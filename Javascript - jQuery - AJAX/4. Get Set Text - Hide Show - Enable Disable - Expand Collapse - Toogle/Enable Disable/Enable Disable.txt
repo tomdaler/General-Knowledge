@@ -1,0 +1,18 @@
+javascript
+----------
+document.getElementById("txt1").disabled = true;
+document.getElementById("txt1").setAttribute("disabled", "disabled");
+
+Enable again:
+
+document.getElementById("txt1").removeAttribute("disabled"); 
+
+
+
+jQuery
+------
+$("#txt1").prop("disabled", false);
+
+Enable again:
+
+$('#txt1').removeAttr("disabled");

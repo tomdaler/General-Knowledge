@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title> - jsFiddle demo</title>
+  
+  <script type='text/javascript' src='http://code.jquery.com/jquery-1.9.1.js'></script>
+  
+  <script type="text/javascript" src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+
+  <link rel="stylesheet" type="text/css" href="http://code.jquery.com/ui/1.9.2/themes/base/jquery-ui.css">
+  
+  
+  <style type='text/css'>
+    
+  </style>
+ 
+
+<script type='text/javascript'>
+$(window).load(function(){
+$(document).on("click", "#btn", function () {
+
+      var html_info = "<input type='text' name='fname' value='aaa'> ";
+
+      var newDiv = $(document.createElement('div'));
+           
+            newDiv.html(html_info);
+
+            newDiv.dialog({
+                width: 240,
+                maxHeight: 250,
+                maxWidth: 250,
+                dialogClass: "popup-styling",
+                title: 'Pop Up Title'
+            });
+
+
+});
+});
+
+</script>
+
+</head>
+<body>
+  <input id="btn" type="button" value="Click Me" />
+  
+</body>
+
+</html>
+

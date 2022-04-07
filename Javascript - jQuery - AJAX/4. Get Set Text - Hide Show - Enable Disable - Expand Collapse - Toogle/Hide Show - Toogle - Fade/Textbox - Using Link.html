@@ -1,0 +1,71 @@
+<!doctype html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8">
+
+<title>Test</title>
+
+<script language="javascript">
+ 
+function toggle(elementId) {
+
+	var ele = document.getElementById(elementId);
+
+	if(ele.style.display == "block") {
+    		ele.style.display = "none";
+
+  	}
+
+	else {
+
+		ele.style.display = "block";
+
+	}
+}
+ 
+</script>
+</head>
+
+
+<body>
+
+<div class="tree">
+<div>
+BLA BLA
+</div>
+	
+<a id="displayText" href="javascript:toggle('toggleText');">show</a>
+ <== click Here
+<div onclick="javascript:toggle('toggleText');">
+
+
+<h1>Hello!</h1>
+<div id="toggleText" style="display:none; border-width:2px; border-style:solid">Hidden data...</div>
+
+</div>
+<div>
+BLA
+</div>
+	
+<div>
+BLA BLA 
+</div>
+	
+<div>
+BLA BLA 123
+</div>
+<a id="displayText" href="javascript:toggle('toggleText2');">show</a>
+
+ <== click Here
+<div id="toggleText2" style="display: none" href="javascript:toggle();">
+
+<h1>Hide!</h1></div>
+	
+</div>
+
+</body>
+
+</html>

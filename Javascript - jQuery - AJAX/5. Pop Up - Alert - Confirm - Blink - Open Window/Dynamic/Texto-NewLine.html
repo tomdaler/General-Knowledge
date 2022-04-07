@@ -1,0 +1,92 @@
+<html>
+
+<head>
+
+  <script type='text/javascript' src='http://code.jquery.com/jquery-1.9.1.js'></script>
+  
+  <script type="text/javascript" src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+
+<script type="text/javascript">
+
+function NewLines(texto)
+{
+
+   var largo = texto.length;
+   var nume = 5 * 45;  // skills per line
+
+   var pos1 = nume;
+
+   while (pos1 < largo)
+   {
+
+       var pos2 = texto.indexOf(';', pos1);
+
+       if ( pos2 < largo-10 )
+        { 
+          texto = texto.substring(0,pos2)+ ";&#10;&#10;"+ texto.substring(pos2+1);
+          largo = largo + 10;
+          
+      }
+      pos1 = pos1+ nume;
+   }
+
+   return texto;
+}
+
+
+function PopUp()
+{
+    var url = window.location.href;
+    
+    var tab_text = "63934;63947;63961;63970;63989;66027;66043;66065;66096;66108;66152;66206;66209;66243;66253;66266;66290;66324;66339;66479;66512;66518;66547;66648;66754;66773;66776;66823;66893;63913;66100;67221;67226;67231;67236;67237;63922;63923;63932;63937;63942;63943;63948;63950;63962;";
+    tab_text = tab_text + "63979;63980;63988;66023;66039;66078;66111;66130;66132;66133;66160;66189;66194;66225;66232;66261;66288;66313;66331;66350;66400;66422;66450;66482;66484;66487;66504;66531;66548;66559;66565;66586;66591;66610;66642;66666;66710;66730;66735;66748;66787;66791;66803;66810;66811;66818;66866;66877;66885;66891;66909;66918;66938;66990;67238;";
+    tab_text = tab_text + "63934;63947;63961;63970;63989;66027;66043;66065;66096;66108;66152;66206;66209;66243;66253;66266;66290;66324;66339;66479;66512;66518;66547;66648;66754;66773;66776;66823;66893;63913;66100;67221;67226;67231;67236;67237;63922;63923;63932;63937;63942;63943;63948;63950;63962;";
+    tab_text = tab_text + "63979;63980;63988;66023;66039;66078;66111;66130;66132;66133;66160;66189;66194;66225;66232;66261;66288;66313;66331;66350;66400;66422;66450;66482;66484;66487;66504;66531;66548;66559;66565;66586;66591;66610;66642;66666;66710;66730;66735;66748;66787;66791;66803;66810;66811;66818;66866;66877;66885;66891;66909;66918;66938;66990;67238;";
+
+    tab_text = NewLines(tab_text);
+
+    if (tab_text != "") {
+
+                var largo = tab_text.length;
+                var filas = parseInt(largo / 50) + 2;
+                //filas = filas * 48;
+                
+               // var texto = "<input type='text' width='60' height='"+ filas + "'> value = '" + tab_text + "'/>";
+
+                var texto = "<textarea cols='95' rows='7' >"+ tab_text + "</textarea>";
+
+                var html_info = "<div id='div1'>" + texto + "</div>";
+                var Titulo = "";
+                var newDiv = $(document.createElement('div'));
+
+                newDiv.html(html_info);
+
+                newDiv.dialog({
+                    width: 600,
+                    maxHeight: 900,
+                    maxWidth: 600,
+                    dialogClass: "popup-styling",
+                    title: Titulo
+                });
+
+        //prompt("Log Ids", tab_text);
+        //var url = '../../templates/LoginID.html?id=' + tab_text;
+        //var wind1 = window.open(url, 'displayWindow', 'width=860,height=400, status=no,toolbar=no,menubar=no,scrollbars=1');
+
+
+
+    }
+}
+
+
+</script>
+
+</head>
+
+<body>
+
+<button type="button"  onclick='PopUp();' >Click Me!</button> 
+
+</body>
+
+</html>

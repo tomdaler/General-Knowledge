@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title> - jsFiddle demo</title>
+  
+  <script type='text/javascript' src='http://code.jquery.com/jquery-1.9.1.js'></script>
+  
+  <script type="text/javascript" src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+
+  <link rel="stylesheet" type="text/css" href="http://code.jquery.com/ui/1.9.2/themes/base/jquery-ui.css">
+  
+  <style type='text/css'>
+    
+  </style>
+ 
+
+<script type='text/javascript'>
+
+     function closing()
+        {
+          $("#div1").parent().remove();
+        }
+
+$(window).load(function(){
+$(document).on("click", "#btn", function () {
+
+    
+                var Titulo = 'prueba';
+
+                var html_info = "<div id='div1'> ";
+                html_info = html_info + "<button style='background:white; cursor:pointer' id='bt_add' onclick='closing();'  >Close</button>";
+                html_info = html_info + "</div>";
+
+
+                var newDiv = $(document.createElement('div'));
+
+                newDiv.html(html_info);
+                
+
+                newDiv.dialog({
+                    modal: true,
+                    width: 600,
+                    maxHeight: 900,
+                    maxWidth: 600,
+                    dialogClass: "popup-styling",
+                    title: Titulo
+                 
+                });
+
+                $(".ui-dialog-titlebar-close").hide();
+
+   });
+});
+
+</script>
+
+</head>
+<body>
+  <input id="btn" type="button" value="Click Me" />
+  
+</body>
+
+</html>
+

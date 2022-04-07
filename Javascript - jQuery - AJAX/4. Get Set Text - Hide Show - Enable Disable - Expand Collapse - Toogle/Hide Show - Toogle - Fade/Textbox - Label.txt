@@ -1,0 +1,25 @@
+Javascript
+----------
+
+var ele = document.getElementById(elementId);
+
+if(ele.style.display == "block") {
+	ele.style.display = "none";
+  } else {
+	ele.style.display = "block";
+  }
+}
+ 
+
+
+
+jQuery
+------
+
+ $('#hideLink').click(function() {
+                   $('#someText').hide();
+                });
+
+ $('#showLink').click(function() {
+                   $('#someText').show();
+                });

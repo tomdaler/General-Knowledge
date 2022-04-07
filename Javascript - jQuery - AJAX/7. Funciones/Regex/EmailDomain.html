@@ -1,0 +1,57 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Sign-In</title>
+<link rel="stylesheet" type="text/css" href="style-sign.css">
+
+<script type="text/javascript">
+     function validate()
+        {                  
+          var usuario = document.myemailform.userid.value;
+          var pattern = new RegExp("^\\d{9}$");
+
+          submitFlag = true;  
+
+          if (!usuario.match(pattern))   
+               {
+                  alert("Invalid value, type 9 digits");
+                  submitFlag = false;  
+               }
+          
+
+          if (submitFlag)
+           {
+             alert("Sending email with the domain");
+           }
+
+          return submitFlag;  
+         
+        }
+    </script>
+
+</head>
+
+
+<body id="body-color">
+
+<form method="post" name="myemailform" action="emailDomain.php" >
+
+<div id="Sign-In">
+<fieldset style="width:90%"><legend><b>Type your 9-digit employee id</b></legend>
+
+</br>
+<form  method="POST" action="login.php">
+
+&nbsp;&nbsp;&nbsp;Employee ID&nbsp;&nbsp;&nbsp;<input type="text" name="userid" size="10"><br>
+</br>
+
+
+&nbsp;&nbsp;&nbsp;<input id="button" type="submit" name="submit" onclick="return validate();"  value="Request Domain">
+
+</fieldset>
+
+</div>
+</form>
+
+</body>
+</html> 

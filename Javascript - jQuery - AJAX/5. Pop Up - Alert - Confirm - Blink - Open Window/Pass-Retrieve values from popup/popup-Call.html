@@ -1,0 +1,41 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>Pop Up</title>
+
+
+  <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+  <script src="http://code.jquery.com/jquery-ui-1.8.16.custom.min.js"></script>
+
+
+   <script type="text/javascript">
+
+       $(document).ready(function(){
+         
+         $("#filter").click(function(){
+             var url = 'popup.html?id=' + document.getElementById("texto").value;            
+             var wind1 = window.open(url, 'displayWindow', 'width=400,height=300, status=no,toolbar=no,menubar=no,scrollbars=1');             
+           });
+	}); 
+
+
+      function getValues(tmp){
+          $('#texto').val(tmp);
+      }
+
+     
+   </script>
+</head>
+
+<body>
+
+   <input id='texto' type="text" name="txtmail" value="" />
+   
+    <br/>
+
+   <button  id='filter' type="button">Click Me!</button> 
+
+
+</body> 
+</html>
+

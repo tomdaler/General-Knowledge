@@ -1,0 +1,46 @@
+<html>
+<head>
+
+  <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+  <script src="http://code.jquery.com/jquery-ui-1.8.16.custom.min.js"></script>
+
+
+<script> 
+
+     $(document).ready(function() {
+          var id = GetQueryString('id');
+          document.getElementById('texto2').innerText= id;
+     });
+
+
+
+    function GetQueryString(sParam) {
+      var id = window.location.search.substring(1);
+      id = id.replace("id=", ""); 
+      return id;      
+    }
+
+
+    function filltextfield(f){
+        var text=f.txttext.value;
+        window.opener.tmp=text;
+        window.opener.getValues(text);
+        window.close();
+    }
+
+
+</script>
+
+</head>
+
+<body>
+  <form action='#' name='myform' action='post'>
+   
+    <TEXTAREA rows='2' cols='20' id='texto2' name='txttext'></TEXTAREA><br>
+    <INPUT type='button' value='save'   onclick='javascript:filltextfield(this.form);'>
+    <INPUT type='button' value='cancel' onclick='javascript:window.close();'>
+
+  </form>
+</body>
+</html> 
+

@@ -1,0 +1,80 @@
+
+x=80
+y=20
+
+
+
+js = "ul = document.getElementsByClassName('pagination'); ";
+js= js+ " li = ul[0].getElementsByTagName('li');    ";
+js= js+ " var rect = li[3].getBoundingClientRect(); ";
+
+js= js+ " var x = rect.left; ";
+js= js+ " var y = rect.top;  ";
+
+js= js+ " var ev = document.createEvent('MouseEvents');";
+js= js+ " ev.initMouseEvent('click', true, true, window, 0, 0, 0, x, y, false, false, false, false, 0, null); ";
+js= js+ " document.body.dispatchEvent(ev); ";
+
+
+function click(x, y)
+{
+    var ev = new MouseEvent('click', {
+        'view': window,
+        'bubbles': true,
+        'cancelable': true,
+        'screenX': x,
+        'screenY': y
+    });
+
+    var el = document.elementFromPoint(x, y);
+    el.dispatchEvent(ev);
+}
+
+FOR IE
+
+function imitateClick(oElement, iClientX, iClientY) {
+                var oEvent;
+                if (document.createEventObject) { //For IE
+                    oEvent = document.createEventObject();
+                    oEvent.clientX = iClientX;
+                    oEvent.clientY = iClientY;
+                    oElement.fireEvent("onclick", oEvent);   
+                } else {
+                    oEvent = document.createEvent("MouseEvents");
+                    oEvent.initMouseEvent("click", true, true, document.defaultView, 0, 0, 0, 
+                                            iClientX, iClientY/*, false, false, false, false, 0, null*/); 
+                    oElement.dispatchEvent(oEvent);
+                }
+            }
+   
+            var body = document.body;
+ 
+            body.onclick = function(event) {
+                alert("clicked at (" + event.clientX + "," + event.clientY + ")");
+            };
+ 
+            imitateClick(body, 100, 100);Copy code
+
+
+
+
+const x = 10
+const y = 10
+
+const click = (x, y) => {
+
+  const ev = new MouseEvent('click', {
+    'view': window,
+    'bubbles': true,
+    'cancelable': true,
+    'screenX': x,
+    'screenY': y
+  });
+
+  const el = document.elementFromPoint(x, y);
+  el.dispatchEvent(ev);
+}
+
+document.elementFromPoint(x, y).click();
+
+
