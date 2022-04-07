@@ -1,0 +1,12 @@
+¿Cuál es la pseudoinversa de Moore Penrose de la matriz?
+
+[[1 2]
+[3 4]
+[5 6]]
+
+import numpy as np
+A =np.array([[1,2],[3,4],[5,6]])
+inversa = np.linalg.inv(A.T.dot(A)).dot(A.T)
+print(inversa)
+
+[[-1.33333333 -0.33333333 0.66666667] [ 1.08333333 0.33333333 -0.41666667]]

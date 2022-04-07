@@ -1,0 +1,27 @@
+Desviacion standard de vector en serie de tiempo
+
+rms2 = np.sum(x**2)/x.size
+
+avg2 = np.mean(x)**2
+
+std2 = np.std(x)**2
+
+rms2 == avg2 + std2
+
+
+import numpy as np
+x = np.array([1,-2,3,2])
+
+np.mean(x)  = 1-2+3+2 /4  = 1
+
+np.std(a)   = 1.8708
+
+rms2 = np.sum(x**2)/x.size
+
+avg2 = np.mean(x)**2
+std2 = np.std(x)**2
+
+rms2 == avg2 + std2
+
+
+

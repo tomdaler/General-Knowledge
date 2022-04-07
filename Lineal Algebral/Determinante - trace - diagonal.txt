@@ -1,0 +1,82 @@
+El determinante de una matriz determina si los sistemas son singulares o mal condicionados. 
+Sirve para determinar la existencia y la unicidad de los resultados de los sistemas de ecuaciones lineales. 
+
+Un determinante con valor cercano a cero indica que se tiene un sistema mal condicionado.
+ 
+El determinante es una prueba de la independencia lineal de los vectores que forman la matriz.
+
+Cuando una matriz tiene la misma cantidad de ecuaciones que de incógnitas es compatible determinada, 
+cada incógnita tiene una única solución y la podemos resolver por el método de Gauss, por la Regla de Cramer, por sustitución… 
+o por otros métodos, son los sistemas de ecuaciones más fáciles de resolver.
+
+Cuando una matriz tiene menos ecuaciones que incógnitas, 
+es compatible indeterminada y cada incógnita tiene infinito número de soluciones, 
+estás se suelen resolver casi siempre con el método de Gauss.
+
+
+Import numpy as pd
+matriz = np.array([
+                   [1,0,0,0,0],
+                   [0,2,0,0,0],
+                   [0,,3,0,0],
+                   [0,0,0,4,0],
+                   [0,0,0,0,5]
+])
+
+np.linalg.det(matriz)
+120
+
+
+
+El determinante es 120, ya que al ser diagonal la matriz (simetrica)
+el determinante es la multiplicacion de todos los elementos de la diagonal
+
+1x2x3x4x5 = 120
+
+
+La suma de la diagonal es trace
+
+import numpy as np
+
+arr = np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9]])
+
+   [[1, 2, 3], 
+   [4, 5, 6], 
+   [7, 8, 9]])
+
+np.trace(arr)
+15
+
+1+5+9
+
+Suma de diagonal de 3D
+
+import numpy as np
+
+arr = np.array([[[1, 2], [2, 3], [3, 4]], [
+               [4, 5], [4, 5], [3, 4]], [[5, 6], [4, 5], [4, 5]]])
+
+print(arr)
+print(np.shape(arr))
+
+outs = np.trace(arr)
+print("Output is: \n", outs)
+
+Output
+
+ [[[1 2]   <-
+  [2 3]
+  [3 4]]
+
+ [[4 5]
+  [4 5]   <-
+  [3 4]]
+
+ [[5 6]
+  [4 5]
+  [4 5]]] <-
+
+Shape of the array is:  (3, 3, 2)
+
+Output is:
+ [ 9 12]     1+4+4   2+5+5
