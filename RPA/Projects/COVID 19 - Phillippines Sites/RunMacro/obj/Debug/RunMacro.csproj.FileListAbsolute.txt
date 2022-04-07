@@ -1,0 +1,8 @@
+C:\Proyectos\Exposure\RunMacro\bin\Debug\RunMacro.exe.config
+C:\Proyectos\Exposure\RunMacro\bin\Debug\RunMacro.exe
+C:\Proyectos\Exposure\RunMacro\bin\Debug\RunMacro.pdb
+C:\Proyectos\Exposure\RunMacro\obj\Debug\RunMacro.csproj.SuggestedBindingRedirects.cache
+C:\Proyectos\Exposure\RunMacro\obj\Debug\RunMacro.csproj.ResolveComReference.cache
+C:\Proyectos\Exposure\RunMacro\obj\Debug\RunMacro.csproj.CoreCompileInputs.cache
+C:\Proyectos\Exposure\RunMacro\obj\Debug\RunMacro.exe
+C:\Proyectos\Exposure\RunMacro\obj\Debug\RunMacro.pdb
