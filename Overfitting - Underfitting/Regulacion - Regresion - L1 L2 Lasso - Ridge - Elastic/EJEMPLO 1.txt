@@ -1,0 +1,113 @@
+import pandas as pd
+import sklearn
+
+from sklearn.linear_model import LinearRegression
+from sklearn.linear_model import Lasso
+from sklearn.linear_model import Ridge
+
+from sklearn.model_selection import train_test_split
+from sklearn.metrics import mean_squared_error
+
+   
+dataset = pd.read_csv('./data/whr2017.csv')
+
+X = dataset[['gdp', 'family', 'lifexp', 'freedom' , 'corruption' , 'generosity', 'dystopia']]
+y = dataset[['score']]
+
+X_train, X_test, y_train, y_test = train_test_split(X,y, test_size=0.25)
+modelLinear = LinearRegression().fit(X_train, y_train)
+
+y_predict_linear = modelLinear.predict(X_test)
+
+
+# Configuramos alpha, que es valor labda y entre mas valor tenga alpha en lasso mas penalizacion 
+# vamos a tener y lo entrenamos con la función fit 
+
+#alpha = 0.2 A MAYOR ALPHA MAS PENALIZACION
+
+modelLasso = Lasso(alpha=0.2).fit(X_train, y_train)
+
+# Hacemos una prediccion para ver si es mejor o peor de lo que teniamos en el modelo lineal sobre
+# exactamente los mismos datos que teníamos anteriormente 
+y_predict_lasso = modelLasso.predict(X_test)
+
+# alpha = 1
+
+# Hacemos la misma predicción, pero para nuestra regresion ridge 
+modelRidge = Ridge(alpha=1).fit(X_train, y_train)
+
+# Calculamos el valor predicho para nuestra regresión ridge 
+y_predict_ridge = modelRidge.predict(X_test)
+
+
+# Calculamos la perdida para cada uno de los modelos que entrenamos, empezaremos con nuestro modelo 
+# lineal, con el error medio cuadratico y lo vamos a aplicar con los datos de prueba con la prediccion 
+# que hicimos 
+linear_loss = mean_squared_error(y_test, y_predict_linear)
+
+# Mostramos la perdida lineal con la variable que acabamos de calcular
+print("Linear loss: ", linear_loss) 
+    
+# Mostramos nuestra perdida Lasso, con la variable lasso loss 
+lasso_loss = mean_squared_error(y_test, y_predict_lasso)
+print("Lasso Loss. ", lasso_loss) 
+
+# Mostramos nuestra perdida de Ridge con la variable lasso loss 
+ridge_loss = mean_squared_error(y_test, y_predict_ridge)
+print("Ridge loss: ", ridge_loss)
+
+# Imprimimos las coficientes para ver como afecta a cada una de las regresiones 
+# La lines "="*32 lo unico que hara es repetirme si simbolo de igual 32 veces 
+print("="*32)
+print("Coeficientes lasso: ")
+
+# Esta informacion la podemos encontrar en la variable coef_ 
+print(modelLasso.coef_)
+
+# Hacemos lo mismo con ridge 
+print("="*32)
+print("Coeficientes ridge:")
+print(modelRidge.coef_) 
+
+
+OUTPUT
+
+(155, 7)
+(155, 1)
+
+Linear loss:  6.758120164054522e-08
+Lasso Loss.  0.5561252216352585
+Ridge loss:  0.007871158497137537
+================================
+
+Coeficientes lasso: 
+[1.06045786 0.         0.         0.         0.         0.  0.2615462 ]
+================================
+
+Coeficientes ridge:
+[[1.0887705  0.93882579 0.86959154 0.89841946 0.63065798 0.70952306  0.96572868]]
+
+
+INTERPRETACION
+
+La regresion Ridge tiene el menor loss
+
+El modelo tiene estas caracteristicas
+
+X = dataset[['gdp', 'family', 'lifexp', 'freedom' , 'corruption' , 'generosity', 'dystopia']]
+
+Tomando la matriz de coeficientes
+            [1.06045786   0.     0.         0.         0.              0.          0.26154 ]
+
+Nos dice que variables son las mas relevantes
+
+Implica que a mas GDP, indice de ingresos mas felices
+NO INFLUYE FAMILIA, LIBERTAD, CORRUPCION, GENEROSIDAD
+
+
+Pero con ridge si tuvo importancia 
+
+
+Coeficientes ridge:
+[[1.0887705  0.93882579 0.86959154 0.89841946 0.63065798 0.70952306  0.96572868]]
+

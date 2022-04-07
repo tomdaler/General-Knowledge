@@ -1,0 +1,105 @@
+import pandas as pd
+import sklearn 
+import matplotlib.pyplot as plt 
+
+from sklearn.decomposition import PCA
+from sklearn.decomposition import IncrementalPCA
+
+from sklearn.linear_model import LogisticRegression
+
+from sklearn.preprocessing import StandardScaler
+from sklearn.model_selection import train_test_split
+
+from sklearn.metrics import jaccard_score
+
+
+#PREPARE DATA
+#============
+dt_heart = pd.read_csv('heart.csv')
+dt_features = dt_heart.drop('target', axis =1)
+dt_target = dt_heart['target']
+
+# Normalizando
+dt_features = StandardScaler().fit_transform(dt_features)
+
+X_train,X_test, y_train, y_test = train_test_split(dt_features,dt_target, test_size=0.3, random_state=42)
+
+
+# Default si no asigna n_components = min(n_columnas, n_filas)
+# Entrenaremos con 3 componentes de los 13 que tiene
+# Que PCA evalue cuales son los mas relevantes
+
+n1= 3
+pca = PCA(n_components=n1)
+pca.fit(X_train)
+
+# Batch 10 es con bloques de 10 muestras a la vez
+ipca = IncrementalPCA(n_components=n1, batch_size=10)
+ipca.fit(X_train)
+
+# Grafica mostrara aporte de cada uno de los 3 features
+plt.plot(range(len(pca.explained_variance_)),
+                   pca.explained_variance_ratio_)
+
+logistic = LogisticRegression(solver='lbfgs')
+
+dt_train = pca.transform(X_train)
+dt_test = pca.transform(X_test)
+logistic.fit(dt_train, y_train)
+print("Score PCA: ", logistic.score(dt_test, y_test))
+
+dt_train = ipca.transform(X_train)
+dt_test = ipca.transform(X_test)
+logistic.fit(dt_train, y_train)
+print("Score IPCA ", logistic.score(dt_test, y_test))
+
+
+# GRAFICA COMPARATIVA DE VARIOS COMPONENTES 2-10
+# PARA VERIFICAR CUANDO YA NO AUMENTA EXACTITUD
+# EN EL CASO DE ESTE EJERCICIO, CON N=3 ES SUFICIENTE
+# Y CON ESTA GRAFICA CONFIRMAMOS QUE CON MAS NO AUMENTA EXACTITUD
+
+logistic = LogisticRegression(solver='lbfgs')
+
+pca_data = {'accuracy': [],'n_components': []}
+ipca_data = {'accuracy': [],'n_components': []}
+
+
+for n in range(2, 10):
+
+    #PCA
+    pca = PCA(n_components=n)
+    pca.fit(X_train)
+
+    #IPCA
+    # Batch 10 es con bloques de 10 muestras a la vez
+    ipca = IncrementalPCA(n_components=n, batch_size=10)
+    ipca.fit(X_train)
+
+    #Train PCA
+    df_train = pca.transform(X_train)
+    df_test = pca.transform(X_test)
+    logistic.fit(df_train, y_train)
+    acccuracy = logistic.score(df_test, y_test)
+        
+    pca_data['accuracy'].append(acccuracy)
+    pca_data['n_components'].append(n)
+    
+
+    # TRAIN IPCA
+    df_train = ipca.transform(X_train)
+    df_test = ipca.transform(X_test)
+    logistic.fit(df_train, y_train)
+    acccuracy = logistic.score(df_test, y_test)
+       
+    ipca_data['accuracy'].append(acccuracy)
+    ipca_data['n_components'].append(n)
+
+    
+plt.plot(pca_data['n_components'], pca_data['accuracy'], label='PCA')
+plt.plot(ipca_data['n_components'], ipca_data['accuracy'], label='IPCA')
+plt.title('N Components vs Accuracy - PCA vs IPCA')
+plt.xlabel('Number of Components')
+plt.ylabel('Accuracy of Logistic-Regression')
+plt.legend()
+plt.show()

@@ -1,0 +1,10 @@
+Desvalance, en campo churn
+df.Churn.value_counts()
+
+Output
+No     5174
+Yes    1869
+
+Hay muchos mas “No” eso hace desbalance, 73% es No
+
+

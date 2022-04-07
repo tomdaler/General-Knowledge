@@ -1,0 +1,7 @@
+Regresiones robustas
+
+Sci-kit learn nos ofrece algunos modelos para abordar los valores atipicos
+- RANSAC
+- Huber Regressor
+
+

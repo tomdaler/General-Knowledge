@@ -1,0 +1,40 @@
+Validación de nuestro modelo usando Cross Validation
+
+SE PRUEBA CON
+Varios modelos
+Varios set de datos
+Varias conf de parametros
+Varias distribuciones de dadtos
+
+
+Tipos de validación
+
+Hold-Out
+========
+Dividir nuestros datos entrenamiento/pruebas, usar porcentajes fijos, 
+por lo regular 70% de entrenamiento y 30% de pruebas.te, todo esto:
+- Cuando necesitamos prototipo rapido
+- Sin mucho conocimiento
+- Sin mucho poder de computo
+
+
+Validacion cruzada (k-folds)
+Entrena 1-4, valida con 5
+Entrena 2-5, valida con 1
+Entrena 1,3-5 valida con 2
+Y asi con lo demas
+- El mas recomendable
+- Optimizacion parametrica
+- Se tiene mas tiempo para las pruebas
+
+
+Validacion cruzada (LOOCV) mas intensivo
+- Con poder de computo
+- Con pocos datos 
+- Se prueban todos los casos posibles
+- Train todos menos 1, hasta que pasan por todos los datos
+
+
+
+
+
