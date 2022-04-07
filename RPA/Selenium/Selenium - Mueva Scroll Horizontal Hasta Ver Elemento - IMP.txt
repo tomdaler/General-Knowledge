@@ -1,0 +1,12 @@
+
+SCROLL Bar
+
+En vez de conocer el scroll, se pide que busque el elemento, 
+y que luego se mueva hasta poderlo ver en la pantalla
+
+
+
+IJavaScriptExecutor executor = dr1 as IJavaScriptExecutor;
+
+    IWebElement element = dr1.FindElement(By.ClassName("pagination"));
+    executor.ExecuteScript("arguments[0].scrollIntoView();", element);
