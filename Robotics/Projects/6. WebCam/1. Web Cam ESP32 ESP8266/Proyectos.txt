@@ -1,0 +1,13 @@
+
+https://randomnerdtutorials.com/esp32-cam-post-image-photo-server/
+ESP32-CAM Post Images to Local or Cloud Server using PHP (Photo Manager)
+
+
+https://randomnerdtutorials.com/esp32-cam-video-streaming-web-server-camera-home-assistant/
+ESP32-CAM Video Streaming Web Server (works with Home Assistant)
+
+
+https://randomnerdtutorials.com/esp32-cam-send-photos-email/
+SP32-CAM: Take and Send Photos via Email using an SMTP Server
+
+
