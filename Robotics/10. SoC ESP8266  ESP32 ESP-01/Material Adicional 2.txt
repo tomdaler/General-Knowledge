@@ -1,0 +1,35 @@
+
+VIDEOS
+
+¿QUÉ ES EL ESP32?
+https://www.youtube.com/watch?v=9ouMjvVACnc
+
+
+Send SMS ESP 32
+https://www.youtube.com/watch?v=X_w3ov4sSKY
+
+
+
+Nodo LoRa con RFM95W y ESP32 | Añade comunicaciones de largo alcance a tus proyectos.
+https://www.youtube.com/watch?v=USpYs0RjUbo
+
+
+First Project ESP32 development using the TTGO T-DISPLAY
+https://www.youtube.com/watch?v=u7277VShso4
+
+TTGO T-DISPLAY INTERMEDIO
+https://www.youtube.com/watch?v=UE1mtlsxfKM
+
+
+Check Out These TTGO T-Display Example Sketches
+https://www.youtube.com/watch?v=-7O3qKWU6DU
+
+
+LEER
+
+BLUETOOTH
+https://randomnerdtutorials.com/esp32-bluetooth-classic-arduino-ide/
+
+
+SPARKFUN SEND RECIEVE SMS
+https://havecloudwillcode.wordpress.com/2017/08/11/using-a-sparkfun-esp32-thing-to-send-an-sms-text-message/

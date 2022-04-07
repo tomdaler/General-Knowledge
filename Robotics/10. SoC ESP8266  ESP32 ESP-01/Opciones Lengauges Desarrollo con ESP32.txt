@@ -1,0 +1,11 @@
+Estas son algunas de las opciones para cargar programas en ESP32:
+
+https://webcache.googleusercontent.com/search?q=cache:we8tJVOHH24J:https://randomnerdtutorials.com/getting-started-with-esp32/+&cd=11&hl=en&ct=clnk&gl=sv
+
+
+	Arduino IDE
+	Espressif IDF (IoT Development Framework)
+	Micropython
+	JavaScript
+	LUA
+

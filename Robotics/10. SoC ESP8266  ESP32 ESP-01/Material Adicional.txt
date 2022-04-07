@@ -1,0 +1,88 @@
+VIDEOS
+
+PROFE GARCIA
+WIFi Module ESP8266 Conect and send data online. AT Commands
+https://www.youtube.com/watch?v=7gXcTBHLCRc
+
+
+https://www.youtube.com/watch?v=P8Z-ZHwNeNI
+
+Video 01 - ESP 8266 - Esp32 - Introduccion y Aplicaciones
+https://www.youtube.com/watch?v=tQJiClU4Z3o
+
+ESP8266 TUTORIAL
+https://www.youtube.com/watch?v=NwkDKhC0M6M&t=8s
+
+https://www.youtube.com/watch?v=7gXcTBHLCRc&t=81s
+
+CON FTDI
+https://www.youtube.com/watch?v=CewXwaJrjPE
+
+
+ESP8266 TUTORIAL - Goodbye AT Commands 
+https://www.youtube.com/watch?v=NwkDKhC0M6M
+
+
+ESP8266 Adiós Comandos AT 
+https://www.youtube.com/watch?v=pL92SQ3eOko
+
+
+ESP8266 - Explicación, modelos y diferencias
+https://www.youtube.com/watch?v=gAe-Kjg_ggc
+
+
+ESP8266 - Cómo programar, accesorios y proyectos IoT
+https://www.youtube.com/watch?v=9IwJIkTxgME
+
+
+LECTURA
+
+LEER
+
+
+SEND SMS
+
+https://circuitdigest.com/microcontroller-projects/sending-sms-using-esp8266
+
+https://www.engineersgarage.com/esp8266/send-text-message-with-nodemcu/
+
+
+SEND GMAIL
+https://www.instructables.com/ESP8266-GMail-Sender/
+
+
+ENCENDER Y APAGAR LED CON LA WEB
+https://www.luisllamas.es/encender-y-apagar-un-led-en-el-esp8266-con-un-formulario-web/
+
+PROYECTOS
+https://www.instructables.com/ESP8266-Projects/
+
+
+
+PROYECTOS CON ESP8266
+https://randomnerdtutorials.com/projects-esp8266/
+
+15 MEJORES PROYECTOS PARA PRINCIPIANTES
+https://www.electronicshub.org/esp8266-projects/
+
+
+DIFERENCIA ESP8266 FRENTE A ESP32
+https://www.luisllamas.es/comparativa-esp8266-esp32/
+https://makeradvisor.com/esp32-vs-esp8266/
+
+
+LEER
+FAMILIA ESP82
+http://polaridad.es/esp8266-modulo-wifi-elegir-caracteristicas/
+
+
+TELEGRAM
+
+Telegram ESP32
+https://randomnerdtutorials.com/telegram-control-esp32-esp8266-nodemcu-outputs/
+https://randomnerdtutorials.com/telegram-group-esp32-esp8266/
+https://www.firtec.com.ar/cms/69-telegram-esp32
+
+Telegram, Arduino, Linux, Python
+https://www.instructables.com/Personal-Assistant-With-Telegram-Arduino/
+
