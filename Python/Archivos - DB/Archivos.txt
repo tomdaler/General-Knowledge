@@ -1,0 +1,57 @@
+#
+import fs
+
+
+CURRENT_DIR =fs.open_fs(".")
+print(CURRENT_DIR.exists("."))
+CURRENT_DIR.exists("..")
+
+DATA_DIR = fs.open_fs("../")
+print(DATA_DIR.exists(""))
+DATA_DIR.listdir(".")
+
+for path in DATA_DIR.walk.files():
+    print(path)
+
+    with DATA_DIR.open(path) as data_file:
+        print(data_file.read())
+
+for path in DATA_DIR.walk.dirs():
+    print(path)
+
+DATA_DIR.makedir("external_fs",recreate=True)
+
+sub_data_dir = DATA_DIR.makedirs("external_fs/fs/nested", recreate=True)
+sub_data_dir.makedir("test")
+
+
+= = = = =
+
+
+import pyprojroot
+pyprojroot.here().joinpath("data", "raw")
+
+import pyhere
+pyhere.here("data", "raw")
+pyhere.here().resolve().joinpath("raw")
+
+
+def make_dir_function(dir_name):
+    def dir_function(*args):
+
+        if isinstance(dir_name, str):
+            return pyprojroot.here().joinpath(dir_name, *args)
+        else:
+            return pyprojroot.here().joinpath(*dir_name, *args)
+
+    return dir_function
+
+# Nested lambda.
+make_dir_function_lambda = lambda dir_name: lambda *args: pyprojroot.here().joinpath(dir_name, *args)
+
+#
+data_dir = make_dir_function("data")
+data_dir("external", "os", "do")
+#figures_dir = make_dir_function_lambda("figures")
+figures_dir("amazing", "plots", "here")
+
