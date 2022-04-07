@@ -1,6 +1,0 @@
-PCA
-
-Para correlacion, summary, si p > 0.05 se descarta
-
-Matriz de calor, covarianza, si esta correlacionado con otra se descarta una
-
