@@ -1,0 +1,49 @@
+def run():
+    for values in super_list:
+         for key, value in values.items():
+              print(f'{key} - {value}')
+
+    my_list = [.....]
+    my_dict = {.....}
+
+    super_list = [
+        {"1", "2", "3"},
+        {"1", "2", "3"},
+        {"1", "2", "3"}
+    ]
+
+    for key, value in super_dict.item():
+          print(key, "->", value)
+
+    for values in super_list:
+          for key, value in values,items():
+        print(value)
+
+
+if _name_== '_main_':
+    run()
+
+
+squares = []
+for i in range(1,100):
+    if i%3 !=0 :
+       squares.append(i**2)
+
+
+[new element en lista] [for element in iterable] [ condition]
+dict_squares = [ i**2 for i in range(1, 100) if i % 3 == 0]
+list_squares = { i**2 for i in range(1, 100) if i % 3 == 0}
+
+new element:  i**2
+iterable   :  for i in range(1,100)
+condition  :  if i%3 ==0
+
+
+FUNCIONAL ANONIMA  LAMBDA
+
+def procesar(string)
+  return string == string[::-1]
+
+procesar = lambda string: string = string[::-1]
+print(procesar('ani') #i
+

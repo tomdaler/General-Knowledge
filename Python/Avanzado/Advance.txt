@@ -1,0 +1,80 @@
+
+https://medium.com/better-programming/5-advanced-python-concepts-explanations-and-applications-99a03f6bd1bd
+
+
+5 Advanced Python Concepts: Explanations and Applications
+
+Lambda functions. You use lambda functions to have a simple operation, usually within another function call, such as sorted() or max().
+Comprehensions. They’re convenient and performant ways to create lists, dictionaries, and sets from iterables.
+Generators. Generators are lazily-evaluated iterators that render items only when requested, and thus they’re very memory efficient. They should be used when you’re dealing with a large amount of data sequentially.
+Decorators. Decorators are useful when you want to have some non-algorithmic modifications with current functions. In addition, decorators can be used repeatedly. Once defined, they can decorate as many functions as you want.
+Hashability. Hashability is the required characteristic of Python objects that can be used as dictionary keys or set elements. They provide a mechanism for efficient item retrieving and insertion, as well as membership checking.
+
+
+Lambda functions
+================
+
+scores = [('John', 95), ('Danny', 98), ('Aaron', 90), ('Leo', 94)]
+
+sorted(scores, reverse=True)
+# [('Leo', 94), ('John', 95), ('Danny', 98), ('Aaron', 90)]
+
+# Sort using the scores
+sorted(scores, key=lambda x: x[1], reverse=True)
+#[('Danny', 98), ('John', 95), ('Leo', 94), ('Aaron', 90)]
+
+
+Comprehension allows us to create a list, dictionary, or set using an exiting iterable, which are named list comprehension, dictionary comprehension, and set comprehension, respectively
+
+numbers = [1, 2, 3, -3, -2, -1]
+
+# Create a new list of these numbers' squares
+[x*x for x in numbers]
+# [1, 4, 9, 9, 4, 1]
+
+# Create a new dictionary of these numbers' exponentiation
+{x: pow(10, x) for x in numbers}
+{1: 10, 2: 100, 3: 1000, -3: 0.001, -2: 0.01, -1: 0.1}
+
+# Create a set of these numbers' absolutes
+{abs(x) for x in numbers}
+#{1, 2, 3}
+
+
+Generators, during the iteration, the iterable is converted to an iterator, such that the iterator can render elements when needed.
+One particular kind of iterator is a generator.
+
+def abc_generator():
+    yield "a"
+    yield "b"
+    yield "c"
+
+abc_gen = abc_generator()
+print("Type of abc_gen:", type(abc_gen))
+for letter in abc_gen:
+     print(letter)
+
+Type of abc_gen: <class 'generator'>
+a
+b
+c
+
+
+
+limit = 10000000000
+
+# Use a generator function
+def integer_generator():
+    n = 0
+    while n < limit:
+        n += 1
+        yield n
+
+
+int_gen = integer_generator()
+int_sum0 = sum(int_gen)
+
+# Use generator expression
+int_sum1 = sum(x for x in range(1, limit+1))
+
+

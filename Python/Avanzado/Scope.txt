@@ -1,0 +1,27 @@
+z=5
+
+def my_func():
+    z=3
+    print(z)
+
+my_func()
+print(z)
+
+3
+5
+
+reglas para encontrar un closure
+
+def make_multiplier(x)
+
+    def multiplier(n):
+         return x*n
+
+    return multiplier
+
+times10= make_multiplier(3)
+
+print(times10(3))
+
+30
+

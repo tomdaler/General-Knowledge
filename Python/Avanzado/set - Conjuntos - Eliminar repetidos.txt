@@ -1,0 +1,72 @@
+Sets: coleccion de elementos unicos inmutables
+
+No es set:  1, 5, 7, 1  (se repite)
+No es set:  [1,2] (mutable)
+
+
+set1 = {3,4, 5.23, "Hola", True}
+
+empty_set1 = {}
+empty_set2 = set()
+
+
+Hacerlo set
+===========
+list1 = [1,1,2,3,4,4,5]
+set1 = set(list1) #cast a set, elimina repetido
+
+tuple1 = ("Hola", "Hola",1)
+set2   = set(tupla1)  #elimina repetido
+
+set2.add(4)
+set2.update([1,2,5])  #para varios, add si no es repetido
+
+set4.update((1,7,2), {6,8})
+1,2,6,7,8
+
+set4.discard(2)
+set4.remove(6)
+1,7,8
+
+set4.remove(12) # da error
+
+set4.pop()   #elimina cualquier elemento
+set4.clear()
+
+
+set1.union(set2)
+set3 = set1 | set2
+
+set1.intersection(set2)
+set3 = set1 & set2
+
+set1.difference(set2)
+set3 = set1 - set2
+
+set1.symmetric_difference(set2)
+set3 = set1 ^ set2
+set3 = set1 + set2 - ( set1 & set2)
+
+
+ELIMINE REPETIDOS
+-----------------
+
+def del_duplicates(random_list):
+    return list(set(random_list))
+
+
+def main():
+    random_list = [ 11, 55, 2, 2, 55]
+    print(del_duplicates(random_list))
+
+
+if __name__ == '__main__':
+    main()
+
+
+
+remove_duplicate = lambda some_list: list(set(some_list))
+
+
+
+

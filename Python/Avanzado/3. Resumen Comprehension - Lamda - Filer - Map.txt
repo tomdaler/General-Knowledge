@@ -1,0 +1,55 @@
+DATA = [
+    {
+        'name': 'Facundo',
+        'age': 72,
+        'organization': 'Platzi',
+        'position': 'Technical Coach',
+        'language': 'python',
+    },
+    {
+        'name': 'Luisana',
+        'age': 33,
+        'organization': 'Globant',
+        'position': 'UX Designer',
+        'language': 'javascript',
+    },
+    {
+        'name': 'Héctor',
+        'age': 19,
+        'organization': 'Platzi',
+        'position': 'Associate',
+        'language': 'ruby',
+    }
+  ]
+
+old_people = list(map(lambda worker: {**worker, **{"old": worker["age"] > 70}}, DATA))
+
+#worker es el nombre generico de cada item
+==========================================
+
+#Solo el nombre de los desarrolladores en python
+desarrolladores = [worker["name" in DATA if worker["language"]=="python"]]
+
+python_devs = list(filter(lambda worker: worker['language'] == 'python', DATA))
+python_devs = list(map(lambda worker: worker['name'], all_python_devs))
+
+#filter, todos la informacion de los trabajadores en platzi
+platzi_workers = list(filter(lambda worker: worker['organization'] == 'Platzi', DATA))
+
+#Solo el nombre de los que estan en platzi_workers
+platzi_workers = list(map(lambda worker: worker['name'], platzi_workers))
+
+
+RESUMEN
+=======
+crear diccinario = []
+crear lista      = {}
+
+python_devs = [worker["name"] in DATA if worker["language"]=="python"]
+platzi_devs = [worker["name"] in DATA if worker["organization"]=="Platzi"]
+
+adultos = list(filter(lambda worker: worker["age"] > 18, DATA))
+adultos = list(map(lambda worker: worker["name"], adultos))
+
+ancianos = list(map(lambda worker: worker | {"old":worker["age"]>70}, DATA))
+

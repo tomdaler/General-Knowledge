@@ -1,0 +1,26 @@
+
+import datetime
+
+dt1 = datetime.datetime.now()
+
+2020-04-20 16:34:43.930434
+
+dt1 = datetime.date.today()
+
+2020-04-30
+
+dt1.year
+dt1.month
+dt1.day
+
+dt1.strftime('%d/%m%Y')  30/04/2020
+dt1.strftime('%H:%M')    16:30
+
+
+from datetime import datetime
+import pytz
+
+
+TZ1 = pytz.timezone("America/Bogota")
+dt1 = datetime.now(TZ1)
+

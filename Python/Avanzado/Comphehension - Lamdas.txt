@@ -1,0 +1,86 @@
+¿Cuál es el módulo nativo de Python para crear entornos virtuales?
+venv
+python3 -m venv nombre_venv
+python3 -m venv venv
+
+
+Activación del ambiente virtual:
+Windows:       .\venv\Scripts\activate
+Unix o MacOS:  source venv/bin/activate
+
+
+Desactivar el ambiente virtual:  deactivate
+
+Crear un alias en linux/mac:
+
+alias nombre-alias="comando"
+
+`alias avenv=“source venv/bin/activate”``
+
+¿Cuál es la especialidad de Anaconda?
+Ciencia de datos
+
+¿Puede una lista contener diccionarios? Verdadero
+
+En un dictionary comprehension el ciclo es: Obligatorio
+En un list comprehension la condición es: Opcional
+
+¿Qué es una función de orden erior?
+Una función que recibe como parámetro a otra función.
+
+¿Cuántas expresiones como máximo puede contener una función anónima? Una
+
+¿Con qué palabra clave se define una función anónima? lambda
+
+¿Cuál de las siguientes funciones anónimas recibe a x como parámetro y lo devuelve elevado al cuadrado?
+lambda x: x**2
+
+
+¿Cuál es la diferencia entre un error de sintaxis y una excepción?
+Un error de sintaxis en el código impide que el programa siquiera empiece a ejecutarse, en cambio una excepción es elevada cuando se llega a la línea de código que la ocasiona.
+
+¿Dónde se encuentra la herramienta de depuración?
+En el editor de código.
+
+¿Cuál es la excepción que simboliza que intentamos acceder a una llave inexistente en un diccionario?
+KeyError
+
+La palabra clave finally en el manejo de excepciones es: Opcional
+
+Los assert statements pueden ser usados en conjunto con el manejo de excepciones tradicional (try/except) Verdadero
+
+¿Qué valor debe llevar el parámetro encoding de la función open para escribir y leer caracteres especiales sin inconvenientes? utf-8
+
+
+¿Cuál de las siguientes opciones es un list comprehension con su sintaxis correcta?
+[i for i in range(1, 5) if i % 2 == 0]
+
+¿Cuál de las siguientes opciones es un dictionary comprehension con su sintaxis correcta?
+{value*2:value for value in range(1, 5) if value % 2 != 0}
+
+
+¿Cuál de las siguientes sentencias abre un archivo?
+with open("archivo.txt", "r", encoding="utf-8") as f:
+
+Sobreescribir
+with open('myFolder/myfile.txt', "w") as myfile:
+    myfile.write(newData)
+
+¿Cuál de estos principios pertenece al Zen de Python?
+Explícito es mejor que implícito.
+
+¿Cuál de las siguientes opciones es un list comprehension con su sintaxis correcta?
+
+newlist = [expression for item in iterable if condition == True]
+[i for i in range(1, 5) if i % 2 == 0]
+
+
+¿Con qué operador puedo unir diccionarios? NO & * +
+old_people = list(map(lambda worker: {**worker, **{"old": worker["age"] > 70}}, DATA))
+
+
+¿Cuál es el documento PEP que contiene la guía de estilos de Python?
+PEP 8
+
+Cuál es el archivo que contiene los nombres y versiones de las dependencias de un proyecto en Python?
+requeriments.txt     package.json es de javascript

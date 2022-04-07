@@ -1,0 +1,47 @@
+ORDEN SUPERIOR
+
+FILTER, MAP, REDUCE
+
+def saludo(func):
+    func()
+
+def hola():
+   print("hola")
+
+def adios():
+   print("adios")
+
+saludo(hola)
+saludo(adios)
+
+
+my_list = [1,4,5,6,9,11,19]
+
+odd=[i for i in my_list if i%2 !=0]
+
+FILTER
+======
+
+filter(fx, variable)
+       ==  ========
+
+odd=list(filter(lambda x: x%2!=0, mylist))
+
+MAP
+===
+filter(fx, variable)
+       ==  ========
+
+squares = [i**2 for i in my_list]
+ 
+squares = list(map(lambda x: x**2, my_list))
+
+
+REDUCE
+======
+
+from fx import reduce
+total_multiplicado = reduce(lamda a, b: a*b, my_list)
+
+cada valor multiplicado 2 x 3 x 5 x 6
+
