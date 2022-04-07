@@ -1,0 +1,12 @@
+DEFAULT MANILA TIME
+
+(dateadd(hour,(8),getutcdate()))
+
+
+RETRIEVE
+
+select EmpID from DeclarationFormsNotContacted 
+ where EmpID='12343'
+ AND cast(DateCreated as Date) = cast((dateadd(hour,(8),getutcdate())) as Date) 
+
+

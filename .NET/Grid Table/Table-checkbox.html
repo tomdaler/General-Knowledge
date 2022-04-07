@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>Loop through table with no jQuery - jsFiddle demo by markwylde</title>
+  
+
+  <style type='text/css'>
+    
+  </style>
+  
+
+
+<script type='text/javascript'>//<![CDATA[ 
+window.onload=function(){
+    checkboxes = document.getElementsByTagName("input"); 
+
+    for (var i = 0; i < checkboxes.length; i++) {
+        var checkbox = checkboxes[i];
+        checkbox.onclick = function() {
+            var currentRow = this.parentNode.parentNode;
+            var secondColumn = currentRow.getElementsByTagName("td")[1];
+        
+            alert("My text is: " + secondColumn.textContent );
+        };
+    } 
+
+
+
+}//]]>  
+
+</script>
+
+
+</head>
+<body>
+  <table>
+    <thead>
+        <tr><th></th><th>Row Text</th></tr>
+    </thead>
+    <tr>
+        <td><input type="checkbox" /></td>
+        <td>Test</td>
+    </tr>
+    <tr>
+        <td><input type="checkbox" /></td>
+        <td>Test 2</td>
+    </tr>
+    <tr>
+        <td><input type="checkbox" /></td>
+        <td>Test 3</td>
+    </tr>
+</table>
+  
+</body>
+
+
+</html>
+
