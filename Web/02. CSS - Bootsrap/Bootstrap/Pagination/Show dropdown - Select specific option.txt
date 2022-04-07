@@ -1,0 +1,14 @@
+
+
+SHOW DROPDOWN
+-------------
+$('#id').show();
+$("[name='DataTables_Table_0_length']").show();
+$("[name*='_length']").show();
+
+
+SELECT A SPECIFIC OPTION
+------------------------
+$('#id option[value=theOptionValue]').prop('selected', 'selected').change();
+$("[name='DataTables_Table_0_length'] option[value=10]").prop('selected', 'selected').change();
+$("[name*='_length']" option[value=10]").prop('selected', 'selected').change();
