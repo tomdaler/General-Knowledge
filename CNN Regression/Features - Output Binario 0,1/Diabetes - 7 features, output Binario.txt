@@ -1,0 +1,65 @@
+
+Datos con diferentes features
+- Target es 0,1 -> dos nodos de salida
+- Clasificar 0 o 1, si tiene o no diabetes -> dos nodos salida
+
+#   is between 0 and 1 and easy to map to either a probability of class 1 or snap to a hard classification.
+#   of either class with a default threshold of 0.5.
+
+Funciones de activacion:
+  'relu' Activation function for input layer.
+  'sigmoid' activation function on the output layer to ensure our network output
+ 
+Funcion de error:  binary_crossentropy, salida binario, 0,1
+Optimizador: Adam
+
+
+from keras.models import Sequential
+from keras.layers import Dense
+import numpy
+import pandas as pd
+
+dataset = pd.read_csv('diabetes.csv')
+
+# Split into input (X) and output (Y) variables.
+training_targets = dataset['Outcome']
+training_data = dataset.drop(['Outcome'], axis=1)
+
+seed = 7
+numpy.random.seed(seed)
+
+epocas =150
+lotes = 10
+
+model = Sequential()
+model.add(Dense(12, input_dim=8, kernel_initializer='uniform', activation='relu'))
+model.add(Dense(8, kernel_initializer='uniform', activation='relu'))
+model.add(Dense(1, kernel_initializer='uniform', activation='sigmoid'))
+
+model.compile(loss='binary_crossentropy', optimizer='adam', metrics=['accuracy'])
+model.fit(training_data, training_targets, epochs=epocas, batch_size=lotes)
+
+scores = model.evaluate(training_data, training_targets)
+print("%s: %.2f%%" % (model.metrics_names[1], scores[1] * 100))
+
+
+import numpy as np
+punto = np.array([[6],[148],[72],[35],[0],[33.6],[0.627],[50]])
+
+def sigmoid(x):
+    return 1/(1+np.exp(-x))
+
+for layer in model.layers:
+    pesos = layer.get_weights() 
+
+# make a prediction
+result = model.predict(punto)
+print(result)
+
+
+#print(pesos)
+#punto = np.transpose(punto) 
+
+#newArr = np.dot(punto, weights)
+#result = sigmoid(newArr)
+#print(result)

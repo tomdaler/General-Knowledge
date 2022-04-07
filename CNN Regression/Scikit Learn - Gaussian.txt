@@ -1,0 +1,128 @@
+import numpy as np
+import matplotlib.pyplot as plt
+from sklearn.dataset import make_gaussian_quantiles
+
+#CREAR VALORES ALEATORIOS
+
+N=1000
+
+gaussian_quantiles= make_gaussian_quantiles(mean=None,
+                    cov=0.1,
+                    n_samples = N,
+                    n_features = 2,
+                    n_classes = 2,
+                    shuffle = True,
+                    random_state=None
+             )
+
+X,Y = gaussian_quantiles
+X.shape  #(1000,2) 2 features
+Y.shape  #(1000,)
+
+Y= Y[:,np.newaxis]
+
+plt.scatter(X[:,0], X[:,1], c=Y[:,0], cmap=plt.cm.Spectral)
+
+#=========================
+
+np.random.rand(10,3) # numeros aleatorios
+# no. 0-1 en arr[10,3]
+
+
+# CREA RED NEURAL CON PESOS
+#------------------------------
+def initialize_parameters_deep(arrCapas):
+    parameters = {}
+
+    #No. Capas
+    L = len(arrCapas)
+    
+
+    #PARA CADA CAPA
+    for l in range(0,L-1):
+
+        #PESO
+        parameters['W' + str(l+1)] = (np.random.rand( arrCapas[l], arrCapas[l+1]) * 2) -1
+
+           
+        parameters['b' + str(l+1)] = (np.random.rand(1, arrCapas[l+1]) * 2) -1
+
+    return parameters
+
+
+#FUNCION ACTIVACION SIGMOID
+def sigmoid(x, derivate = False):
+    if derivate:
+        return np.exp(-x)/(( np.exp(-x) +1)**2)
+    else:    
+        return 1 / (1 + np.exp(-x))
+
+
+#FUNCION ACTIVACION RELU
+def relu(x, derivate = False):
+    if derivate:
+        x[x <= 0] = 0
+        x[x > 0 ] = 1
+        return x
+    else:    
+        return np.maximum(0, x)
+
+
+#FUNCION DE PERDIDA MSE
+def mse(y, y_hat, derivate = False):
+    if derivate:
+        return (y_hat - y)
+    else:
+        return np.mean((y_hat - y)**2)
+
+
+#ESTRUCTURA, 
+
+
+
+# CREA RED NEURAL CON PESOS
+#------------------------------
+def initialize_parameters_deep(Capas):
+    parameters = {}
+      
+    #No. Capas
+    NoCapas = len(Capas)
+    
+    #PARA CADA CAPA
+    for l in range(0,NoCapas-1):
+
+        #np.random.rand(10,3) 10x3 numeros de 0-1
+        Rand1 = np.random.rand( Capas[l], Capas[l+1])
+        Rand2 = np.random.rand( Capas[l], Capas[l+1])
+
+        #Multiplica x 2 y resta 1 porque los valores van de -1, 1
+        #De esa forma cambia de 0,1 a -1,1
+
+        #PESO W0 = Rand(Capas , 1)   W1 = Rand(Capas, 2)  ... W9 = Rand(Capas, 10)
+        parameters['W' + str(l+1)] = (Rand1 * 2) -1
+
+        # b0=Rand(1,1)  b1=Rand(1,2)... b9=Rand(1,10)
+        parameters['b' + str(l+1)] = (Rand2 * 2) -1
+
+    return parameters
+
+
+#4 capas generadas aleatoriamente, entrada, 2 internas, salida
+capas=[2,4,8,1]
+params = initialize_parameters_deep(capas)
+params
+
+#  w1[2x4] w2[4x8] w3[8x1]
+#  b1[2x4] b2[4x8] b3[8x1]
+
+# X tiene 1000,1  y W1 tiene 2,4
+#np.matmul(X, params['W1']).shape
+
+X@params['W1']
+
+params['A0']=X
+params['Z1'] = np.matmul(params['A0'],paams['W1'])+ params['b1']
+params['A1'] = relu(params
+
+params['W1'].shape
+X.shape

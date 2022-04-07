@@ -1,0 +1,27 @@
+import numpy as np
+punto = np.array([[6],[148],[72],[35],[0],[33.6],[0.627],[50]])
+
+def sigmoid(x):
+    return 1/(1+np.exp(-x))
+
+for layer in model.layers:
+    pesos = layer.get_weights() 
+
+result = np.matmul(punto,weights)
+print(result)
+
+#print(pesos)
+#punto = np.transpose(punto) 
+
+#newArr = np.dot(punto, weights)
+#result = sigmoid(newArr)
+#print(result)
+
+
+
+
+# redondeamos las predicciones
+predictions = model.predict(X)
+rounded = [round(x[0]) for x in predictions]
+print(rounded)
+
