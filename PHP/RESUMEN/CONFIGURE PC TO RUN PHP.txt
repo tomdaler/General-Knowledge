@@ -1,0 +1,33 @@
+To run the PHP scripts on your PC, configure computer as a server. 
+
+
+Install XAMPP on your PC. 
+PHP scripts and HTML in “C:\xampp\htdocs\” folder
+Browse as “localhost/yourPhpFileName.php”.
+
+O WAMP
+ 
+Install WAMP on you rPC
+En vez de “C:\xampp\htdocs\”  use "C:\wamp\www" folder
+Browse in "www\file.php"
+
+WAMP es exclusivo para la plataforma Windows, y XAMPP es multiplataforma Windows, Linux, Mac OS X.
+
+XAMP cuenta con una versión portable, en caso de que no queramos instalarlo en nuestro sistema o no contemos con los permisos necesarios.
+
+WAMP permite visualizar los sitios web localmente, para acceder al proyecto particular WAMP incluye un ‘explorador de archivos’, que permite moverse entre directorios partiendo de C:\wamp\www; en cambio para abrir un proyecto en XAMPP hay que escribir la url en navegador: http://localhost/, debido a que XAMPP no incluye este servicio.
+
+WAMP no incluye un apartado de seguridad, el cual sí incluye XAMPP, siendo esta característica muy útil para ver la seguridad de los proyectos una vez estén online, aunque aun así muchos no recomiendan que se utilicé en un sistema de producción.
+
+En WAMP se puede acceder de forma más sencilla a archivos importantes de configuraciones específicas de PHP o MySQL a través de su menú, lo cual lo hace más amigable para el usuario.
+
+
+XAMPP proporciona otros servicios que son de gran utilidad como:
+• FileZilla FTP Server: Servidor de FTP
+• Tomcat: Servidor web y contenedor de servlets Java.
+• XAMPP Control Panel: panel de control propio desde el cual controlar todo lo anterior
+• Webalizer: Genera logs de análisis sobre acceso y uso de una determinada página: visitas, países de procedencia de los visitantes… Las estadísticas generadas pueden ser representadas de diferentes maneras en gráficos, pudiendo configurarlo para medir días, meses o años.
+• Mercury Mail: Es una herramienta que permite configurar un servidor de correo, aunque viene integrada requiere un notable conocimiento sobre redes y requiere diferentes configuraciones para mails internos (intranet) o externos (Internet).
+
+Al iniciar XAMPP, aparece la ventana XAMPP Control Panel, o si lo tenemmos portable tendremos que entrar a la carpeta donde se encuentra XAMPP y ejecutarlo, en la que están reflejadas las aplicaciones que están corriendo en ese momento. Estas aplicaciones son: Apache, MySQL, FileZilla, y Mercury Mail. Con WAMP se tiene que navegar por el menú de su icono de la barra de tareas para saber qué servicios están funcionando.
+xampp1

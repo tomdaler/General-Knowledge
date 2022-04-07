@@ -1,0 +1,7 @@
+table{ border-collapse: collapse; width: 400px; color: black; margin: auto;}
+table, tr, th, td{ border: 1px solid black; }
+th{cursor: pointer; background-color: #5898A3; background-repeat:no-repeat; background-position: 3% center;  }
+th.asc{background-image:url(../images/asc.gif);}
+th.des{background-image:url(../images/des.gif);}
+tr{background-color:#CDE1E4;}
+tr.alt{background-color:#94BEC5;}

@@ -1,0 +1,9 @@
+login.php
+- Si intenta 3 veces se bloquea  cuenta usando cookie
+- Arregla el userid (doLogin.php)
+- Si da login le borra cookie (doLogin.php)
+- Boton de help
+
+EmailDomain
+- Si olvida dominio lo solicita y le envia correo y reset cookie  (EmailDomain)
+	- Verifica que empleado sea de 9 digitos con javascript
