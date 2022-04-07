@@ -1,0 +1,33 @@
+appinventor.mit.edu/hour-of-code
+http://appinventor.mit.edu/explore/library
+
+	Levitico17@gmail.com
+	Levitico15
+
+public void StopSearch()
+{
+  stopService(new Intent(MainActivity.this, ServiceCommunicator.class));
+  Button btn = (Button) findViewById(R.id.buttonOn);
+  Button btn2 = (Button) findViewById(R.id.buttonOff);
+
+  btn.setEnabled(true);
+  btn2.setEnabled(false);
+}
+
+http://www.techinsider.io/getting-shape-fast-lose-weight-summer-2016-5
+
+Bluetooth
+
+13.67847  -89.28474
+13.67844  -89.28481
+
+https://www.google.com.sv/maps/@13.67844,-89.28481,15z?hl=es-419
+
+https://www.google.com.sv/maps/@13.67082,-89.27739,15z?hl=es-419
+
+
+https://www.youtube.com/watch?v=vBRDvwrFwVo
+
+https://www.youtube.com/watch?v=ePH6vkqAeB4
+
+https://www.youtube.com/watch?v=cRkuFenWLgg
