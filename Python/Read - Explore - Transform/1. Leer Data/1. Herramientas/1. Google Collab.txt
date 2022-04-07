@@ -1,0 +1,112 @@
+Pandas: Paneles de Datos
+Ventajas: reduce codigo, para analisis, multiples funciones, compatible con matrices 3D
+
+URL  Google Colaboratory
+
+File / New Notebook
+File / Open Notebook
+
+Esquina superior: NOMBRE.ipynb
+CTL-S salvar
+
+Para escribir grupos de codigo presione
+< + Code >
+
+
+
+array([1,2,3,4,5]) + [10]
+=> 1,2,3,4,5,10
+
+
+import numpy as np
+
+np.array([1,2,3,4,5]) + 10
+=>  11,12,13,14,15
+
+
+np.array([1,2,3,4,5]).shape
+=>  (5,)    # 5 elementos
+
+
+np.array( [1,2,3,4], [5,6,7,8,9] ).shape
+=> (2,4)   matrix 2x4)
+
+np.array( [1,2,3,4], [5,6,7,8,9] )[0]
+=> array([1,2,3,4])
+
+np.array( [1,2,3,4], [5,6,7,8,9] )[0][3]
+=> 4
+
+SERIES INDEXACION, SELECCION
+
+import pandas as pd
+
+sr= pd.Series([10,9,8,7,6])
+=> 
+0 10
+1 9
+2 8
+3 7
+4 6
+
+sr.values
+=> array([10,9,8,7,6])
+
+sr.index
+=> RangeIndex(start-0, stop-5, step=1)
+
+sr[3] 
+=> 7
+
+sr[[0,3]]
+=> 10, 7
+
+sr= pd.Series([10,9,8,7,6],index=['a','b','c','d','e'])
+sr
+=> 
+a 10
+b 9
+c 8
+d 7
+e 6
+
+sr[['c':'e']]
+=> 
+c 8
+d 7
+e 6
+
+dict_data = {'C0':100, 'MX':200, 'AR':300}
+dict_data.keys()
+=>  dict_keys(['C0','MX','AR'])
+
+
+dict_data['MX']
+=> 200
+
+pd.Series(dict_data.index=['CO','MX',PE'])
+=>
+CO    100.0
+MX    200.0
+PE      NaN
+
+No aparece 'AR' y con 'PE' es NaN
+
+
+import pandas as pd
+dict_data = {'CO':100, 'MX':200, 'AR':300}
+sr = pd.Series(dict_data,index=['CO','MX','PE'])
+sr.isnull()
+# sr.notnull()
+
+=>
+CO    False
+MX    False
+PE     True
+
+
+
+
+
+
+

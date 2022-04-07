@@ -1,0 +1,17 @@
+filter1 = df['Country'].isin(['Colombia','Brazi'])
+df2 = df[filter1]
+
+
+filter1 = df['bath']>3
+df2 = df[filter1]
+df2
+
+
+df.query('Salary_in_1000 >= 100 & TeamName.str.startswith("S").values')
+
+
+#Filter and select fields
+df[(df['Salary_in_1000']>=100)  & df['TeamName'].str.startswith('S')][['Name','Age','Salary_in_1000']]
+
+
+

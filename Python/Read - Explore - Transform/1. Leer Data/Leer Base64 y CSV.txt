@@ -1,0 +1,38 @@
+import json
+import base64
+from PIL import Image
+
+url = "/tmp/databasesLoadData/sign_mnist_base64/data.json"
+with open(url) as f:
+    data = json.load(f)
+
+base64_img_bytes = data["b"].encode("utf-8") #
+path_img = "/tmp/decoded_image.png"
+with open(path_img, "wb") as file_to_save:
+    decoded_image_data = base64.decodebytes(base64_img_bytes)  
+    file_to_save.write(decoded_image_data)
+
+img = Image.open(path_img)
+img
+
+
+
+Leer la base de datos en CSV
+
+#
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+from PIL import Image 
+
+train = pd.read_csv("/tmp/databasesLoadData/sign_mnist_train/sign_mnist_train.csv")
+test = pd.read_csv("/tmp/databasesLoadData/sign_mnist_test/sign_mnist_test.csv")
+
+print(train.head())
+print(train.shape)
+labels = train['label'].values
+train.drop('label', axis = 1, inplace = True)
+print(train.head())
+
+images = train.values

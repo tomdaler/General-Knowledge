@@ -1,0 +1,17 @@
+import os
+
+from google.colab import files
+uploaded = files.upload()
+
+Selecciona archivo
+
+import os
+os.getcwd()    #  'C:\\Python39'
+
+
+os.chdir('/server/accesslogs')  
+os.system('mkdir today')   # Run the command mkdir in the system shell
+
+os.system('cd /temp/')
+os.listdir()
+

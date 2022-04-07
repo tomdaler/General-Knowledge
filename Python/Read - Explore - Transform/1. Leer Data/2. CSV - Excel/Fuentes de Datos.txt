@@ -1,0 +1,26 @@
+www.quandl.com
+!pip install quandl
+
+
+DataSearch.research.google.com
+
+Buscamos meteoritos
+
+Explore at Rally - Open Data Portal
+
+=============
+
+kaggle.com
+
+Search: London bike sharing dataset
+Data
+Download
+
+La api de kaggle para cargar archivos directo al Colab y ahorrar el descargarlos frecuentemente. 
+https://www.kaggle.com/general/74235
+
+
+https://data.worldbank.org/
+
+Search: population
+Download

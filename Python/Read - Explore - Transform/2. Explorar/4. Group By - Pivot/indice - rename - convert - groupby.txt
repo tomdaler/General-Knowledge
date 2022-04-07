@@ -1,0 +1,32 @@
+
+#selecciones primera columna, para no tener que poner todo el nombre
+df.iloc[:,0].values   
+
+
+#RENAME COLUMNS
+df =df.set_axis(['Row_1', 'Row_2'], axis=1)
+
+#Rename indice
+df.index.names = ['Date']
+
+#convertir array a dataframe
+
+numpy_data = np.array([[1, 2], [3, 4]])
+df = pd.DataFrame(data=numpy_data, index=["row1", "row2"], columns=["column1", "column2"])
+
+
+#crear un indice
+df = df.set_index(Column_name,inplace = True)
+
+#Multiindice
+df = pd.MultiIndex.from_frame(df, names=('Col_1','Col_2'))
+
+
+colnames = ['Name','Time','Course']
+df = pd.DataFrame([['Jay',10,'B.Tech'],
+                   ['Raj',12,'BBA'],
+                   ['Jack',11,'B.Sc']], columns = colnames)
+
+
+promedios
+df.groupby('Col3')['col1'].mean()

@@ -1,0 +1,190 @@
+DataSearch.research.google.com
+
+Buscamos meteoritos
+
+Explore at Rally - Open Data Portal
+
+Export - CSV
+
+import pandas as pd
+df=pd.read_csv('Meteoros.csv')
+
+# mostrar primeros 5 datos
+df.head()
+
+# mostrar ultimos 15 datos
+df.tail(15)
+
+df.sample(10)
+
+#No. registros
+df.shape
+
+#tamano
+df.size
+
+BASICO
+======
+
+#listar campos
+list(df)
+df.columns
+
+
+# Estructura de cada campo, object, int, float
+# Cuantos registros no son nulos por campo
+
+df.dttypes
+df.info()
+
+ #   Column       Non-Null Count  Dtype  
+---  ------       --------------  -----  
+ 0   name         45716 non-null  object 
+ 1   id           45716 non-null  int64  
+ 2   nametype     45716 non-null  object 
+ 3   recclass     45716 non-null  object 
+ 4   mass (g)     45585 non-null  float64
+ 5   fall         45716 non-null  object 
+ 6   year         45425 non-null  object 
+ 7   reclat       38401 non-null  float64
+ 8   reclong      38401 non-null  float64
+ 9   GeoLocation  38401 non-null  object 
+
+df.convert_dtypes().dtypes
+
+name            string
+id               Int64
+nametype        string
+recclass        string
+mass (g)       float64
+fall            string
+year            string
+reclat         float64
+reclong        float64
+GeoLocation     string
+
+
+
+Escriba primeros 5 y ultimos 5
+Head y Tail de 5 
+df['year']
+
+01/01/1880 12:00:00:00 AM
+01/01/1852 12:00:00:00 AM
+
+
+# cualidades estadisticas de las variables
+df.describe()
+
+#set decimales
+pd.options.display.float_format='{:.1f}'.format
+
+===========
+
+import pandas as pd
+df=pd.read_csv('Meteoros.csv')
+
+pd.options.display.float_format='{:,.1f}'.format
+
+#informacion de las variables numericas
+df.describe()
+
+
+	id		mass (g)	reclat		reclong
+count	45,716.0	45,585.0	38,401.0	38,401.0
+mean	26,889.7	13,278.1	-39.1		61.1
+std	16,860.7	574,988.9	46.4		80.6
+min	1.0		0.0		-87.4		-165.4
+25%	12,688.8	7.2		-76.7		0.0
+50%	24,261.5	32.6		-71.5		35.7
+75%	40,656.8	202.6		0.0		157.2
+max	57,458.0	60,000,000.0	81.2		354.5
+
+LO QUE NOS DICE DE LOS METEORITOS
+
+En promedio tienen masa 13,278 grs
+La mitad 50% tienen una masa de 32.6 gr
+< la gran diferencia es por el outlider de 60 millones de gramos
+
+
+#Todo, no solo los numericos
+df.describe(include='all')
+
+	name	id		nametype	recclass	mass (g)	fall	year	reclat	reclong	GeoLocation
+count	45716	45,716.0	45716		45716		45,585.0	45716	45425	38,401.0	38,401.0	38401
+unique	45716	nan		2		466		nan		2	266	nan	nan	17100
+top	Northwest Africa 6361	nan	Valid	L6	nan	Found	01/01/2003 12:00:00 AM	nan	nan	(0.0, 0.0)
+freq	1	nan	45641	8285	nan	44609	3323	nan	nan	6214
+mean	NaN	26,889.7	NaN	NaN	13,278.1	NaN	NaN	-39.1	61.1	NaN
+std	NaN	16,860.7	NaN	NaN	574,988.9	NaN	NaN	46.4	80.6	NaN
+min	NaN	1.0	NaN	NaN	0.0	NaN	NaN	-87.4	-165.4	NaN
+25%	NaN	12,688.8	NaN	NaN	7.2	NaN	NaN	-76.7	0.0	NaN
+50%	NaN	24,261.5	NaN	NaN	32.6	NaN	NaN	-71.5	35.7	NaN
+75%	NaN	40,656.8	NaN	NaN	202.6	NaN	NaN	0.0	157.2	NaN
+max	NaN	57,458.0	NaN	NaN	60,000,000.0	NaN	NaN	81.2	354.5	NaN
+
+
+- count
+- unique
+
+Son 45,716 registros
+Para name y para fall solo exiten 2 tipos de variables
+
+
+df.nunique()
+
+name           45716
+id             45716
+nametype           2
+recclass         466
+mass (g)       12576
+fall               2
+year             266
+reclat         12738
+reclong        14640
+GeoLocation    17100
+
+nametype y fall solo tienen 2 tipos de valores
+Veamos que tipo de valores tiene fall
+
+df[['fall','nametype']]
+Fell
+Found
+
+IMPORTANTE: COMO NAMETYPE Y FALL TIENEN SOLO 2 DATOS, LES ASIGNO TIPO DE DATO "CATEGORY"
+
+df[['fall','nametype']]=df[['fall','nametype']].astype('category')
+df.info()
+
+nametype     45716 non-null  category
+fall         45716 non-null  category
+
+
+#Cuantos registros x categoria
+
+df['fall'].value_counts()
+
+Found    44609
+Fell      1107
+
+# Convertir Found, Fell a 0, 1 para mejor procesamiento x categoria
+pd.get_dummies(df['fall'])
+
+0,1
+
+dr[['fell','found']] = pd.get_dummies(df['fall'])
+
+Dos nueva columnas fell, found con 0,1
+fall   fell   found
+---------------------
+Fell     1      0
+Fell     1      0
+Found    0      1
+Fell     1      0
+
+
+CAMBIAR NOMBRES A COLUMNAS
+
+list(df)
+df.rename(columns={'mass (g)':'Masa'}, inplace=True)
+

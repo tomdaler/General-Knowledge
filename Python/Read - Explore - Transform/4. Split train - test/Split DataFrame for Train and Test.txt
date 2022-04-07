@@ -1,0 +1,35 @@
+Opcion 0
+=========
+# Fracción de entrenamiento 0.8.
+Ntrain = int(data.shape[0] * 0.8)
+
+train = data.iloc[:Ntrain, :]
+test = data.iloc[Ntrain:, :]
+
+OPCION 1:
+===========
+
+df = pd.DataFrame(np.random.randn(100, 2))
+
+msk = np.random.rand(len(df)) < 0.8
+
+df_Train = df[msk]
+df_test = df[~msk]
+
+
+OPCION 2:
+=========
+
+#random state is a seed value
+df_train=df.sample(frac=0.8,random_state=200) 
+df_test=df.drop(train.index)
+
+
+OPCION 3:
+=========
+
+#Creating a dataframe with 70% values of original dataframe
+part_1 = df.sample(frac = 0.7)
+
+#Creating dataframe with rest of the 30% values
+part_2 = df.drop(part_1.index)

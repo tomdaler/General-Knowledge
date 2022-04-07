@@ -1,0 +1,40 @@
+- COPIAR DF
+- BORRAR X CONDICION
+- CAMBIAR TIPO DE DATO
+
+COPIAR
+df2 = df.copy(deep=True)
+
+BORRAR COLUMNA
+columna axis=1
+indice  axis=0
+inplace que quede registrado en dataframe
+
+df.drop(['ones'],axis=1,inplace=True)
+
+df.drop(columns=['id','recclass'])
+
+
+POR CONDICION
+df.drop(df[df['mass']== 21.0].index)
+
+
+FILAS ESPECIFICAS
+df.drop([0,2,5,10])
+
+
+
+CAMBIAR TIPO DE DATO
+Para cambiar el tipo de dato 
+df['martricula'] = df['matricula'].astype(int)
+
+
+Para un conjunto de variables:
+df[['matricula', 'otro_numerico']] = df[['matricula', 'otro_numerico']].astype(int)
+
+
+Una manera que se puede hacer para no colocar el format es:
+df['year'] = pd.to_datetime(df['year'], errors = 'coerce')
+
+
+

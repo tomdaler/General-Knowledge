@@ -1,0 +1,13 @@
+iloc permite hacer una selección de basada en posiciones enteras, también admite el uso de slices.
+En otras palabras iloc permite seleccionar posiciones de un DataFrame basándose en su índice numérico.
+
+
+#todas las finas, y las primeras 6 columnas
+df.iloc[:,6]
+
+
+Dicha selección puede guardarse en una variable.
+df['t1'].iloc[::3].sub(df['t2'], fill_value=1000) 
+
+
+

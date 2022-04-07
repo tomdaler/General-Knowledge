@@ -1,0 +1,59 @@
+#LAMDA
+df['hour'] = df['timestamp'].apply( lambda x: x.hour)
+
+
+#Diferencia temperatura
+df_lmerged0[‘t1’]-df_lmerged0[‘t2’]
+print(df['t1'].sub(df['t2']))
+
+
+#Diferencia con lamda
+df.apply(lambda x : x[‘t1’] - x[‘t2’], axis = 1)
+
+
+def fx1(x)
+    y=x**2+1
+    return y
+
+fx1(10)
+
+#array (-3,-2,-1,0,1,2,3)
+np.arange(-3,3)
+
+# (7,)
+np.arange(-3,3).shape
+
+# array([10,5,2,1,2,5,10])
+fx1(np.arange(-3,3)
+
+#En el campo 'Hora' se le aplica hora*hora +1
+df('Hora').apply(fx1)
+
+
+#usando lamda y no usar funcion fx
+df['Hora'].apply(lamda x:x*2 +1)
+
+
+#Pasa a campo 'Hola' un valor constante calculado en fx1
+df('Hora').apply(fx1, x=20)
+
+
+#calcular promedio a cada columna
+df.apply(lambda x:x.mean())
+
+
+#calcular promedio a cada fila
+df.apply(lambda x:x.mean(), axis=1)
+
+
+
+#calcular desv. standard a cada fila
+df.apply(lambda x:x.std(), axis=1)
+
+
+#calcule diferencia entre t1 y t2 de cada fila
+df.apply(lambda x:x[t1] - x[t2], axis=1)
+
+
+#dividir TODOS los valores por 100
+df.applymap(lambda x:x/100)

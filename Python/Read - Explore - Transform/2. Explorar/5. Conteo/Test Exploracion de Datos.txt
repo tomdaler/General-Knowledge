@@ -1,0 +1,76 @@
+¿Qué es EDA?
+Es el análisis exploratorio para entender los datos y conocer si podemos resolver el problema con ellos antes de hacer cualquier modelo.
+
+¿Cuál es una diferencia entre el EDA y el análisis clásico?
+En EDA el desarrollo del modelo se encuentra después del análisis de datos.
+
+Nombra dos herramientas para desarrollar un EDA.
+Python, Sagemaker.
+
+¿Cuáles son algunas librerías de visualización?
+Altair y Seaborn.
+
+¿Cuáles son las transformaciones de datos más empleadas?
+pd.to_datetime, pd.date_range
+
+¿Cuáles son dos medidas descriptivas?
+mean, mode
+
+¿Cuáles son las diferencias entre variable continua y variable discreta?
+Continua: cuando puede tomar cualquier valor dentro de un intervalo. Discreta: cuando no puede tomar ningún valor entre dos consecutivos.
+
+¿Qué establece la ley de grandes números?
+Engloba varios teoremas que describen el comportamiento del promedio de una sucesión de variables aleatorias conforme aumenta su número de ensayos.
+
+¿Qué comandos usamos para agrupar datos?
+groupby(), .agg()
+
+Al unir dos o más datasets ¿cómo podemos distinguirlos?
+Añadiendo una propiedad a cada dataset, puede ser una característica que se comparta.
+
+¿Cuál es la sintaxis para crear una pivot table con pandas?
+pd.pivot_table(nombre_dataset, index=['columna_a', 'columna_b'])
+
+¿Qué es la correlación?
+La correlación indica la fuerza y la dirección de una relación lineal y proporcionalidad entre dos variables estadísticas.
+
+¿Qué es la paradoja de Simpson?
+Se denomina paradoja de Simpson (o efecto Yule-Simpson) al cambio en el sentido de una asociación entre dos variables, numéricas o cualitativas, cuando se controla el efecto de una tercera variable.
+
+¿Qué es causalidad?
+La causalidad es el principio o el origen de algo. El concepto se utiliza para nombrar a la relación entre una causa y su efecto, y puede utilizarse en el ámbito de la física, la estadística y la filosofía.
+
+¿Qué es una serie de tiempo?
+Una serie de tiempo es una secuencia de datos u observaciones, medidos en determinados momentos y ordenados cronológicamente. Visualmente es una curva que evoluciona en el tiempo.
+
+¿Cuáles son algunas propiedades de una serie de tiempo?
+Estacionalidad, tendencia.
+
+¿Cómo evalúas un modelo?
+Todas las opciones.
+confusion_matrix
+accuracy
+f1-score
+
+¿Qué obtienes al final del EDA?
+Todas las opciones.
+Definir estrategia basada en datos, efectiva y facil de entender
+Que datos tenemos para ML
+Identificar fuentes de datos valiosos
+
+
+DIFICIL
+¿Qué es el p-value?
+El p-value es una medida directa de lo verosímil que resulta obtener una muestra como la actual si es cierta H0. Los valores pequeños indican que es muy infrecuente obtener una muestra como la actual, en cambio, los valores altos que es frecuente.
+X Es el error que se comete cuando el investigador rechaza la hipótesis nula (H0: el supuesto inicial) siendo esta verdadera en la población.
+
+
+¿Qué es un análisis multivariable?
+Aquel que siempre se utiliza cuando hay más de tres variables involucradas y el contexto de su contenido no está claro.
+
+¿Qué indica una asimetría negativa?
+Posicion: Media - Mediana - Moda
+
+La "cola" a la izquierda de la media es más larga que la de la derecha, es decir, si hay valores más separados de la media a la izquierda.
+X La "cola" a la derecha de la media es más larga que la de la izquierda, es decir, si hay valores más separados de la media a la derecha.
+

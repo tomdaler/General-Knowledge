@@ -1,0 +1,43 @@
+#vea tipo de datos
+df.dtypes
+
+# Escriba primeros 5 y ultimos 5
+df['year']
+
+01/01/1880 12:00:00:00 AM
+01/01/1852 12:00:00:00 AM
+
+
+#cambie a datetime
+df['f1_time'] = df.to_datetime(df['f1_time'])
+
+#cree columna hora
+df['hora'] = df['f1_time'].dt.hour
+df['hora']
+
+#otra forma CON LAMDA
+df['hour'] = df['timestamp'].apply( lambda x: x.hour)
+
+#elimine primera columna (f1_time) ya no la necesito
+df = df.iloc[:,1:]
+df
+
+
+Para tranformar dtype object a datetime: Campo year
+
+pd.to_datetime(
+    df_meteorites['year'],
+    errors = 'coerce',
+    format ='%m/%d/%Y %H:%M:%S %p'
+)
+
+
+O al momento de lectura
+https://pandas.pydata.org/pandas-docs/stable/user_guide/io.html#io-csv-mixed-timezones
+
+df = pd.read_csv(‘filename.csv’,
+	parse_dates=
+[‘column_date’],
+	date_parser=lambda x: pd.to_datetime(x, utc=True))
+
+

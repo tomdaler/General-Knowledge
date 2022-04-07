@@ -1,0 +1,27 @@
+
+df.head()
+
+df.dtypes
+
+df.descrip()
+
+df.info()
+
+train.isnull().values.any()
+
+
+df[df.duplicated()]
+
+
+Elimine por las filas duplicadas o informacion toda en 0
+df = df.drop([317,487, 595, 689, 802, 861], axis = 0)
+
+
+Verifique si hay valores basura y borrelos
+df[df['pixel1'] == "fwefew"] 
+df = df.drop([727], axis = 0)
+
+
+#asegure que todos los datos son numericos
+df = df.astype(str).astype(int)
+df = df / 255

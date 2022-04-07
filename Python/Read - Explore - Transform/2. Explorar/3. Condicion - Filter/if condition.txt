@@ -1,0 +1,20 @@
+FASTER THAN DROP
+
+df = df[df.score > 50]
+
+
+WITH DROP
+
+drop all with negativa value
+
+df = df[(df > 0).all(axis=1)]
+
+df = df.drop(df[df.score < 50].index)
+
+df.drop(df[df.score < 50].index, inplace=True)
+
+df = df.drop(df[(df.score < 50) & (df.score > 20)].index)
+
+
+
+

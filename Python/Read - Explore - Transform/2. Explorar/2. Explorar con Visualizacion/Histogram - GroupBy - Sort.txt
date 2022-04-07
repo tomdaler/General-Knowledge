@@ -1,0 +1,22 @@
+Los valores unicos de los labels
+
+train['label'].unique()
+
+
+
+Conteo de los labels
+
+train.groupby('label')['label'].count()
+
+
+Sort
+
+train[['label']].value_counts().sort_values(ascending=False)
+
+
+REVISA SI ESTA BALANCEADO, EL HISTOGRAMA
+
+plt.figure(figsize-(10,10))
+sns.set_style('darkgrid')
+sns.countplot(train['label'])
+

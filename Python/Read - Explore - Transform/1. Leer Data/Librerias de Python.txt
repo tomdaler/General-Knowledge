@@ -1,0 +1,94 @@
+
+Beautiful Soup
+For extracting (scraping) information from web pages. 
+It uses an HTML or XML parser (lxml) and functions for iterating, searching, and modifying the parse tree.
+pip install beautifulsoup4 lxml
+
+
+Gekko
+Gekko provides an interface to gradient-based solvers for machine learning and optimization of mixed-integer, differential algebraic equations, and time series models. 
+Gekko provides exact first and second derivatives through automatic differentiation and discretization with simultaneous or sequential methods.
+pip install gekko
+
+
+Keras
+Keras provides an interface for artificial neural networks. Keras acts as an interface for the TensorFlow library. 
+Other backend packages were supported until version 2.4. 
+TensorFlow is now the only backend and is installed separately with pip install tensorflow.
+pip install keras
+
+
+Matplotlib
+The package matplotlib generates plots in Python.
+pip install matplotlib
+
+
+Numpy
+Numpy is a numerical computing package for mathematics, science, and engineering. 
+pip install numpy
+
+
+OpenCV
+OpenCV (Open Source Computer Vision Library) is a package for real-time computer vision and developed with support from Intel Research.
+pip install opencv-python
+
+
+Pandas
+Pandas visualizes and manipulates data tables. 
+There are many functions that allow efficient manipulation for the preliminary steps of data analysis problems.
+pip install pandas
+
+
+Pandas-Profiling
+Pandas Profiling generates more detailed analysis than the pandas describe function. 
+The widgets extension needs to be enabled as part of this installation to use widget reports that are interactive results in the Python notebook.
+pip install pandas-profiling[notebook]
+jupyter nbextension enable --py widgetsnbextension
+
+
+Plotly
+Plotly renders interactive plots with HTML and JavaScript. Plotly Express is included with Plotly.
+pip install plotly
+
+
+PyTorch
+PyTorch enables deep learning, computer vision, and natural language processing. 
+Development is led by Facebook's AI Research lab (FAIR).
+pip install torch
+
+
+Scikit-Learn
+Scikit-Learn (or sklearn) includes a wide variety of classification, regression and clustering algorithms including neural network, support vector machine, random forest, gradient boosting, k-means clustering, and other supervised or unsupervised learning methods.
+pip install scikit-learn
+
+
+SciPy
+SciPy is a general-purpose package for mathematics, science, and engineering and extends the base capabilities of NumPy.
+pip install scipy
+
+
+Seaborn
+Seaborn is built on matplotlib, and produces detailed plots in few lines of code.
+pip install seaborn
+
+
+Statsmodels
+Statsmodels is a package for exploring data, estimating statistical models, and performing statistical tests. It include descriptive statistics, statistical tests, plotting functions, and result statistics.
+pip install statsmodels
+
+
+Temperature Control Lab
+The Temperature Control Lab is used throughout the course for hands-on activities such as the Learn Python and Data Science modules. Data can also be generated from a digital twin simulator if a TCLab device is not connected. Use TCLabModel to generate simulated data wherever TCLab is used to connect Python to the physical lab.
+pip install tclab
+
+
+TensorFlow
+TensorFlow is an open source machine learning platform with particular focus on training and inference of deep neural networks. Development is led by the Google Brain team.
+pip install tensorflow
+
+
+XGBoost
+XGBoost is an open-source in Python and other data science platforms for gradient boosting. Unique features include tree penalization, proportional leaf node shrinking, Newton boosting, and scalable computing architectures. 
+It is frequently the tool of choice of winning teams for Kaggle machine learning competitions.
+pip install xgboost
+

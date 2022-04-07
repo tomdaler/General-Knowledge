@@ -1,0 +1,4 @@
+La función pd.Series.value_counts(parámetros) nos permite: *****
+
+Contar cuántos valores hay de un tipo de otro por ejemplo, contar cuántos true o false hay
+

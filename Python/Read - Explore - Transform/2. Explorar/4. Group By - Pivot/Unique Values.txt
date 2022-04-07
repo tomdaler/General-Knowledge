@@ -1,0 +1,20 @@
+
+
+df['Age'].unique().to_sort()
+
+
+df.iloc[0] # Primera fila
+df.iloc[1] # Segunda fila
+df.iloc[-1] # Última fila
+
+
+df.iloc[1:]                      # Todo desde segunda columna
+print((df2.iloc[:,0]).unique())  # valores unicos de columna 0
+
+
+df2['alcohol'].unique()          #Unique value in col
+
+
+#Unique and then sort
+lista =(df2['alcohol']).unique()
+lista2 = pd.Series(lista).sort_values()

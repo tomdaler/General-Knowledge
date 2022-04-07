@@ -1,0 +1,14 @@
+
+
+media = df['price'].mean()
+std   = df['price'].std()
+
+LIMITE = media* 2 *std
+df.loc[df['price'] > LIMITE, 'price'] = LIMITE
+
+
+Si nulo valor
+
+valor = 0
+df.fillna(valor)
+

@@ -1,0 +1,66 @@
+
+
+Para conocer las dimensiones de mi DataFrame puedo usar:
+df.shape
+# row x cols
+
+df.columns 
+
+#Tipo de datos
+df.dtypes
+
+#Informacion general
+df.info() 
+
+Descripción estadística es 
+df.describe()
+
+#cantidad de memoria
+df.memory_usage()
+
+df.head()
+
+#Para ver las primeras 10 filas debemos usar:
+df.head(10)
+
+#Para ver las últimas 10 filas debemos usar:
+df.tail(10)
+
+
+Para ver una descripción de "solo las variables numéricas" de un DataFrame: (Percentiles, media, desv)
+df.describe()
+
+Para ver una descripción "de todas las variables" en un DataFrame usamos:
+df.describe(include='all')
+
+
+#SI CATEGORIAS
+df['campo'].value_counts()
+COMM 82
+EMP  71
+ASI  50
+SERV 30
+
+
+# Valores en columna
+list(df['Concepto'].value_counts())
+[12,45,23,63,43,634,334,43,...
+
+
+#cuantos unicos
+len(df['Concepto'].unique())
+1343
+
+
+# LOS 10 MAYORES EN ORDEN, NO APARECEN LOS CHICOS ?
+df['Beneficiario'].value_counts()[0:10]
+DFDFD    123
+AAEF     100
+DDDFFF    90
+
+Si se usa .value_counts(normalize=True), devuelve el pocentaje aparición de cada valor. 
+Puede llegar a ser muy útil, especialmente cuando se trabaja con números grandes.
+
+df['COMPRAS'] < df['COMPRAS'].quantile(0.95)]
+df['COMPRAS'] < df['COMPRAS'].quantile(0.95)].head(10)
+

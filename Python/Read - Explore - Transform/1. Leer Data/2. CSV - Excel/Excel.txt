@@ -1,0 +1,49 @@
+import pandas as pd
+import os
+
+
+#cambiar directorio y ver contenido
+os.chdir('..')
+!ls
+
+
+Función para crear los distintos dataframes:
+============================================
+
+def dataframe(file, sheet, rows):
+    df=pd.read_excel(file, sheet_name=sheet, skiprows=rows)
+    df['SHEET']=sheet
+    return df
+
+df_personales=dataframe('12_DICIEMBRE_2020.xlsx', 'SERV. PERS.', 5)
+df_personales.head() 
+
+
+CONCATENAR HOJAS DE EXCEL
+=========================
+
+import xlrd
+import pandas as pd
+filename = '12_DICIEMBRE_2020.xlsx'
+
+xls = xlrd.open_workbook(filename, on_demand = True)
+sheet_lst = xls.sheet_names()
+df = pd.DataFrame()
+
+for i in range(1,len(sheet_lst)):
+    df_read = pd.read_excel(filename, sheet_name=sheet_lst[i], skiprows=5)    
+    df_read['sheet'] = sheet_lst[i]
+    df = df.append(df_read)
+
+
+#otra opcion
+df_todos = pd.concat([df1, df2, df3])
+len(df_todos)
+
+
+#eliminar filas si alguna celda no tiene datos
+df = df.dropna(how='any')
+
+#listar campo field1
+list(df['field1'])
+

@@ -1,0 +1,8 @@
+
+#tomar solo primera columna
+df.iloc[:,0].values   
+
+#selecciones primera columna, para no tener que poner todo el nombre, y desde 4 file, elimina  3 filas
+arr = df.iloc[3:,0].values
+
+#En vez de  arr = df['Normally Distributed Housefly Wing Lengths'].values[3:]

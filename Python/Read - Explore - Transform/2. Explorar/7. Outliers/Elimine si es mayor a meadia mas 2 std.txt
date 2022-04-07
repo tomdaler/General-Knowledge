@@ -1,0 +1,14 @@
+mean = df.price.mean()
+std = df.price.std()
+limite = mean + 2* std
+
+Elimine si precio es mayor a price + 2 SD
+
+filter1 = df['price'] <= limite
+df2 = df[filter1]
+df2
+
+
+Si precio mayor a price + 2 SD actualice
+
+df[filter1][[i for i in df.columns.values if i not in ['a']]].apply(lambda x: x/2)

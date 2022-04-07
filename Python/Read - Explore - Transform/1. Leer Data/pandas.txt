@@ -1,0 +1,42 @@
+import pandas as pd
+
+series = pd.Series([1,2,3,4,5,6,7])
+
+0  1
+1  2
+2  3
+3  4
+4  5
+5  6
+6  7
+
+series[3]
+4
+
+list = [1,2,3]
+df = pd.DataFrame(list)
+
+data ={ 'Nombre' :['Juan', 'Ana', 'Jose'],
+        'Edad    :[24,      18,    40]}
+
+df.pd.DataFrame(data)
+
+    Nombre Edad
+0   Juan    24
+1   Ana     18
+2   Jose    40
+
+
+df[['Nombre','Edad']]
+    Nombre Edad
+0   Juan    24
+1   Ana     18
+2   Jose    40
+
+df.head(5)
+dff.shape
+df.dtype
+df.describe()  #percentiles
+
+
+

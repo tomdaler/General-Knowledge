@@ -1,0 +1,35 @@
+
+REVISA SI ESTA BALANCEADO, EL HISTOGRAMA
+
+EL MODELO PUEDE DAR CASI 100%, PERO AL VER LA DATA RESULTA
+QUE TODO ESTA ENFOCADO EN UNAS POCAS CLASES Y NO ESTA BALANCEADO
+ES DECIR, SI TIENES 24 CLASES, TIENEN QUE TENER IGUAL NUMERO DE 
+EJEMPLOS PARA PREDECIR
+
+PUESTO DE OTRA FORMA, SI TIENES 99 ZAPATOS Y 1 GORRA, EL MODELO
+TE DIRA QUE ES CERTERO, PERO LUEGO PONES LA GORRA Y NO LA CONFIRMA
+PERO SIEMPRE CONFIRMA LOS ZAPATOS
+
+
+Los valores unicos de los labels
+
+train['label'].unique()
+
+
+
+Conteo de los labels
+
+train.groupby('label')['label'].count()
+
+
+Sort
+
+train[['label']].value_counts().sort_values(ascending=False)
+
+
+REVISA SI ESTA BALANCEADO, EL HISTOGRAMA
+
+plt.figure(figsize-(10,10))
+sns.set_style('darkgrid')
+sns.countplot(train['label'])
+

@@ -1,0 +1,15 @@
+#elimine primera columna (f1_time) ya no la necesito
+df = df.iloc[:,1:]
+df
+
+
+Si ponemos el 1 después de (:)
+
+df = df_lmerged.iloc[:,:1]
+df
+
+En vez de eliminar la primera columna, borra todas las columnas y deja solo la primera
+
+
+axis 0 significa que hará operaciones a todas las filas de cada columna
+axis 1 significa que hara operaciones en todas las columnas de cada fila
