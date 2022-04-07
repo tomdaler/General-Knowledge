@@ -1,0 +1,319 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="STAT">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="robotName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="client" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="program" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="region" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="site" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="workstation" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="lANID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="lANIDFor" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dATA01" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dATA02" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dATA03" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dATA04" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dATA05" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dATA06" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dATA07" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dATA08" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dATA09" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dATA10" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="sTAT01" nillable="true" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="sTAT02" nillable="true" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="sTAT03" nillable="true" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="sTAT04" nillable="true" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="sTAT05" nillable="true" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="sTAT06" nillable="true" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="sTAT07" nillable="true" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="sTAT08" nillable="true" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="sTAT09" nillable="true" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="sTAT10" nillable="true" type="s:double" />
+            <s:element minOccurs="0" maxOccurs="1" name="note" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="lastUpdateBy" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="STATResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="STATResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="STAT2">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="robotName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="client" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="program" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="region" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="site" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="workstation" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="lANID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="lANIDFor" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="tXCOUNT" nillable="true" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="tXSUCCESS" nillable="true" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="tXFAILED" nillable="true" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="tXTIME" nillable="true" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="dATA01" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dATA02" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dATA03" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dATA04" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dATA05" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dATA06" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dATA07" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dATA08" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dATA09" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dATA10" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="sTAT01" nillable="true" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="sTAT02" nillable="true" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="sTAT03" nillable="true" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="sTAT04" nillable="true" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="sTAT05" nillable="true" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="sTAT06" nillable="true" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="sTAT07" nillable="true" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="sTAT08" nillable="true" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="sTAT09" nillable="true" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="sTAT10" nillable="true" type="s:double" />
+            <s:element minOccurs="0" maxOccurs="1" name="note" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="lastUpdateBy" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="STAT2Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="STAT2Result" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="VERSION">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="robotName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="client" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="program" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="region" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="site" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="workstation" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="lANID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dATA01" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="lastUpdateBy" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="VERSIONResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="VERSIONResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ERROR">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="robotName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="client" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="program" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="region" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="site" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="workstation" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="lANID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dATA01" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="lastUpdateBy" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ERRORResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ERRORResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WARNING">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="robotName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="client" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="program" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="region" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="site" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="workstation" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="lANID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dATA01" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="lastUpdateBy" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WARNINGResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WARNINGResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="STATSoapIn">
+    <wsdl:part name="parameters" element="tns:STAT" />
+  </wsdl:message>
+  <wsdl:message name="STATSoapOut">
+    <wsdl:part name="parameters" element="tns:STATResponse" />
+  </wsdl:message>
+  <wsdl:message name="STAT2SoapIn">
+    <wsdl:part name="parameters" element="tns:STAT2" />
+  </wsdl:message>
+  <wsdl:message name="STAT2SoapOut">
+    <wsdl:part name="parameters" element="tns:STAT2Response" />
+  </wsdl:message>
+  <wsdl:message name="VERSIONSoapIn">
+    <wsdl:part name="parameters" element="tns:VERSION" />
+  </wsdl:message>
+  <wsdl:message name="VERSIONSoapOut">
+    <wsdl:part name="parameters" element="tns:VERSIONResponse" />
+  </wsdl:message>
+  <wsdl:message name="ERRORSoapIn">
+    <wsdl:part name="parameters" element="tns:ERROR" />
+  </wsdl:message>
+  <wsdl:message name="ERRORSoapOut">
+    <wsdl:part name="parameters" element="tns:ERRORResponse" />
+  </wsdl:message>
+  <wsdl:message name="WARNINGSoapIn">
+    <wsdl:part name="parameters" element="tns:WARNING" />
+  </wsdl:message>
+  <wsdl:message name="WARNINGSoapOut">
+    <wsdl:part name="parameters" element="tns:WARNINGResponse" />
+  </wsdl:message>
+  <wsdl:portType name="DADashboardLogSoap">
+    <wsdl:operation name="STAT">
+      <wsdl:input message="tns:STATSoapIn" />
+      <wsdl:output message="tns:STATSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="STAT2">
+      <wsdl:input message="tns:STAT2SoapIn" />
+      <wsdl:output message="tns:STAT2SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="VERSION">
+      <wsdl:input message="tns:VERSIONSoapIn" />
+      <wsdl:output message="tns:VERSIONSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ERROR">
+      <wsdl:input message="tns:ERRORSoapIn" />
+      <wsdl:output message="tns:ERRORSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WARNING">
+      <wsdl:input message="tns:WARNINGSoapIn" />
+      <wsdl:output message="tns:WARNINGSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="DADashboardLogSoap" type="tns:DADashboardLogSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="STAT">
+      <soap:operation soapAction="http://tempuri.org/STAT" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="STAT2">
+      <soap:operation soapAction="http://tempuri.org/STAT2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VERSION">
+      <soap:operation soapAction="http://tempuri.org/VERSION" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ERROR">
+      <soap:operation soapAction="http://tempuri.org/ERROR" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WARNING">
+      <soap:operation soapAction="http://tempuri.org/WARNING" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="DADashboardLogSoap12" type="tns:DADashboardLogSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="STAT">
+      <soap12:operation soapAction="http://tempuri.org/STAT" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="STAT2">
+      <soap12:operation soapAction="http://tempuri.org/STAT2" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VERSION">
+      <soap12:operation soapAction="http://tempuri.org/VERSION" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ERROR">
+      <soap12:operation soapAction="http://tempuri.org/ERROR" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WARNING">
+      <soap12:operation soapAction="http://tempuri.org/WARNING" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="DADashboardLog">
+    <wsdl:port name="DADashboardLogSoap" binding="tns:DADashboardLogSoap">
+      <soap:address location="https://orliwv024.na.convergys.com/DADashboardWebService/DADashboardLog.asmx" />
+    </wsdl:port>
+    <wsdl:port name="DADashboardLogSoap12" binding="tns:DADashboardLogSoap12">
+      <soap12:address location="https://orliwv024.na.convergys.com/DADashboardWebService/DADashboardLog.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
