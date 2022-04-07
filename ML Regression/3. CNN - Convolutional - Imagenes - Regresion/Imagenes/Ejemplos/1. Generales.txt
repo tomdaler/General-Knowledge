@@ -1,0 +1,6 @@
+
+Una convolución es un filtro que pasa sobre una imagen, la procesa, y extrae características que muestran algo en común en la imagen.
+(Introducción a las redes neuronales convolucionales)
+https://www.youtube.com/watch?v=mO1fNuOhjtw
+
+CNN: red neural especializada en reconocimiento de imagen
