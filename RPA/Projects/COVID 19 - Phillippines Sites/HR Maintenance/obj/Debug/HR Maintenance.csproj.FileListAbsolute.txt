@@ -1,0 +1,10 @@
+C:\Proyectos\Exposure\HR Maintenance\bin\Debug\HR Maintenance.exe.config
+C:\Proyectos\Exposure\HR Maintenance\bin\Debug\HR Maintenance.exe
+C:\Proyectos\Exposure\HR Maintenance\bin\Debug\HR Maintenance.pdb
+C:\Proyectos\Exposure\HR Maintenance\obj\Debug\HR Maintenance.csproj.SuggestedBindingRedirects.cache
+C:\Proyectos\Exposure\HR Maintenance\obj\Debug\HR_Maintenance.Form1.resources
+C:\Proyectos\Exposure\HR Maintenance\obj\Debug\HR_Maintenance.Properties.Resources.resources
+C:\Proyectos\Exposure\HR Maintenance\obj\Debug\HR Maintenance.csproj.GenerateResource.cache
+C:\Proyectos\Exposure\HR Maintenance\obj\Debug\HR Maintenance.csproj.CoreCompileInputs.cache
+C:\Proyectos\Exposure\HR Maintenance\obj\Debug\HR Maintenance.exe
+C:\Proyectos\Exposure\HR Maintenance\obj\Debug\HR Maintenance.pdb

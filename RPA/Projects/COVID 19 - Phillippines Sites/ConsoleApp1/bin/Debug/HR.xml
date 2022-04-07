@@ -1,0 +1,698 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Users>
+
+  <Row>
+    <Location>Clark</Location>
+    <Name>Sharon Gozun</Name>
+    <Email>sharon.gozun</Email>
+  </Row>
+
+  <Row>
+    <Location>Ayala North Exchange</Location>
+    <Name>Jona Picones</Name>
+    <Email>jona.picones</Email>
+  </Row>
+  <Row>
+    <Location>Ayala North Exchange</Location>
+    <Name>Elaine EJspiritu</Name>
+    <Email>elaine.espiritu</Email>
+  </Row>
+  <Row>
+    <Location>Ayala North Exchange</Location>
+    <Name>Jerome Servida</Name>
+    <Email>jeromemarion.servida</Email>
+  </Row>
+  <Row>
+    <Location>Ayala North Exchange</Location>
+    <Name>Willy Mahalin</Name>
+    <Email>willy.mahalin</Email>
+  </Row>
+  
+  <Row>
+    <Location>Davao</Location>
+    <Name>Ilin Mae Juntilla</Name>
+    <Email>ilinmae.juntilla</Email>
+  </Row>
+  <Row>
+    <Location>Davao</Location>
+    <Name>Erika Villalba</Name>
+    <Email>erikamaita.villalba</Email>
+  </Row>
+
+  <Row>
+    <Location>Bonifacio</Location>
+    <Name>Melissa Garcia</Name>
+    <Email>melissa.garcia</Email>
+  </Row>
+  
+  <Row>
+    <Location>One Sanparq</Location>
+    <Name>Sharon Lamb</Name>
+    <Email>sharoncarol.lamb</Email>
+  </Row>
+  <Row>
+     <Location>One Sanparq</Location>
+     <Name>Mary Lou Ledesma</Name>
+     <Email>marylouj.ledesma</Email>
+  </Row>
+  <Row>
+     <Location>One Sanparq</Location>
+     <Name>Abigail Uy</Name>
+     <Email>abigailbarbra.uy</Email>
+  </Row>
+
+  <Row>
+      <Location>Two Sanparq</Location>
+      <Name>Keithe Baldoza</Name>
+      <Email>keithjustine.baldoza</Email>
+  </Row>
+  <Row>
+      <Location>Two Sanparq</Location>
+      <Name>Nela Castillo</Name>
+      <Email>nenakristina.castillo</Email>
+  </Row>
+
+  <Row>
+    <Location>UP Ayala TechnoHub</Location>
+    <Name>Evelyn Tomilloso</Name>
+    <Email>evelyn.tomilloso</Email>
+  </Row>
+  <Row>
+    <Location>UP Ayala TechnoHub</Location>
+    <Name>Nerielyn Lapuzo</Name>
+    <Email>nerielyn.Lapuz</Email>
+  </Row>
+  <Row>
+    <Location>UP Ayala TechnoHub</Location>
+    <Name>Franklin Socorro</Name>
+    <Email>Franklin.Socorro</Email>
+  </Row>
+  <Row>
+    <Location>UP Ayala TechnoHub</Location>
+    <Name>Vanessa Pura</Name>
+    <Email>vanessa.pura</Email>
+  </Row>
+  <Row>
+    <Location>UP Ayala TechnoHub</Location>
+    <Name>Arjay Baylon</Name>
+    <Email>arjay.baylon</Email>
+  </Row>
+  <Row>
+    <Location>UP Ayala TechnoHub</Location>
+    <Name>Danielle Apostol</Name>
+    <Email>danielle.apostol</Email>
+  </Row>
+  <Row>
+    <Location>UP Ayala TechnoHub</Location>
+    <Name>Reuben Balanza</Name>
+    <Email>reuben.balanza</Email>
+  </Row>
+  <Row>
+    <Location>UP Ayala TechnoHub</Location>
+    <Name>Kevin Aviso</Name>
+    <Email>kevin.aviso</Email>
+  </Row>
+  <Row>
+    <Location>Cagayan de Oro</Location>
+    <Name>Joje Dolotina</Name>
+    <Email>joje.dolotina</Email>
+  </Row>
+  <Row>
+    <Location>Cagayan de Oro</Location>
+    <Name>Justin Luminarias</Name>
+    <Email>justin.luminarias</Email>
+  </Row>
+  <Row>
+    <Location>Mactan</Location>
+    <Name>Topee Manalang</Name>
+    <Email>christopher.manalang</Email>
+  </Row>
+  <Row>
+    <Location>Arcenas</Location>
+    <Name>Ed Cotejar</Name>
+    <Email>edward.cotejar</Email>
+  </Row>
+  <Row>
+    <Location>Arcenas</Location>
+    <Name>Darlyn Pilapil</Name>
+    <Email>darlyn.pilapil</Email>
+  </Row>
+  <Row>
+    <Location>Asiatown</Location>
+    <Name>Sylveth Castaños </Name>
+    <Email>sylveth.castanos</Email>
+  </Row>
+  <Row>
+    <Location>Asiatown</Location>
+    <Name>Edwin Buenaviaje</Name>
+    <Email>edwin.buenaviaje</Email>
+  </Row>
+  <Row>
+    <Location>Asiatown</Location>
+    <Name>Vanessa Penecitos</Name>
+    <Email>vanessarhea.penecitos</Email>
+  </Row>
+  <Row>
+    <Location>Asiatown</Location>
+    <Name>Angela Catadman</Name>
+    <Email>angelachristi.catadman</Email>
+  </Row>
+  <Row>
+    <Location>Cebu City - i1</Location>
+    <Name>Ethel Jo-Reyes</Name>
+    <Email>ethel.jo</Email>
+  </Row>
+  <Row>
+    <Location>Cebu City - i1</Location>
+    <Name>Markrob Havana</Name>
+    <Email>markrob.havana</Email>
+  </Row>
+  <Row>
+    <Location>Cebu City - i1</Location>
+    <Name>Evarlyn Cuenca</Name>
+    <Email>evarlynsyne.cuenca</Email>
+  </Row>
+  <Row>
+    <Location>Cebu City - i2</Location>
+    <Name>Jeff Chavez</Name>
+    <Email>jeffanthony.chaves</Email>
+  </Row>
+  <Row>
+    <Location>Cebu City - i2</Location>
+    <Name>Mariebelle Flores</Name>
+    <Email>mariebellegrace.flores</Email>
+  </Row>
+
+  <Row>
+    <Location>Cebu City - i3</Location>
+    <Name>Tom Louis Sanchez</Name>
+    <Email>tomlouis.sanchez</Email>
+  </Row>
+
+  <Row>
+    <Location>J Center</Location>
+    <Name>Maria Arribas</Name>
+    <Email>mariateodora.arribas</Email>
+  </Row>
+  <Row>
+    <Location>J Center</Location>
+    <Name>Jeuse Panganiban</Name>
+    <Email>jeusebyron.panganiban</Email>
+  </Row>
+    
+  <Row>
+    <Location>TGU</Location>
+    <Name>Jayson Codilla</Name>
+    <Email>jayson.codilla</Email>
+  </Row>
+  
+  <Row>
+    <Location>TGU</Location>
+    <Name>Marianubel Chang</Name>
+    <Email>marianubel.chang</Email>
+  </Row>
+  <Row>
+    <Location>TGU</Location>
+    <Name>Irishdale Lecena</Name>
+    <Email>irishdale.lecena</Email>
+  </Row>
+  <Row>
+    <Location>Laguna</Location>
+    <Name>Nicetas Gabutan-Diaz</Name>
+    <Email>nicegabutan.diaz</Email>
+  </Row>
+  <Row>
+    <Location>Laguna</Location>
+    <Name>Ronnie Soliguen</Name>
+    <Email>ronnie.soliguen</Email>
+  </Row>
+  <Row>
+    <Location>The Link</Location>
+    <Name>Becca Enriquez </Name>
+    <Email>rebecca.enriquez</Email>
+  </Row>
+
+  <Row>
+    <Location>Abreeza</Location>
+    <Name>Erika Maita Villalba</Name>
+    <Email>erikamaita.villalba</Email>
+  </Row>
+
+  <Row>
+    <Location>Damosa</Location>
+    <Name>Mary Joy Rapas</Name>
+    <Email>maryjoy.rapas</Email>
+  </Row>
+  <Row>
+    <Location>Damosa</Location>
+    <Name>Fides May Gimena</Name>
+    <Email>fidesmay.gimena</Email>
+  </Row>
+  <Row>
+    <Location>Damosa</Location>
+    <Name>Feliz Sindao</Name>
+    <Email>feliz.sindaos</Email>
+  </Row>
+  <Row>
+    <Location>Damosa</Location>
+    <Name>Margaux Gonzales</Name>
+    <Email>margaux.gonzales</Email>
+  </Row>
+
+  <Row>
+    <Location>Nuvali</Location>
+    <Name>Nicetas Gabutan-Diaz</Name>
+    <Email>nicegabutan.diaz</Email>
+  </Row>
+
+  <Row>
+    <Location>Alabang 1</Location>
+    <Name>Jenny Maglangit</Name>
+    <Email>jenny.maglangit</Email>
+  </Row>
+
+  <Row>
+      <Location>Alabang 2</Location>
+      <Name>Gemma Montojo</Name>
+      <Email>gemma.montojo</Email>
+  </Row>
+
+  <Row>
+    <Location>Alabang 2</Location>
+    <Name>Joanne Clemeno</Name>
+    <Email>joannechristianne.clemeno</Email>
+  </Row>
+  <Row>
+    <Location>Alabang 2</Location>
+    <Name>Rozel Cruz</Name>
+    <Email>rozel.cruz</Email>
+  </Row>
+  
+  <Row>
+    <Location>Alabang 3</Location>
+    <Name>Midgey Lualhati</Name>
+    <Email>michelle.lualhati</Email>
+  </Row>
+  <Row>
+    <Location>Alabang 3</Location>
+    <Name>Kathlyn Manlangit</Name>
+    <Email>kathlynmarie.manlangit</Email>
+  </Row>
+  
+  <Row>
+    <Location>Alabang 4</Location>
+    <Name>Joycy Tanpueche</Name>
+    <Email>cherryjoyce.tanpueche</Email>
+  </Row>
+  <Row>
+    <Location>Alabang 4</Location>
+    <Name>Marianne Chua</Name>
+    <Email>marianne.chua</Email>
+  </Row>
+
+  <Row>
+    <Location>MOA</Location>
+    <Name>Katherine Mingi</Name>
+    <Email>katherine.mingi</Email>
+  </Row>
+  <Row>
+    <Location>MOA</Location>
+    <Name>Ruby Mae de la Cruz</Name>
+    <Email>rubymae.delacruz</Email>
+  </Row>
+  
+  <Row>
+    <Location>SLC</Location>
+    <Name>Willy Mahalin </Name>
+    <Email>willy.mahalin</Email>
+  </Row>
+
+  <Row>
+    <Location>Glorietta</Location>
+    <Name>Sheryl Magpayo-Yao</Name>
+    <Email>sherylanne.magpayo</Email>
+  </Row>
+  <Row>
+    <Location>Glorietta</Location>
+    <Name>Prince Ramirez</Name>
+    <Email>princejhessjaramantra.ramirez</Email>
+  </Row>
+  <Row>
+    <Location>Glorietta</Location>
+    <Name>Chai Cabansay</Name>
+    <Email>chai.cabansay</Email>
+  </Row>
+
+  <Row>
+    <Location>Megamall</Location>
+    <Name>Michelle Santos</Name>
+    <Email>michelle.santos5</Email>
+  </Row>
+  <Row>
+    <Location>Megamall</Location>
+    <Name>Noriel Tongol</Name>
+    <Email>noriel.tongol</Email>
+  </Row>
+  <Row>
+    <Location>Megamall</Location>
+    <Name>Charlie Garcia</Name>
+    <Email>charlie.garcia</Email>
+  </Row>
+  <Row>
+    <Location>Megamall</Location>
+    <Name>Leonora Laxa</Name>
+    <Email>leonora.laxa</Email>
+  </Row>
+
+  <Row>
+    <Location>Vertex One</Location>
+    <Name>Rheneloie Roxas</Name>
+    <Email>rheneloie.roxas</Email>
+  </Row>
+  <Row>
+    <Location>Vertex One</Location>
+    <Name>Ana Lourdes Cruz </Name>
+    <Email>analourdesthereselourdz.cruz</Email>
+  </Row>
+
+  <Row>
+    <Location>UPA</Location>
+    <Name>Evelyn Tomilloso</Name>
+    <Email>evelyn.tomilloso</Email>
+  </Row>
+
+  <Row>
+    <Location>UPA - Bldg. G</Location>
+    <Name>Franklin Socorro</Name>
+    <Email>franklin.socorro</Email>
+  </Row>
+
+  <Row>
+    <Location>Naga</Location>
+    <Name>Sarah Chancoco</Name>
+    <Email>sarah.chancoco</Email>
+  </Row>
+  <Row>
+    <Location>Naga</Location>
+    <Name>Eleazar Cuela</Name>
+    <Email>Eleazar.Cuela</Email>
+  </Row>
+
+  <Row>
+    <Location>North Edsa</Location>
+    <Name>Darwin Dizon</Name>
+    <Email>darwin.dizon</Email>
+  </Row>
+  <Row>
+    <Location>North Edsa</Location>
+    <Name>Heather Sondia </Name>
+    <Email>heather.sondia</Email>
+  </Row>
+  <Row>
+    <Location>North Edsa</Location>
+    <Name>Adrian Villalobos1</Name>
+    <Email>adrian.villalobos1</Email>
+  </Row>
+
+  <Row>
+    <Location>Eton</Location>
+    <Name>Josh Reyes</Name>
+    <Email>josh.reyes</Email>
+  </Row>
+  <Row>
+    <Location>Eton</Location>
+      <Name> Lorna Rupero</Name>
+      <Email>LornaEleanor.Rupero</Email>
+  </Row>
+  <Row>
+    <Location>Eton</Location>
+    <Name>Mmark Rivera</Name>
+    <Email>mark.rivera</Email>
+  </Row>
+
+  <Row>
+    <Location>MDC</Location>
+    <Name>Ella Capigon </Name>
+    <Email>marieraniellafrances.capigon</Email>
+  </Row>
+  <Row>
+    <Location>MDC</Location>
+    <Name>Eldrin Castillo</Name>
+    <Email>eldrinjohn.castillo</Email>
+  </Row>
+  <Row>
+    <Location>MDC</Location>
+    <Name>Kevin Dofeliz</Name>
+    <Email>kevin.dofeliz</Email>
+  </Row>
+  <Row>
+    <Location>MDC</Location>
+    <Name>Christiane Caasi</Name>
+    <Email>christianejae.caasi</Email>
+  </Row>
+  <Row>
+    <Location>MDC</Location>
+    <Name>Mark Aggabao</Name>
+    <Email>markanthony.aggabao</Email>
+  </Row>
+
+  <Row>
+    <Location>CyberWest</Location>
+    <Name>Melvin Maderazo</Name>
+    <Email>melvin.maderazo</Email>
+  </Row>
+  <Row>
+    <Location>CyberWest</Location>
+    <Name>Kevin Velasquez</Name>
+    <Email>kevin.velasquez</Email>
+  </Row>
+  <Row>
+    <Location>CyberWest</Location>
+    <Name>Reneray Gorospe</Name>
+    <Email>reneray.gorospe</Email>
+  </Row>
+
+  <Row>
+    <Location>EXXA</Location>
+    <Name>Ma. Rowena Gonzales</Name>
+    <Email>rowena.gonzales</Email>
+  </Row>
+  <Row>
+    <Location>EXXA</Location>
+    <Name>Alvin Pangilinan</Name>
+    <Email>alvin.pangilinan</Email>
+  </Row>
+  <Row>
+    <Location>EXXA</Location>
+    <Name>Kristel Bolasoc1</Name>
+    <Email>Kristel.Bolasoc1</Email>
+  </Row>
+  <Row>
+    <Location>EXXA</Location>
+    <Name>Michelle Occidental</Name>
+    <Email>michelle.occidental</Email>
+  </Row>
+  <Row>
+    <Location>EXXA</Location>
+    <Name>Jeanne Macandog</Name>
+    <Email>jeanne.macandog</Email>
+  </Row>
+  <Row>
+    <Location>EXXA</Location>
+    <Name>Rachel Eustaquio</Name>
+    <Email>rachelanagnese.eustaquio</Email>
+  </Row>
+  <Row>
+    <Location>EXXA</Location>
+    <Name>Solance Martinez</Name>
+    <Email>solance.martinez1</Email>
+  </Row>
+  <Row>
+    <Location>EXXA</Location>
+    <Name>Louela Chua</Name>
+    <Email>louela.chua</Email>
+  </Row>
+  <Row>
+    <Location>EXXA</Location>
+    <Name>Justin Panganiban</Name>
+    <Email>justin.panganiban</Email>
+  </Row>
+  <Row>
+    <Location>EXXA</Location>
+    <Name>Princess Mendoza</Name>
+    <Email>princess.mendoza</Email>
+  </Row>
+  <Row>
+    <Location>EXXA</Location>
+    <Name>Randy Gutierrez</Name>
+    <Email>randy.gutierrez</Email>
+  </Row>
+  
+  <Row>
+    <Location>Tera Tower</Location>
+    <Name>Janea Sabangan</Name>
+    <Email>janea.sabangan</Email>
+  </Row>
+  <Row>
+    <Location>Tera Tower</Location>
+    <Name>Marife Yapjuangco</Name>
+    <Email>marife.yapjuangco</Email>
+  </Row>
+  <Row>
+    <Location>Tera Tower</Location>
+    <Name>Raymond Flores</Name>
+    <Email>raymond.flores</Email>
+  </Row>
+  <Row>
+    <Location>Tera Tower</Location>
+    <Name>Charles Salas</Name>
+    <Email>Charles.Salas</Email>
+  </Row>
+  <Row>
+    <Location>Tera Tower</Location>
+    <Name>Althea Bacosa</Name>
+    <Email>althea.bacosa</Email>
+  </Row>
+  <Row>
+    <Location>Tera Tower</Location>
+    <Name>John Paul Ayap</Name>
+    <Email>JOHNPAUL.AYAP</Email>
+  </Row>
+  <Row>
+    <Location>Tera Tower</Location>
+    <Name>Pia Cezar</Name>
+    <Email>pia.cezar</Email>
+  </Row>
+
+  <Row>
+    <Location>TP2</Location>
+    <Name>Jona Picones</Name>
+    <Email>jona.picones</Email>
+  </Row>
+
+  <Row>
+    <Location>E-Commerce</Location>
+    <Name>Abigail Loyola</Name>
+    <Email>Abigail.Loyola</Email>
+  </Row>
+  <Row>
+    <Location>E-Commerce</Location>
+    <Name>Mark Guzman</Name>
+    <Email>marklawrence.guzman</Email>
+  </Row>
+  <Row>
+    <Location>E-Commerce</Location>
+    <Name>Sharon Mozo</Name>
+    <Email>sharon.mozo</Email>
+  </Row>
+    
+  <Row>
+    <Location>CyberOne</Location>
+    <Name>Jona Picones</Name>
+    <Email>jona.picones</Email>
+  </Row>
+
+  <Row>
+    <Location>Eastwood</Location>
+    <Name>Jona Picones</Name>
+    <Email>jona.picones</Email>
+  </Row>
+
+  <Row>
+    <Location>Spark</Location>
+    <Name>Lea Carla Goleta</Name>
+    <Email>leacarla.goleta</Email>
+  </Row>
+
+
+  <Row>
+    <Location>Spark</Location>
+    <Name>Maria Isabel Bantayan-Alegre </Name>
+    <Email>isabel.bantayan</Email>
+  </Row>
+  <Row>
+    <Location>Spark</Location>
+    <Name>Theresa Seno</Name>
+    <Email>theresa.seno</Email>
+  </Row>
+  <Row>
+    <Location>Spark</Location>
+    <Name>April Dantes</Name>
+    <Email>apriljoyce.dantes</Email>
+  </Row>
+  <Row>
+    <Location>Spark</Location>
+    <Name>Sherylyn Villarta</Name>
+    <Email>sherylyn.villarta</Email>
+  </Row>
+  <Row>
+    <Location>Spark</Location>
+    <Name>Carlo Rendon</Name>
+    <Email>carlo.rendon</Email>
+  </Row>
+  <Row>
+    <Location>Spark</Location>
+    <Name>Leacarla Goleta</Name>
+    <Email>Leacarla.Goleta</Email>
+  </Row>
+  <Row>
+    <Location>Spark</Location>
+    <Name>Laurence Llave</Name>
+    <Email>laurence.llave</Email>
+  </Row>
+
+  <Row>
+    <Location>Shaw</Location>
+    <Name>Alvira Galido </Name>
+    <Email>alvira.galido</Email>
+  </Row>
+
+  <Row>
+    <Location>Shaw</Location>
+    <Name>Marvin Medrana </Name>
+    <Email>marvin.medrana</Email>
+  </Row>
+
+  <Row>
+    <Location>Taguig</Location>
+    <Name>Carolyn del Mundo</Name>
+    <Email>carolyn.delmundo</Email>
+  </Row>
+
+  <Row>
+    <Location>UP Tech 1</Location>
+    <Name>Nenita Gannaban</Name>
+    <Email>nenita.gannaban</Email>
+  </Row>
+  <Row>
+    <Location>UP Tech 1</Location>
+    <Name>Rvin Carl Carandang</Name>
+    <Email>rvincarl.carandang</Email>
+  </Row>
+
+  <Row>
+    <Location>UP Tech 2</Location>
+    <Name>Mary Ann De Jesus</Name>
+    <Email>maryann.dejesus</Email>
+  </Row>
+  <Row>
+    <Location>UP Tech 2</Location>
+    <Name>Lei Tan</Name>
+    <Email>Lei.Tan2</Email>
+  </Row>
+  
+  
+  <Row>
+    <Location>TechnoHub</Location>
+    <Name>Czar Arkhe Caguioa</Name>
+    <Email>czararkhe.caguioa</Email>
+  </Row>
+
+  <Row>
+    <Location>Tera Tower</Location>
+    <Name>Pia Cezar</Name>
+    <Email>Pia.Cezar</Email>
+  </Row>
+
+</Users>
+
