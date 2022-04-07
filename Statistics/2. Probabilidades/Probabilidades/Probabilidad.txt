@@ -1,0 +1,177 @@
+AXIOMAS DE PROBABILIDAD :
+La probabilidad está dada por el número de casos de éxito sobre la cantidad total(teórica) de casos.
+
+P = #-Casos de éxito/ # Casos-totales.
+Suceso elemental: Es una única ocurrencia, “Solo tienes una cara de la moneda como resultado”
+Sucesos: Son las posibilidades que tenemos en el sistema. Está compuesto de sucesos elementales,
+por ejemplo, “El resultado de lanzar un dado es par”, hay tres sucesos (2,4,6) que componen este enunciado.
+
+Fuentes de incertidumbre
+- Datos (por los instrumentos)
+- Atributos de modelo, hechos de datos inciertos
+- Arquitectura de modelo, la representacion simplificada tiene menos informacion
+
+
+Tipos de probabilidd
+- Conjunta  :  Prob de nublado Y llueve  P(A Y B)
+- Marginal  :  Prob de llover  P(A)
+- Condicional : Prob de llover SI esta nubado P(A/B)
+
+Prob conjunta, regla del producto
+P(A,B)  = p(A/B) P(B)  = P(A y B)
+
+Condicional
+P(A dado B) = P(A/B)
+
+Probabilidad de sacar 4 en dado 1/6
+Probabilidad de salir par  1/3
+Probabilidad de impar      1/3
+
+
+A = {El resultado de lanzar un dado es 4}
+B = {El resultado de lanzar un dado es par}
+C = {El resultado de lanzar un dado es impar}
+
+P(A) = 1/6
+
+P(A|B) = 1/3
+
+El hecho de que B ocurrió antes aumenta la probabilidad de A, 
+entonces los eventos A y B están positivamente correlacionados
+
+P(A|C) = 0   Probabilidad que salga 4 dado que salio antes un impar = 0
+
+La ocurrencia de C acaba de modificar la ocurrencia de A dramáticamente, 
+entonces A y C están negativamente correlacionados
+
+EXCLUYENTE ≠ INDEPENDIENTE
+
+Ejemplo2:
+
+Al lanzar un dado cada jugador ganara si obtiene alguno de los siguentes valores
+
+J1 = {1,2,3,4}
+
+J2 = {5,6,7,8}
+
+P(J1) = 4/8 = 1/2
+
+P(J1|J2) = 0
+
+Por que no hay interseccion entre ambos conjuntos,
+
+Si J2= {4,5,6,7}
+
+P(J1|J2) = 1/4
+
+Este numero nos dice que una vez que sabemos que gano el jugador 2 
+la probabilidad de que gane el jugador 1 es de 1/4, mientas que en un principio la probabilidad era de 1/2.
+
+Entonces J1 y J2 ahora son eventos que estan negativamente correlacionados
+
+Si J2 = {2,3,6,7}
+
+P(J1|J2)
+
+Esta probabilidad nos limita el espacio muestral a las opciones de que J2 gane entonces entre {2,3,6,7} 
+la probabilidad de que tambien gane J1 con {1,2,3,4} queda en la interseccion de ambas {2,3} esto nos dice:
+
+P(J1|J2) = 2/ 4 = 1/2
+
+Igual que la probabilidad por si sola de P(J1), Entonces J1 y J2 estan relacionadas.
+
+=========================
+
+Mujer tiene 2 bebes, el mayor es varon
+Espacio muestral  FM, MM, FF, MF
+Exito                 MM      MF  =  2/4 = 1/2
+
+Mujer tiene 2 bebes, uno es varon
+Espacio muestral  FM, MM, FF, MF
+Exito             FM  MM      MF  =  3/4
+
+X : var aleatoria
+x : valor posible en espacia aleatorio
+
+Distribucione discretas
+
+Bernoulli 
+Ocurrencias con variables binarias, 2 posibles sucesos, como las monedas
+
+
+Binomial
+import numpy as np
+from numpy.random import binomial
+from scipy.stats import binom
+from math import factorial
+import matplotlib.pyplot as plt
+
+P(X = k) = nCk p^k * (1-p)^nk
+
+n: numero de ensayos
+k: numero de exitos
+p: probabilidad de exito x prueba
+nCk 
+
+
+Nathan asierta el 60% de sus tiros libres. 
+Si lanza 12 tiros libres, 
+¿cuál es la probabilidad de que haga exactamente 10?
+
+desde scipy.stats importar binom
+
+#calcular la probabilidad binomial 
+binom.pmf (k = 10 , n = 12 , p = 0.6 )
+0.0639
+
+
+
+El 70%  apoyan una determinada ley. 
+Si se seleccionan al azar 10 individuos, 
+¿cuál es la probabilidad de que entre 4 y 6 de ellos apoyen la ley?
+
+desde scipy.stats importar binom
+
+#calcular la probabilidad binomial 
+binom.cdf (k = 6 , n = 10 , p = 0,7 ) - binom.cdf (k = 3 , n = 10 , p = 0,7 )
+0.3398
+
+
+Visualizar distribucion
+
+de numpy importación aleatoria
+ importación matplotlib.pyplot como PLT
+ importación Seaborn como SNS
+
+x = random.binomial (n = 10 , p = 0.5 , tamaño = 1000 )
+
+sns.distplot (x, hist = True , kde = False )
+
+plt.show ()
+
+
+
+Normal
+
+arr = df['Normally Distributed Housefly Wing Lengths'].values[3:]
+
+DIST. DISCRETA
+- Binomial, multinomial
+- Hipergeometrica
+- Binomial negativa y geometrica
+- Poisson
+
+DIST. CONTINUAS
+- Uniforme continua
+- Normal
+- Gamma y exponencial
+- chi cuadrada
+- beta
+- Weibull
+
+DIST. DE MUESTREO
+- Muestral de medias
+- muestras de S2
+- t student
+- F
+
