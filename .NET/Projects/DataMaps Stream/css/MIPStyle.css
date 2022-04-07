@@ -1,0 +1,149 @@
+/*
+DESIGNED BY:   Hutch White
+DATE:    9/15/2011
+DESCRIPTION:  Design for MIP Config site
+*/
+
+*{margin:0;padding:0;}
+html{font-size:100%;}
+body{background:url("/images/BackgroundWave.jpg");color:#222;font-family:"Helvetica Neue", Arial, Helvetica, sans-serif;text-align:center;font-size:75%;}
+h2{font-size:2em;margin-bottom:0.75em;}
+h4{margin-bottom:0.75em;}
+.error{background:#FBE3E4;border:2px solid #FBC2C4;color:#8a1f11;margin-bottom:1em;text-align:center;width:332px;padding:6px;}
+.clear {clear:both;}
+
+
+#wrapper{width:1000px; margin:0 auto;}
+
+#siteNav{border: solid 0px blue; float: left; margin-bottom: 10px; margin-left: 1px;}
+/*#siteNav div {float: left; display: inline;}*/
+#headernav {border: solid 0px red;}
+#headerlogo {width:500px;}
+
+#headerlinks a {font-family: Verdana; font-size: 11px; font-weight: bold;}
+#headerlinks a:link  { text-decoration: none; color: #002d62;  }
+#headerlinks a:visited  { text-decoration: none; color: #002d62;  }
+#headerlinks a:hover { text-decoration: underline; color: #0099cc;  }
+#headerlinks a:active { text-decoration: none; color: #002d62;  }
+
+/* TOP NAVIGATION STYLES - MENUBAR ---------------------------------------------*/
+
+#menubar {background-image: url(/images/nav/nav_bg_up.gif);}
+
+#menubar ul li
+{ padding: 0px 0px 0px 0px; left: 0px; top: 0px; 
+      float: left; position: relative; z-index: 50; }
+
+ul.menubaritem li {list-style-type: none; margin: 0px;}
+.menuend {width: 6px; z-index: 50;}
+.navdivider {height: 30px;}
+
+.navcell, .navcellover, .navcellselected {background-repeat:repeat-x; list-style-image: none; margin: 0px; height: 30px;}
+.navcell { background-image: url(/images/nav/nav_bg_up.gif); }
+.navcellover { background-image: url(/images/nav/nav_bg_ov.gif); }
+.navcellselected { background-image: url(/images/nav/nav_bg_sl.gif); }
+  
+.mitem {display:block; font-family: Arial; font-size: 12px; color: #ffffff; font-weight: bold; padding: 7px 20px 8px 20px; white-space: nowrap; }
+
+a.mitem:link {color: #ffffff; text-decoration: none;}
+a.mitem:visited {color: #ffffff; text-decoration: none;}
+a.mitem:hover {color: #ffffff; text-decoration: none;}
+a.mitem:active {color: #ffffff; text-decoration: none;}
+
+.dropmenu { width: 180px;
+      display: none; position: absolute; top: 30px; left: 0px;
+      border-top: solid 0px red;
+      background-color:#ffffff;
+      padding: 0px 0px 0px 0px;
+      margin: 0px;
+      text-align: left; z-index: 100;
+    }
+
+ul.dropmenu li {list-style-type: none; margin: 0px;}
+
+/* "over" is added to subitem class name in swapimages.js to create the show/hide effect */
+
+#menubar .subitem, #menubar .subitemover
+{           clear: both; text-align: left; z-index: 5;
+            display: block;
+            padding-top:5px;
+      padding-right: 20px;
+      padding-bottom: 5px;
+      padding-left: 14px;
+      border-left: solid 2px #e8e8e8;
+      border-right: solid 2px #e8e8e8;
+      border-bottom: solid 1px #e8e8e8;    
+      width: 100%;  }
+      
+#menubar .subitem { background-color: #ffffff;}
+#menubar .subitemover { background-color: #e1eaf5;}  
+
+#menubar .subitem a, #menubar .subitemover a {color: #3c82d3;
+      font-family: verdana; font-weight: normal; font-size: 12px; }
+
+#menubar .subitem a:link {color: #3c82d3; text-decoration: none;}
+#menubar .subitem a:visited {color: #3c82d3; text-decoration: none;}
+#menubar .subitem a:hover {color: #3c82d3; text-decoration: none;}
+#menubar .subitem a:active {color: #3c82d3; text-decoration: none;}
+
+#menubar .subitemover a:link {color: #3c82d3; text-decoration: none;}
+#menubar .subitemover a:visited {color: #3c82d3; text-decoration: none;}
+#menubar .subitemover a:hover {color: #3c82d3; text-decoration: none;}
+#menubar .subitemover a:active {color: #3c82d3; text-decoration: none;}
+
+
+
+#logo {padding:0; margin:0 auto; margin-top: 50px;}
+
+#login-form{background:#fff;border:1px solid #ccc;text-align:left;-moz-border-radius:5px;-webkit-border-radius:5px;-moz-box-shadow:0 1px 3px #ddd;-webkit-box-shadow:0 1px 3px #ddd;margin:0 auto;padding:15px 15px 25px;}
+#login-form h2{text-align:center;padding:5px 0;font-size: 14px;}
+#login-form .field{width:335px;margin:15px 0;}
+#login-form .field label{color:#777;display:block;font-size:1em;font-weight:700;margin-bottom:5px;text-align:left;}
+#login-form .field input{border:1px solid #ccc;font-size:1.2em;width:100%;padding:5px;}
+
+#login-status {text-align:right; margin-top:10px;}
+
+#mainContent{background:#fff;border:1px solid #ccc;text-align:left;-moz-border-radius:5px;-webkit-border-radius:5px;-moz-box-shadow:0 1px 3px #ddd;-webkit-box-shadow:0 1px 3px #ddd;margin:0 auto;padding:15px 15px 25px;}
+
+#footer{margin:0 auto;padding:15px 0 0 0;font-size: 11px; color: #314c67;}
+#copyInfo{float:left;}
+#footerLinks{float:right;}
+#footerLinks a:link{text-decoration: none; color: #314c67;} 
+#footerLinks a:visited{text-decoration: none; color: #314c67;}
+#footerLinks a:hover{text-decoration: underline; color: #0099cc;}
+  
+/* Form Styles */
+.form {}
+.form label {display:inline-block; float:left; height: 26px; line-height: 26px;}
+.form input { margin: 5px 0;}
+.selection {clear: both; padding-right: 10px;padding-top: 10px;}
+
+/* Specific Page Styles */
+#lobMapping {}
+#lobMapping table tr td,
+#lobMapping table th {font-size: 10px; margin-left: 5px; padding-left: 6px; text-align: left; width: 100px;}
+#lobMapping table th {padding-top: 8px; padding-bottom: 8px;}
+
+.GridView td
+{
+  padding-left: 7px;
+  padding-right: 7px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* EDITOR PROPERTIES - PLEASE DON'T DELETE THIS LINE TO AVOID DUPLICATE PROPERTIES */
