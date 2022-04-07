@@ -1,0 +1,13 @@
+!pip install translate
+
+
+from translate import Translator
+translator= Translator(to_lang="German")
+translation = translator.translate("Good Morning!")
+print(translation)
+
+
+from translate import Translator
+translator= Translator(from_lang="portuguese",to_lang="english")
+translation = translator.translate("bom dia")
+print(translation)

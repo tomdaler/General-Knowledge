@@ -1,0 +1,17 @@
+pip install sentiment-analysis-spanish
+
+from sentiment_analysis_spanish import sentiment_analysis
+
+sentiment = sentiment_analysis.SentimentAnalysisSpanish()
+print(sentiment.sentiment("me gusta la tombola es genial"))
+
+0.9304
+
+= = = =
+
+from pysentimiento import SentimentAnalyzer
+analyzer = SentimentAnalyzer(lang="es")
+
+analyzer.predict("Qué gran jugador es Messi")
+
+SentimentOutput(output=POS, probas={POS: 0.998, NEG: 0.002, NEU: 0.000})
