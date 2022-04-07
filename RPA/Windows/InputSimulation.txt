@@ -1,0 +1,117 @@
+
+https://ourcodeworld.com/articles/read/520/simulating-keypress-in-the-right-way-using-inputsimulator-with-csharp-in-winforms
+
+
+InputSimulator sim = new InputSimulator();
+
+// Press 0 key
+sim.Keyboard.KeyPress(VirtualKeyCode.VK_0);
+// Press 1
+sim.Keyboard.KeyPress(VirtualKeyCode.VK_1);
+// Press b
+sim.Keyboard.KeyPress(VirtualKeyCode.VK_B);
+// Press v
+sim.Keyboard.KeyPress(VirtualKeyCode.VK_V);
+// Press enter
+sim.Keyboard.KeyPress(VirtualKeyCode.RETURN);
+// Press Left CTRL button
+sim.Keyboard.KeyPress(VirtualKeyCode.LCONTROL);
+
+
+InputSimulator sim = new InputSimulator();
+
+// CTRL + C (effectively a copy command in many situations)
+sim.Keyboard.ModifiedKeyStroke(VirtualKeyCode.CONTROL, VirtualKeyCode.VK_C);
+
+// You can simulate chords with multiple modifiers
+// For example CTRL + K + C whic is simulated as
+// CTRL-down, K, C, CTRL-up
+sim.Keyboard.ModifiedKeyStroke(VirtualKeyCode.CONTROL, new[] {
+    VirtualKeyCode.VK_K, VirtualKeyCode.VK_C
+});
+
+// You can simulate complex chords with multiple modifiers and key presses
+// For example CTRL-ALT-SHIFT-ESC-K which is simulated as
+// CTRL + down, ALT + down, SHIFT + down, press ESC, press K, SHIFT-up, ALT-up, CTRL-up
+sim.Keyboard.ModifiedKeyStroke(
+    new[] { VirtualKeyCode.CONTROL, VirtualKeyCode.MENU, VirtualKeyCode.SHIFT },
+    new[] { VirtualKeyCode.ESCAPE, VirtualKeyCode.VK_K }
+);
+Type entire words
+The TextEntry method of the Keyboard simulates uninterrupted text entry via the Keyboard:
+
+InputSimulator Simulator = new InputSimulator();
+
+Simulator.Keyboard.TextEntry("Hello World !");
+The simulator API is chainable, so you can use the Sleep method to wait some milliseconds before starting or after typing something:
+
+InputSimulator Simulator = new InputSimulator();
+            
+// Wait a second to start typing
+Simulator.Keyboard.Sleep(1000)
+// Type Hello World    
+.TextEntry("Hello World !")
+// Wait another second
+.Sleep(1000)
+// Type More text
+.TextEntry("Type another thing")
+;
+Simulate typing of text by characters
+If you are lazy and want to create snippets that make your life easier, you may want to create some type of roboscript that writes some text for you. Obviously the text needs to exist already so it can be used in projects like videos where you can't type errors:
+
+/// <summary>
+/// Simulate typing of any text as you do when you write.
+/// </summary>
+/// <param name="Text">Text that will be written automatically by simulation.</param>
+/// <param name="typingDelay">Time in ms to wait after 1 character is written.</param>
+/// <param name="startDelay"></param>
+private void simulateTypingText(string Text, int typingDelay = 100, int startDelay = 0)
+{
+    InputSimulator sim = new InputSimulator();
+
+    // Wait the start delay time
+    sim.Keyboard.Sleep(startDelay);
+
+    // Split the text in lines in case it has
+    string[] lines = Text.Split(new string[] { "\r\n", "\n" }, StringSplitOptions.None);
+
+    // Some flags to calculate the percentage
+    int maximum = lines.Length;
+    int current = 1;
+
+    foreach (string line in lines)
+    {
+        // Split line into characters
+        char[] words = line.ToCharArray();
+        
+        // Simulate typing of the char i.e: a, e , i ,o ,u etc
+        // Apply immediately the typing delay
+        foreach (char word in words)
+        {
+            sim.Keyboard.TextEntry(word).Sleep(typingDelay);
+        }
+
+        float percentage = ((float)current / (float)maximum) * 100;
+
+        current++;
+
+        // Add a new line by pressing ENTER
+        // Return to start of the line in your editor with HOME
+        sim.Keyboard.KeyPress(VirtualKeyCode.RETURN);
+        sim.Keyboard.KeyPress(VirtualKeyCode.HOME);
+
+        // Show the percentage in the console
+        Console.WriteLine("Percent : {0}", percentage.ToString());
+    }
+}
+The method expects as first argument the text that will be typed as an human would do. The default typing delay is of 100 milliseconds which is usually the typing delay of an human after every keypress. The last argument is optional and provides only a time delay when to start typing:
+
+// Simulate typing text of a textbox multiline
+simulateTypingText(textBox1.Text);
+
+// Simulate typing slowly by waiting half second after typing every character
+simulateTypingText(textBox1.Text, 500);
+
+// Simulate typing slowly by waiting half second after typing every character
+// and wait 5 seconds before starting
+simulateTypingText(textBox1.Text, 500, 5000);
