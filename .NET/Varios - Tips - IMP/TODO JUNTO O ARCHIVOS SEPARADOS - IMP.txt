@@ -1,0 +1,46 @@
+SI TODO ESTA EN ASPX, la programacion es mas rapida <- para aplicaciones sencillas
+SI TODO ESTA SEPARADO, mas facil de modificar y reutilizar, y menos pesada la carga de controles
+
+Podria irse haciendo menos pesada la carga en ASPX a medida que usamos controles simples de html
+
+Label
+Button
+Image
+
+y la interaccion con javascript, y no se hace postbacks.
+
+Si no se reutilizara codigo, mantengalo todo junto.
+
+Por otra parte, con 5G TENDRA SENTIDO LA DIFICULTAD DE CARGA DE CONTROLES?
+No sera siempre mejor un standard que opciones de angular/Vue/React ?
+
+Los nuevos graduados no se meten en VS, el VS es bien pagado porque es manteniemiento, y pocos
+
+
+
+SI VA A SEPARAR
+===============
+
+Cree aspx
+Use archivo cs para funciones
+Use controles simples html
+
+
+LUEGO que funcione en aspx, SEPARE
+
+- Copie el html en archivo html separado
+- javascript in otro archivo
+- Funciones en archivo cs
+- Agregue archivo app.config en el mismo directorio que cs
+
+VENTAJAS:
+- Con aplicaciones GRANDES mas facil modificar, reutilizar
+- Se puede trabajar por separado
+- Se puede reutilizar <-
+- Direcciona a diferentes bases o diferentes back-end
+
+
+Para funcion Load usar html onload=
+Guarde datos en cookie, session, 
+
+
