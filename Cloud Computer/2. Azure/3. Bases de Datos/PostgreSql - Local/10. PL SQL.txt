@@ -1,0 +1,24 @@
+Functions
+
+Click-derecho - create
+
+CREATE OR REPLACE FUNCTION PL1()
+   RETURNS integer AS $$
+DECLARE
+  rec record := NULL;
+  cont integer :=0;
+BEGIN
+
+   FOR rec in SELECT * FROM TABLA1 LOOP
+      RAISE NOTICE 'Nombre : %', rec.nombre;
+      cont=cont+1;
+   END LOOP
+   RAISE NOTICE 'Conteo ',cont;  
+   RETURN cont;
+END
+$$
+
+LANGUAGE PLPGSQL;
+SELECT PL1();
+
+

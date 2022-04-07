@@ -1,0 +1,67 @@
+Hay que tener bastante cuidado con el borrado y la actualizacion en cascada,
+
+-- Agregamos llave foranea de id_estacion a la tabla trayecto
+ALTER TABLE public.trayecto
+    ADD CONSTRAINT trayecto_estacion_fkey FOREIGN KEY (id_estacion)
+    REFERENCES public.estacion (id) MATCH SIMPLE
+    ON UPDATE CASCADE
+    ON DELETE CASCADE
+    NOT VALID;
+
+-- Agregamos llave foranea de id_tren a la tabla trayecto
+ALTER TABLE public.trayecto
+    ADD CONSTRAINT trayecto_tren_fkey FOREIGN KEY (id_tren)
+    REFERENCES public.tren (id) MATCH SIMPLE
+    ON UPDATE CASCADE
+    ON DELETE CASCADE
+    NOT VALID;
+
+-- Agregamos llave foranea de id_trayecto a la tabla viaje
+ALTER TABLE public.viaje
+    ADD CONSTRAINT viaje_trayecto_fkey FOREIGN KEY (id_trayecto)
+    REFERENCES public.trayecto (id) MATCH SIMPLE
+    ON UPDATE CASCADE
+    ON DELETE CASCADE
+    NOT VALID;
+
+-- Agregamos llave foranea de id_pasajero a la tabla viaje
+ALTER TABLE public.viaje
+    ADD CONSTRAINT viaje_pasajero_fkey FOREIGN KEY (id_pasajero)
+    REFERENCES public.pasajero (id) MATCH SIMPLE
+    ON UPDATE CASCADE
+    ON DELETE CASCADE
+    NOT VALID;
+
+-- Para borrar una llave foranea por si tienes algun error
+ALTER TABLE public.viaje DROP CONSTRAINT viaje_trayecto_fkey;
+
+===========================
+
+
+
+
+ALTER TABLE public.viaje
+   ADD CONSTRAINT viaje_pasajero_fkey FOREIGN KEY (id_pasajero)
+   REFERENCES public.pasajero (id) MATCH SIMPLE
+    ON UPDATE CASCADE
+    ON DELETE CASCADE
+    NOT VALID;
+
+
+Si se borra estacion se borra los trayectos que hacen referencia
+
+ALTER TABLE public.trayecto
+    ADD FOREIGN KEY (id_estacion) REFERENCES public.estacion (id) MATCH SIMPLE
+    ON UPDATE CASCADE
+    ON DELETE CASCADE
+    NOT VALID;
+
+
+
+Si borra tren borra los trayectos que tenian ese tren
+
+ALTER TABLE public.trayecto
+    ADD FOREIGN KEY (id_tren)  REFERENCES public.tren (id) MATCH SIMPLE
+    ON UPDATE CASCADE
+    ON DELETE CASCADE
+    NOT VALID;

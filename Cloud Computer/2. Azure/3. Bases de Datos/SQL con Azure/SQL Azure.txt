@@ -1,0 +1,29 @@
+¿De qué producto diseñado para servidores bajo premisa viene SQL Azure? sql server
+  
+Antes de crear una base de datos, ¿qué necesitas tener creado? Un servidor sql
+
+¿Qué herramienta de SQL se encarga de filtrar el acceso a SQL por IP? Firewall
+
+¿Cómo se llama la herramienta para realizar operaciones desde el portal? Editor de consultas
+
+¿extensión de VSCode para hacer consultas a SQL? mssql
+
+¿Cuál es el significado de CRUD? Create Read Update Delete
+
+¿Cómo se escribe el comando para crear una Web API en .NET Core? dotnet new webapi
+
+¿Cuál es la función principal del modelo? Modelar la información recibida por la base de datos.
+
+¿Qué clase se encarga de arrancar el proyecto y configurar la conexión a la base de datos? Startup.cs
+
+¿Qué comando de EntityFramework se encarga de actualizar las acciones en la base de datos? dotnet ef database update
+
+¿Para qué sirve un destructor en C#? Para liberar recursos de la memoria.
+
+¿Qué comando de .NET Core debes usar para publicar tu aplicación? dotnet publish
+
+¿Qué formato de archivo te devuelve tu aplicación en cada operación? JSON
+
+¿Cuál es la extensión de URL que necesitas para poder acceder a tu controlador? api/Contact
+
+¿Cómo se llama el lenguaje de consultas integradas de C#? LINQ

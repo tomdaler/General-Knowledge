@@ -1,0 +1,84 @@
+¿Qué tipo de bases de datos se implementaron primero?
+Basadas en texto.
+
+En la implementación, ¿a qué equivalen las relaciones?
+Intercambio de llaves.
+
+¿Cuál de las siguientes es una de las sentencias principales de SQL estándar?
+GROUP BY
+
+¿De qué se encarga la ciencia de datos?
+Todas las anteriores.
+- TRansformar datos con pipelines
+- Presentar datos en dashboards
+- ETL
+
+¿Cuál de los siguientes no se considera típicamente parte de un equipo de datos?
+Mapeador de datos.
+
+
+¿Cuál es una ventaja de usar Python como lenguaje de datos?
+Ayuda con estructuras de datos no tabulares.
+
+
+VERDADERO
+---------
+¿PostgreSQL tiene un lenguaje que es superset del estándar SQL? Verdadero
+El lenguaje PLPSQL ayuda a la ciencia de datos porque ayuda a transformar los datos a un formato presentable. Verdadero
+
+
+FALSO
+-----
+La presentación de los datos no se debe tomar en cuenta hasta el momento de la ejecución
+¿La sentencia WITH es parte del estándard SQL?
+¿Un equipo orientado a datos debe estar compuesto de varios Científicos de Datos? FALSO
+Solamente utilizamos SQL Estándard para obtener todos los datos del Top 10. Falso
+PostgreSQL utiliza solamente SQL y PLPGSQL FALSO
+
+
+Las particiones nos permiten: Acelerar búsquedas por rango.
+
+¿Cuál de los siguientes es un dato geográfico válido por si mismo? País.
+
+¿Cuál es la principal ventaja de los datos en el tiempo? Se pueden encontrar tendencias con facilidad.
+
+Es un ejemplo de programa de visualización de datos: Tableau
+
+¿Cuál de las siguientes es una ventaja de las RDB? Son multiproposito
+
+Para actualizar los precios es necesario usar: Triggers y S.P.
+
+¿Por qué es dificil trabajar con objetos para una RDB?
+El objeto se guarda y se busca como un string complejo
+
+
+DIFICILES
+
+¿Cuál es la principal dificultad de lidiar con datos no primitivos?
+Son dificiles de indexar/buscar
+
+¿Cómo se representa una relación muchos a muchos en una base de datos?
+Una tabla tansitoria
+
+Las Window Functions nos permiten:
+Hacer calculos del dataset relacionado con el registro individual
+x Obtener informacion estadistica de toda la tabla
+x Llamar funciones que usan la ventana actual
+x Hacer agregaciones de todo el dataset
+
+
+¿Cuál Window Function nos ayuda a tener el lugar del row actual en el dataset sin repetir valores?
+dense_rank
+
+
+¿Cuál es la principal función de la aplicación de la cienca de datos?
+Tomar decisiones basadas en datos
+
+
+¿Qué ventaja tienen los stored procedures?
+Son reutilizables
+
+
+La agregacion de datos nos ayuda a
+Obtener resultados sumarizados
+
