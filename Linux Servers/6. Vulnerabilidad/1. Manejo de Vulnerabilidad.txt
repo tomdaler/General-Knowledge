@@ -1,0 +1,39 @@
++Entendiendo la gestión de vulnerabilidades++
+
+Malas prácticas
+---------------
+- Desactivar el usuario root
+- No usar login con usuario y password (sin ssh)
+- No validar la versión de software usada
+- Utilizar comandos r* o telnet
+- No identificar los servicios y puertos abiertos en el S.O
+- No gestionar correctamente los permisos de los usuarios
+
+
+Importante es verificar las actualizaciones de seguridad y realizar la instalación de las mismas.
+
+En CentOS:
+----------
+yum check-update --security
+yum update security
+
+En Ubuntu Debian:
+-----------------
+apt update
+apt upgrade
+
+https://www.wiley.com/legacy/compbooks/negus/rhbf2/r-commands.html
+
+
+Una superficie de ataque 
+Es el conjunto de datos conocidos o vulnerabilidades que pueden ser explotados por un atacante informático.
+
+
+Software útil para la gestión de vulnerabilidades
+Lynis: Analiza nuestro servidor y nos da recomendaciones
+
+
+Manuales y frameworks útiles para la seguridad de nuestro servidor
+
+SCAP: El Security Content Automation Protocol es un conjunto de reglas sobre la expresión y manipulación de información relacionada con configuraciones y fallos.
+OWASP: El Open Web Application Security Project es un proyecto de código abierto destinado a pelear contra la inseguridad informática

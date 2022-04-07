@@ -1,0 +1,6 @@
+
+install nginx
+https://garywoodfine.com/how-to-install-nginx-on-raspberry-pi/
+
+install nodejs
+https://www.makersupplies.sg/blogs/tutorials/how-to-install-node-js-and-npm-on-the-raspberry-pi

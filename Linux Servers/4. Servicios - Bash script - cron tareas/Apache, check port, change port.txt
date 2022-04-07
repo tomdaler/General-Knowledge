@@ -1,0 +1,46 @@
+
+Task: Change Apache port
+
+Open /etc/apache2/ports.conf file, enter:
+
+sudo vi /etc/apache2/ports.conf
+
+To make the server accept connections on both port 8010, enter:
+
+Listen 8010
+
+To make the server accept connections on both port 80 and port 8010, use:
+
+Listen 80
+Listen 8010
+
+Task: Accept connections on specific IP / interface port
+
+You need to use network interfaces IP address. For example, to make the server accept connections on IP 202.54.1.2 and port 80, enter:
+
+Listen 202.54.1.2:80
+
+To make the server accept connections on two specified interfaces and port numbers, enter:
+
+Listen 202.54.2.1:80
+Listen 202.54.2.5:8010
+
+Save and close the file. Restart Apache 2 webserver:
+# /etc/init.d/apache2 restart
+
+OR
+
+$ sudo /etc/init.d/apache2 restart
+
+How do I verify port and IP binding working ?
+
+Use netstat command to find out if Apache is listening on a specific port or not, use:
+
+netstat -tulpn
+netstat -tulpn | grep :80
+netstat -tulpn | grep :8010
+netstat -tulpn| grep 202.54.1.2:80
+
+Sample output:
+
+tcp        0      0 202.54.1.2:80            0.0.0.0:*               LISTEN     19306/apache2

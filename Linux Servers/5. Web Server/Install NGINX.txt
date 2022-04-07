@@ -1,0 +1,32 @@
+sudo apt-get install nginx
+
+sudo /etc/init.d/nginx start
+
+Check by typing your ip
+
+http://192.168.0.7
+
+You should see the default nginx test page.
+
+hostname -I
+
+Change the default nginx default web page 
+
+sudo nano /var/www/html/index.html
+
+HTML
+<html>
+    <body>
+        <h1>Boo!</h1>
+    </body>
+</html>
+
+
+The nginx test page we seen earlier is actually named index.nginx-debian.html
+
+cd /var/www/html
+ls
+
+index.html  
+index.nginx-debian.html
+

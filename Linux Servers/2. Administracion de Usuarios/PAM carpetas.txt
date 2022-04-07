@@ -1,0 +1,11 @@
+
+
+PAM TIENE 3 CARPETAS
+ls /etc/pam.d              todas las configuraciones que puedes hacerle a PAM
+ls /lib/lib64/security/    liberias, accesos de PAM
+ls /etc/security/          cambios de configuracion que tomaria PAM
+
+
+Asignar permisos de usar ssh 
+vi /etc/security/time.conf
+        

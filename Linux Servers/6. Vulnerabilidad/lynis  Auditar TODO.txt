@@ -1,0 +1,11 @@
+Realiza un escaneo del sistema operativo, mostrándonos sugerencias y el estado de peligro de ciertos detalles en nuestra distribución
+
+sudo apt install lynis
+sudo lynis audit system
+
+
+Lecturas recomendadas
+https://www.open-scap.org/
+
+Security Auditing and Compliance Solutions - CISOfy
+https://cisofy.com/

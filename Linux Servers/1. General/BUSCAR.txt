@@ -1,0 +1,97 @@
+find /var/log/ -name "*.log"             archivos directorios que tengan .log
+find /var/log/ -iname "*.LOG" -type f    archivos .log .LOG
+find /var/log/ ! -name "*.log"           los que NO tienen .log   
+find /etc/ -mtime 10                     los que tuvieron cambios en los ultimos 10 minutos
+
+
+grep "error" /var/log/                       buscar palabra error en directorio
+awk '{print $1}' /var/log/nginx/access.log   las direcciones (field 1) que accedieron al sitio
+awk '{print $1}' /var/log/nginx/access.log  | sort | uniq -c   group by
+awk '{print $2}' /var/log/nginx/access.log  | sort | uniq -c   un group by
+
+
+
+find [ruta]: Buscar algo en el sistema operativo.
+
+-type: Indica que tipo estamos buscando; archivos, directorios y enlaces
+-name: Indica el nombre de lo que estamos buscando
+-iname: Indica el nombre de lo que estamos buscando, pero sin tener en cuenta mayúsculas y minúsculas
+!: Niega la expresión que buscamos (es decir, busca lo contrario)
+-mtime: Muestra archivos con cambios en los últimos n minutos
+grep [string] [archivo]: Busca una cadena de caracteres o expresión regular en un archivo determinado. Si ejecutamos por ejemplo algo como comando | grep [string] vamos a filtrar el resultado de un comando por la cadena o regex que especifiquemos
+awk: Es un lenguaje que nos ayuda a filtrar patrones en un archivo, organizarlos y darles formato
+
+
+find /var/log/ -iname "*.log" -type f: Muestra los archivos de log que tenemos en el sistema
+sudo find /etc/ -mtime 10 2: Muestra los archivos de configuración que tuvieron salidas de error en los últimos diez minutos
+awk '{print $1}' /var/log/nginx/access.log | sort | uniq -c | sort -nr: Muestra las IP’s que se conectaron con nuestro servidor nginx
+awk '{print $9}' /var/log/nginx/access.log | sort | uniq -c | sort -nr: Muestra los errores que surgieron en nuestro servidor nginx
+
+Para el comando sudo find /etc/ -mtime 10 2> /dev/null, te falta una parte y adicional es para que no muestre los error ya que lo direcciona hacia un agujero negro
+
+
+$ find RUTA type TIPO (Tipo de archivo - f para files)
+
+// ejemplo
+$ find /etc f
+
+Buscar logs
+
+// En la ruta de logs busque todos los logs y que sean archivos
+$ find /var/log/ -name "*.log" -type f
+
+Para que no distinga de mayúsculas y minúsculas
+
+$ find /var/log/ -iname "*.LOG" -type f
+
+Todos los archivos que no tengan extensión .log
+
+$ find /var/log/ ! -iname "*.LOG" -type f
+
+Archivos modificados en el último tiempo (10 minutos)
+
+$ sudo find /etc/ -mtime 10
+
+Para hacer una redirección
+
+$ sudo find /etc/ -mtime 10 2> /dev/null (el número 2 es la salida de error, a continuación se muestran las salidas de errores que existen)
+0 -> Archivos de Entrada
+1 -> Archivos de Salida
+2 -> Archivos de Error
+
+
+Buscar una palabra especifica sobre un archivo
+
+$ grep "server" /etc/nginx/sites-available/default
+Ver los logs de nginx, para saber cuales son las IP’s que se conectan a mi sitio
+
+$ awk '{print $1}' /var/log/nginx/access.log
+El anterior caso pero organizado y únicamente de la salida anterior (es como si las agrupara)
+
+$ awk '{print $1}' /var/log/nginx/access.log | sort | uniq -c
+El anterior caso que las redirija por el número de veces que han accedido.
+
+awk '{print $1}' /var/log/nginx/access.log | sort | uniq -c | sort -nr
+Ver errores en el servidor
+
+awk '{print $9}' /var/log/nginx/access.log | sort | uniq -c | sort -nr
+La respuesta del anterior comando es
+
+6 200
+5 404
+1 304
+El número depende de la respuesta del servidor, el 200 esta ok y el 404 es no encontrado.
+
+
+find /etc -type f
+ls -l /etc
+find /var/log/ -name "*.log" -type f
+find /var/log/ -iname "*.LOG" -type f
+find /var/log/ ! -iname "*.LOG" -type f
+sudo find /etc/ -mtime 10
+find /etc/ -mtime 10000 2> /dev/null
+grep "server" /etc/nginx/sites-available/default
+awk '{print $1}' /var/log/ngnix/access.log
+awk '{print $1}' /var/log/ngnix/access.log | sort | uniq -c
+awk '{print $1}' /var/log/ngnix/access.log | sort | uniq -c | sort -nr
+awk '{print $9}' /var/log/ngnix/access.log | sort | uniq -c | sort -nr

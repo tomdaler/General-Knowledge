@@ -1,0 +1,46 @@
+Bash
+
+shell de UNIX y el intérprete de comandos por defecto en la mayoría de distribuciónes GNU/Linux. 
+Se pueden crear scripts, los cuales por convención terminan con la extensión .sh
+
+Definición de un intérprete para que lo que sigue se ejecute con Bash
+#!/bin/bash
+
+Definición de una variable
+VARIABLE = "Hola mundo"
+
+Impresión en pantalla
+echo $VARIABLE
+
+Creación de un comentario
+# Comentario cualquiera
+
+
+env: Muestra las variables del sistema operativo
+Estas variables pueden ser utilizadas en los scripts
+
+Variables de entorno
+$PATH: Guarda las rutas donde se ubican los archivos binarios que pueden ejecutarse directamente en la consola
+
+
+Scripts útiles
+==============
+
+#!/bin/bash
+# Verificar la cantidad de espacio en el S.O
+
+CWD=$(pwd)
+FECHA=$(date +"%F%T")
+echo $FECHA
+
+df -h | grep /dev > uso_disco_"$FECHA".txt
+df -h | grep /dev/sda2 >> uso_disco_"$FECHA".txt
+
+echo "Se ha generado un archivo en la ubicación $CWD"
+
+===============
+Permisos
+chmod +x archivo.sh
+./archivo.sh
+
+

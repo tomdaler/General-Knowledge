@@ -1,0 +1,53 @@
+
+python longrunningscript.py &
+[1] 1950
+
+“1950” is the pid or “Process Id” of this python process. Take note of this as we will use it in a step 7.
+
+Que se ejecuta en background
+
+jobs
+
+[1]+ ejecutando comando
+
+El PID siempre es 1950
+
+List all running process’s
+
+pi@raspberrypi ~ $ ps aux
+[... Truncated ...]
+root  1950 4.7 5.4 15580 10280 ? S 00:05 21:23 python longrunningscript.
+[... Truncated ...]
+
+ps -ef | pi
+
+
+jobs
+
+sudo kill -9 1950
+
+3162
+
+
+EN BACKGROUND
+
+nohup rpi-rf_receive -g 20 & > archivo.txt
+
+Y con otro programa en python se utiliza tail -n 1 para tomar la ultima linea y darle parse al ultimo dato
+
+O en python se genera archivo
+
+import os 
+
+cwd = os.path.dirname(os.path.abspath(__file__)) 
+text_file = open(os.path.join(cwd, "folderName", "textFile.txt"), "w")
+
+
+
+Si estás corriendo un proceso en primer plano (monopolizando el uso del terminal) lo pausas primero con CTRL Z, luego pones el comando 
+
+bg %1
+
+Con esto reactivas el proceso y lo mandas a segundo plano, liberando así la terminal para seguir trabajando. 
+
+También está el comando fg (foreground) que funciona opuesto al bg (background).

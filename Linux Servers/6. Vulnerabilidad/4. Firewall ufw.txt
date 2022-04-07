@@ -1,0 +1,60 @@
+
+Muestra estado, activo, inactivo
+sudo ufw status
+
+
+Habilita un puerto
+sudo ufw allow 22 comment 'Habilita puerto ssh, el 22'
+
+Enciende el firewall
+sudo ufw enable
+
+
+Si firewall activo muestra reglas NUMERADAS
+sudo ufw status numbered
+
+
+Borra una regla
+sudo ufw delete <numero_de_regla>
+
+
+Restringe las direcciones ip que pueden conectarse a cierto puerto.
+Protocolo usualmente es tcp 
+sudo ufw allow from <IP> proto <protocolo> to any port <puerto> 
+
+SSH trabaja con el protocolo TCP, ssh en puerto 22
+Por ello el commando dice que 192.168.1.20 puede hacer ssh
+sudo ufw allow from 192.168.1.20 proto tcp to any port 22
+
+
+Elimina todas las reglas
+sudo ufw reset
+
+
+Recomendación:
+--------------
+Debian
+sudo apt-get install ufw
+
+Active firewall
+sudo ufw enable
+
+Abrir al público únicamente el puerto 80 (http). 
+sudo ufw allow 80 comment 'Habilita puerto publico http'
+
+Abrir al público únicamente el puerto 443 (https). 
+sudo ufw allow 443 comment 'Habilita puerto publico https'
+
+Habilita un puerto ssh para todos
+sudo ufw allow 22 comment 'Habilita puerto ssh, el 22'
+
+O
+
+Permitir a una ip que pueda entrar al puerto 22 (ssh)
+sudo ufw allow from 192.168.1.20 proto tcp to any port 22
+
+Verifique que reglas instaladas
+sudo ufw status numbered
+
+Borra una regla
+sudo ufw delete <numero_de_regla>
