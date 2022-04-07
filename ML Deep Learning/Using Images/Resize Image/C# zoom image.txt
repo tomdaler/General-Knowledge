@@ -1,0 +1,48 @@
+
+
+
+One solution is:
+
+OPTION 1
+========
+
+Create new image of the desired size (for example 200% or 50% of original image size)
+Draw original image to new image using Graphics.DrawImage(Image, Rectangle);, which draws the given image to the new image at the given position with the given size
+Set new image as source for the PictureBox
+
+OPTION 2
+========
+
+Bitmap BM = originalBitmap;
+int zoomFactor = 200;
+
+Size newSize = new Size((int)(BM.Width * zoomFactor), (int)(BM.Height * zoomFactor));
+Bitmap bmp = new Bitmap(BM, newSize);
+
+
+OPTION 3
+========
+
+myWebBrowser.Navigate(@"C:\myimage.png");
+myWebBrowser.Select(); 
+
+//Sends the control + key combo, causing the browser to zoom 
+SendKeys.Send("^{+}"); 
+
+
+OPTION 4
+========
+
+For Zooming In :
+
+pictureBox1.Top= (int)(pictureBox1.Top - (pictureBox1.Height * 0.025));
+pictureBox1.Left = (int)(pictureBox1.Left - (pictureBox1.Width * 0.025));
+pictureBox1.Height = (int)(pictureBox1.Height + (pictureBox1.Height* 0.05));
+pictureBox1.Width = (int)(pictureBox1.Width + (pictureBox1.Width * 0.05));
+
+For Zooming Out :
+
+pictureBox1.Top = (int)(pictureBox1.Top + (pictureBox1.Height * 0.025));
+pictureBox1.Left = (int)(pictureBox1.Left + (pictureBox1.Width * 0.025));
+pictureBox1.Height = (int)(pictureBox1.Height - (pictureBox1.Height* 0.05));
+pictureBox1.Width = (int)(pictureBox1.Width - (pictureBox1.Width * 0.05));

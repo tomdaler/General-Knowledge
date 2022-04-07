@@ -1,0 +1,5 @@
+#cambiar tamano
+
+image = Image.open('img-2.jpg')
+new_image = image.resize((400, 200))
+new_image.save('new_image.jpg')
