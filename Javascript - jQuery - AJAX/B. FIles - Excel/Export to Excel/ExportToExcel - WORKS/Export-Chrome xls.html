@@ -1,0 +1,52 @@
+<html>
+
+<head>
+
+  <script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+
+  <script type="text/javascript">
+ 
+  function TableToExcel(tableid)
+  { 
+      window.open('data:application/vnd.ms-excel,' + encodeURIComponent($('#myDiv').html()));
+      e.preventDefault();          
+  }
+ 
+</script>
+
+</head>
+
+<body>
+ 
+<form id="form1" runat="server">
+ 
+  <div id="myDiv">
+ 
+   <table id='metrics'>
+            <tr>
+                <th>Primera columna</th>
+                <th>Segunda columna</th>
+                <th>Tercera columna</th>
+            </tr>
+            <tr>
+                <td>row1 Col1</td>
+                <td>row1 Col2</td>
+                <td>row1 Col3</td>
+            </tr>
+            <tr>
+                <td>row2 Col1</td>
+                <td>row2 Col2</td>
+                <td>row2 Col3</td>
+            </tr>
+            <tr>
+                <td>row3 Col1</td>
+                <td>row3 Col2</td>
+                <td>row3 Col3</td>
+            </tr>
+        </table>
+
+   <input type="button" id="btnExport" value="Export" onclick="TableToExcel('metrics');" />
+ 
+  </div>
+</body>
+</html>

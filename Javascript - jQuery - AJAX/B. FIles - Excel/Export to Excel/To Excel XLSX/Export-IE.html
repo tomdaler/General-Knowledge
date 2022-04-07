@@ -1,0 +1,74 @@
+<html>
+
+<head>
+
+  <script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+
+  <script type="text/javascript">
+ 
+  function TableToExcel(tableid)
+  { 
+       var id = $('[id$="' + tableid + '"]'); 
+       var strCopy = $('<div></div>').html(id.clone()).html(); 
+       alert(strCopy);
+
+       var objExcel = new ActiveXObject ("Excel.Application");
+       objExcel.visible = false;
+
+       var objWorkbook = objExcel.Workbooks.Add();
+       var objWorksheet = objWorkbook.Worksheets(1);
+
+       objWorkbook.Worksheets(1).Activate;
+       objWorksheet.name = "Export";
+       objWorksheet.Paste;
+       objWorksheet.columns.autofit;
+       window.clipboardData.setData("Text",strCopy); 
+
+      //For Expand environment
+       var wshShell = new ActiveXObject("WScript.Shell");
+       var userProfile = wshShell.ExpandEnvironmentStrings("%USERPROFILE%\\Downloads\\Export.xls");
+
+      //For Save
+       objWorkbook.Worksheets(1).SaveAs(userProfile);
+       alert('File exported to '+userProfile);
+
+  }
+ 
+</script>
+
+</head>
+
+<body>
+ 
+<form id="form1" runat="server">
+ 
+  <div id="myDiv">
+ 
+   <table id='metrics'>
+            <tr>
+                <th>Primera columna</th>
+                <th>Segunda columna</th>
+                <th>Tercera columna</th>
+            </tr>
+            <tr>
+                <td>row1 Col1</td>
+                <td>row1 Col2</td>
+                <td>row1 Col3</td>
+            </tr>
+            <tr>
+                <td>row2 Col1</td>
+                <td>row2 Col2</td>
+                <td>row2 Col3</td>
+            </tr>
+            <tr>
+                <td>row3 Col1</td>
+                <td>row3 Col2</td>
+                <td>row3 Col3</td>
+            </tr>
+        </table>
+
+   <input type="button" id="btnExport" value="Export" onclick="TableToExcel('metrics');" />
+ 
+  </div>
+</body>
+</html>

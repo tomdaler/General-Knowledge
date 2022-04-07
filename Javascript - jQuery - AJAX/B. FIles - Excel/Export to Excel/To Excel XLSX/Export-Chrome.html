@@ -1,0 +1,75 @@
+<html>
+
+<head>
+  
+  <script type="text/javascript" src="xlsx.js"></script>
+  <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+
+  <script type="text/javascript">
+ 
+  function ExportToExcel() {
+
+    var file = { worksheets: [[]], // worksheets has one empty worksheet (array)
+       creator: 'John Smith', 
+       created: new Date('8/16/2012'),
+       lastModifiedBy: 'Larry Jones', 
+       modified: new Date(),
+       activeWorksheet: 0
+    }, w = file.worksheets[0]; // cache current worksheet
+  
+   w.name = "export.xlsx";
+
+
+   $('#Table1').find('tr').each(function() {
+
+       var r = w.push([]) - 1; // index of current row
+       $(this).find('input').each(function() { w[r].push(this.value); });
+   });
+
+   alert('222');
+
+   window.location = xlsx(file).href();
+
+   alert('Done');
+
+};
+
+ 
+</script>
+
+</head>
+
+<body>
+ 
+<form id="form1" runat="server">
+ 
+  <div id="myDiv">
+ 
+   <table id='Table1'>
+            <tr>
+                <th>Primera columna</th>
+                <th>Segunda columna</th>
+                <th>Tercera columna</th>
+            </tr>
+            <tr>
+                <td>row1 Col1</td>
+                <td>row1 Col2</td>
+                <td>row1 Col3</td>
+            </tr>
+            <tr>
+                <td>row2 Col1</td>
+                <td>row2 Col2</td>
+                <td>row2 Col3</td>
+            </tr>
+            <tr>
+                <td>row3 Col1</td>
+                <td>row3 Col2</td>
+                <td>row3 Col3</td>
+            </tr>
+   </table>
+
+   <input type="button" id="save" onclick="ExportToExcel();" value="Export"/>
+ 
+  </div>
+</body>
+</html>

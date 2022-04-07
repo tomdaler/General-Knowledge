@@ -1,0 +1,26 @@
+<HTML>
+ <Head>
+ <Script language=JavaScript>
+
+ function openDialog(){
+
+ if (confirm('This will allow you to save this page, but NOT any of the images. To save the complete page you must click File | Save As. Continue to save without images?'))
+ {
+ htmlBtn.disabled = true;
+ document.execCommand("SaveAs",true,"C:\\My Documents\\Saved Content.html");
+ htmlBtn.disabled = false; 
+ }
+ }
+
+ </Script>
+ </Head>
+ <Body>
+ <Div align=center id=Sect1>
+ <Img Src='1.jpg' id=IMG1>
+ <p> This is some text</p>
+ </Div>
+ <center>
+ <input type=button id=htmlBtn value='Save as an HTML document' onClick="openDialog()">
+ </center>
+ </Body>
+ </HTML> 

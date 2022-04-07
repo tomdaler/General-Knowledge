@@ -1,0 +1,63 @@
+<html lang="es">
+
+<head>
+    <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+</head>
+ 
+<body>
+    <div id="dvData">
+        <table>
+            <tr>
+                <th>Primera columna</th>
+                <th>Segunda columna</th>
+                <th>Tercera columna</th>
+            </tr>
+            <tr>
+                <td>row1 Col1</td>
+                <td>row1 Col2</td>
+                <td>row1 Col3</td>
+            </tr>
+            <tr>
+                <td>row2 Col1</td>
+                <td>row2 Col2</td>
+                <td>row2 Col3</td>
+            </tr>
+            <tr>
+                <td>row3 Col1</td>
+                <td>row3 Col2</td>
+                <td>row3 Col3</td>
+            </tr>
+        </table>
+    </div>
+    <br/>
+    <input type="button" id="btnExport" value="Export into Excel" />
+
+
+ 
+   <iframe id="exportIF" style="display: none"></iframe>
+
+    <script>
+    $("#btnExport").click(function(e) {
+
+       // FOR IE
+       if (window.navigator.userAgent.indexOf("MSE") > 0
+       ||  window.navigator.userAgent.match(/Trident.*rv\:11\./) )
+          {
+             exportIF.document.open("txt/html","replace");
+             exportIF.document.write( $('#dvData').html() );
+             exportIF.document.close();
+             exportIF.focus();
+             sa = exportIF.document.execCommand("SaveAs",true,"DataExport.xls");
+             return;
+          }
+
+        // FOR OTHER BROWSERS
+        var tipo = 'data:application/vnd.ms-excel,';
+        window.open(tipo + encodeURIComponent($('#dvData').html()));        
+        e.preventDefault();
+    });
+    </script>
+
+ 
+</body>
+</html>

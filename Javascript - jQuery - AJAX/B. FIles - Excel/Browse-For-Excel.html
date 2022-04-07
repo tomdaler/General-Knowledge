@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  
+  <title> For excel files </title>
+    
+  <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.6.3/jquery.min.js'></script> 
+ 	
+  <style type='text/css'>
+ 
+     p{background-color:tan;}
+
+     input{margin-bottom:1em;}
+
+  </style>
+  
+<script type='text/javascript'>
+   window.addEvent('load', function() {
+}); 
+
+
+ function LoadData() {
+      var ctrl = document.getElementById('fileSelect').value;            
+      alert(ctrl);
+}
+
+
+
+</script>
+
+
+</head>
+<body>
+  <p>Show .xls, .xlsx, files...</p>
+<input type="file" accept="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel" ID="fileSelect" runat="server" />  
+
+  <br />
+    <br />
+    <input id='BtnUnlock2' type="button" onclick="LoadData(); " 
+       style="width:83px;height:31px; color: black; font: bold 17px Arial" value='LOAD'/>
+
+ 
+</body>
+
+</html>
+

@@ -1,0 +1,76 @@
+<html lang="es">
+
+<head>
+    <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+
+<script src="/Content/Json/gridData.js"></script>
+<script src="/Content/js/export/FileSaver.min.js"></script>
+
+<script src="tableExport.js"></script>
+<script src="jquery.base64.js"></script>
+<script src="base64.js"></script>
+<script src="jspdf.js"></script>
+<script src="sprintf.js"></script>
+
+
+</head>
+ 
+<body>
+    <div id="dvData">
+        <table>
+            <tr>
+                <th>Primera columna</th>
+                <th>Segunda columna</th>
+                <th>Tercera columna</th>
+            </tr>
+            <tr>
+                <td>row1 Col1</td>
+                <td>row1 Col2</td>
+                <td>row1 Col3</td>
+            </tr>
+            <tr>
+                <td>row2 Col1</td>
+                <td>row2 Col2</td>
+                <td>row2 Col3</td>
+            </tr>
+            <tr>
+                <td>row3 Col1</td>
+                <td>row3 Col2</td>
+                <td>row3 Col3</td>
+            </tr>
+        </table>
+    </div>
+    <br/>
+
+    <input type="button" id="btnExport" value="PDF" />
+    <br/>
+    <input type="button" id="btnExport2" value="Excel" />
+ 
+    <script>
+
+    $("#btnExport").click(function(e) {
+
+                    $('#dvData').tableExport({
+                        type: 'pdf', escape: 'false',
+                        tableName: "shieldui-grid",
+                        pdfFontSize: 8,
+                        pdfLeftMargin: 10
+                    });
+    });
+
+    $("#btnExport2").click(function(e) {
+
+                    $('#dvData').tableExport({
+                        type: 'excel', escape: 'false',
+                        tableName: "shieldui-grid",
+                        pdfFontSize: 8,
+                        pdfLeftMargin: 10
+                    });
+
+    });
+
+
+    </script>
+ 
+</body>
+</html>

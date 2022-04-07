@@ -1,0 +1,24 @@
+
+function populateAgentsTab()
+{
+    var skillsId = JSON.stringify($('#selectSkills').val());
+     if ($('#selectSkills').val()){
+            $.ajax({
+                url: "/supervisor/getAgentsData",
+                data: {skillsId: skillsId},
+                method: "POST"
+            }).done(function(html) {
+                $("#agentsContent").html(html);
+            });
+            return true;
+}
+
+
+
+$.ajax({   url: '/supervisor/getAgentsData',
+   data: {skillsId: '[\"4\"]'},
+         method: 'POST'
+    }).done(function(html) {
+        $('#agentsContent').html(html);
+       });
+return true;

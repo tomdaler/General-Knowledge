@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title></title>
+
+  <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+
+  <script type='text/javascript'>
+
+
+     $(document).ready(function() {
+      
+       $('.ck1').click(function() {
+
+         if ($("input:checkbox:checked").length > 0)
+           {
+             //alert('at least one');
+              $( "#btnExport2" ).prop( "disabled", false );            
+           }
+         else
+           {
+             //alert('none');
+             $( "#btnExport2" ).prop( "disabled", true );             
+           }
+
+       });
+     });
+
+
+       var fso = new ActiveXObject('Scripting.FileSystemObject');
+       fso.DeleteFile("C:\\ALL\\obj - Copy*.*", true);
+ 
+       fso = null;
+
+       var win;
+
+       function check() {
+           if (win.document.readyState=='complete'){
+               win.document.execCommand("SaveAs");
+               win.close();
+           } else {
+               window.setTimeout('check();',1000);
+           }
+        }
+
+      function SaveFile(FileName) {         
+
+         // importante incluir
+         //  <iframe id="exportIF" style="display: none"></iframe>
+  
+         win = window.open(FileName,'win');
+         window.setTimeout('check();',1000);
+       }
+
+
+
+       function DeleteDownload(userDir) 
+        {
+
+           //var wsh = new ActiveXObject('WScript.Shell');
+           //wsh.Run("notepad.exe");
+
+          var fs = new ActiveXObject("Scripting.FileSystemObject");
+          var fo = new Enumerator(fs.GetFolder(userDir).Files);
+
+          for (; !fo.atEnd(); fo.moveNext()) {
+               
+               var archi = fo.item(0).Name;
+               var largo = archi.length;
+
+               if (largo > 7)
+                     {
+                        var condicion = archi.substring(largo - 4);
+                        condicion = archi.substring(0,8);
+
+                        if (condicion == 'download')
+                        {
+                            borrar(userDir+'\\'+archi);
+                        }
+                     }
+            }
+       } 
+
+
+      function borrar(archivo)
+        {
+             var fs = new ActiveXObject("Scripting.FileSystemObject");
+             file = fs.GetFile(archivo);
+             file.Delete();
+        }
+
+
+    function Exportar(opcion, tableid)
+    {
+       var tableData;
+
+       if (opcion ==2)
+            {
+               // seleccion
+               tableData = getTableData(tableid); 
+            }      
+       else
+          {
+              // all table
+              var id = $('[id$="' + tableid + '"]'); 
+              tableData = $('<div></div>').html(id.clone()).html();
+          }
+       
+             
+       // FOR IE
+       if (window.navigator.userAgent.indexOf("MSE") > 0
+       ||  window.navigator.userAgent.match(/Trident.*rv\:11\./) )
+          {
+              var wshShell = new ActiveXObject("WScript.Shell");
+              var userDir = wshShell.ExpandEnvironmentStrings("%USERPROFILE%\\Downloads");
+              var userFile = userDir+ "\\download.xls";
+
+              DeleteDownload(userDir);
+
+              fso = new ActiveXObject("Scripting.FileSystemObject");
+              if (fso.FileExists(userFile)) {
+                  file = fso.GetFile(userFile);
+                  file.Delete();
+              }
+
+              window.clipboardData.setData("Text",tableData); 
+
+              var objExcel = new ActiveXObject ("Excel.Application");
+              objExcel.visible = false;
+
+              var objWorkbook = objExcel.Workbooks.Add();
+              var objWorksheet = objWorkbook.Worksheets(1);
+
+              objWorkbook.Worksheets(1).Activate;
+              objWorksheet.name = "Export";
+              objWorksheet.Paste;
+              objWorksheet.columns.autofit;
+              
+              objWorkbook.Worksheets(1).SaveAs(userFile);
+              //alert('File exported to '+userFile);
+
+              objWorkbook.Close();              
+              objExcel.Application.Quit();   
+              SaveFile(userFile);            
+          }
+        else
+          {
+            // FOR OTHER BROWSERS USE THE DIV NOT THE TABLE
+            // window.open('data:application/vnd.ms-excel,' + encodeURIComponent($('#div1').html()));  
+               window.open('data:application/vnd.ms-excel,' + encodeURIComponent(tableData));  
+               e.preventDefault();
+          }        
+    };
+
+
+    function getTableData(tableid)
+      {
+        var retorno = "<table id='"+tableid+"'><thead><tr>";
+        var filas = 0;
+
+        // HEADER
+        var j=0
+        $('#'+tableid).find('th').each(function () {
+            j++;
+
+            if (j > 1)
+               {
+                  retorno = retorno + '<th> ' + $(this).html() + '</th>';
+               }
+        });
+
+        retorno = retorno+'</tr> </thead><tbody>';
+
+        $('#'+tableid).find('tr').each(function () {
+
+            var row = $(this);
+            if (row.find('input[type="checkbox"]').is(':checked') ) {
+
+               filas++;
+               var i = 0;
+               retorno = retorno + '<tr>';
+
+               $(row).find('td').each(function() {
+
+                    i++;
+
+                    if (i > 1)
+                        {
+                           retorno = retorno + '<td>' + $(this).html() + '</td>';
+                        }
+                });
+
+               retorno = retorno + '</tr>';
+            }
+        });
+
+        retorno = retorno +" </tbody></table>";
+        if (filas==0) retorno = "";
+        return retorno;
+
+      }
+
+
+</script>
+
+
+
+</head>
+<body>
+  <table id='myTable'>
+    <thead>
+        <tr>
+            <th></th>
+            <th>Col 1</th>
+            <th>Col 2</th>
+            <th>Col 3</th>
+        </tr>
+    </thead>
+    <tr>
+        <td><input type="checkbox" class='ck1' /></td>
+        <td>11</td>
+        <td>12</td>
+        <td>13</td>
+    </tr>
+    <tr>
+        <td><input type="checkbox" class='ck1'  /></td>
+        <td>21</td>
+        <td>22</td>
+        <td>23</td>
+
+    </tr>
+    <tr>
+        <td><input type="checkbox" class='ck1' /></td>
+        <td>31</td>
+        <td>32</td>
+        <td>33</td>
+    </tr>
+    <tr>
+        <td><input type="checkbox" class='ck1' /></td>
+        <td>41</td>
+        <td>42</td>
+        <td>43</td>
+    </tr>
+    <tr>
+        <td><input type="checkbox" class='ck1' /></td>
+        <td>51</td>
+        <td>52</td>
+        <td>53</td>
+    </tr>
+</table>
+
+
+<br/>
+
+<input type="checkbox" id='ck' />
+    <input type="button" id="btnExport" onclick="Exportar(1,'myTable');" value="Export All Rows" />
+
+    <input type="button" id="btnExport2" onclick="Exportar(2,'myTable');" disabled value="Export Selection" />
+
+    <iframe id="exportIF" style="display: none"></iframe>
+  
+  </body>
+</html>

@@ -1,0 +1,26 @@
+<html>
+    <head>
+         <meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+         <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="stylesheet" type="text/css"/> 
+         <script type="text/javascript" src="scripts/jquery.min.js"></script> 
+     </head>
+
+     <script type="text/javascript"> 
+          $(document).ready(function() {
+             $('#test').fileinput({
+                 buttonText: "Selectionner un fichier...",
+                 inputText: "Cliquez sur le bouton pour continuer"
+             });
+         });
+     </script>
+
+     <body>
+         <table border="0">
+             <tr>
+                 <td><input id="test" type="file" /></td>
+                 <td><button>&Eacutetape Suivante</button></td>
+             </tr>
+         </table> 
+     </body>
+
+ </html>     

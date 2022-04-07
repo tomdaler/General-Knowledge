@@ -1,0 +1,30 @@
+<HTML> 
+<HEAD> 
+
+<SCRIPT language="JavaScript">
+
+ function ListFiles() 
+ {
+   // List  contents of the current folder. 
+   // save the file, getCurrentFolder() below or will return an empty string.
+
+    write("The contents of " + getCurrentFolder()); 
+
+    fileName = findFirstFile("*.*"); // Find the first file matching the filter 
+    while(fileName.length) 
+     { 
+         alert(fileName);
+         write(fileName); 
+         fileName = findNextFile();  // Find the next file matching the filter 
+     }
+  }
+
+ </SCRIPT>
+</HEAD>
+
+<BODY>
+<P>
+<SCRIPT language="JavaScript">  ListFiles(); </SCRIPT>
+</P>
+</BODY>
+</HTML> 

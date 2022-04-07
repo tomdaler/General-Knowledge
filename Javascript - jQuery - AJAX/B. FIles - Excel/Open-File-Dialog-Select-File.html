@@ -1,0 +1,22 @@
+<html> 
+ <head> 
+ 	<title>Form upload example</title> 
+ 	<script src='https://ajax.googleapis.com/ajax/libs/jquery/1.6.3/jquery.min.js'></script> 
+ 	<script src='http://www.daimi.au.dk/~u061768/jquery-custom-file-input.js'></script> 
+ </head> 
+ <body> 
+ 	<iframe name='hidden' id='hidden' style='display:none'></iframe> 
+ 	<a href='javascript:void(0)'>click me!</a> 
+ 	<script> 
+ 		$('a').file().choose(function(e, inp) { 
+ 			// we make a hidden form and append it to body. Replace example.com with your server. 
+ 			var form = $('<form method="POST" enctype="multipart/form-data" action="http://example.com" target="hidden"></form>').hide().appendTo('body') 
+  
+ 			inp.attr('name', 'file-upload'); 
+
+                        // its REQUIRED to give the input a name for the browser to submit it 
+ 			form.append(inp).submit(); 
+ 		}); 
+ 	</script> 
+ </body> 
+</html> 

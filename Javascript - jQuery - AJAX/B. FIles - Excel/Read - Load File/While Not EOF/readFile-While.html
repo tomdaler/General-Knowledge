@@ -1,0 +1,51 @@
+<html>
+
+<head>
+
+<script>
+
+
+ function ReadFile() {
+
+   
+   var variable = '[{"Customer":"ROSEMARI_","Document ID":0,"Agent":"MarjulinABBL","Sentences":[{"Tokens":[[{"Count":1,"Token":"i  find  data usage "},{"Count":1,"Token":"web site  uses  most data"}]],"Sentence_ID":0,"Sentiment Polarity":0.5,"Sentence":"how can i find my data usage on my account, i need to know what web site uses the most data. ."},{"Tokens":[[{"Count":1,"Token":"i  find  data usage "},{"Count":1,"Token":"web site  uses  most data"}]],"Sentence_ID":1,"Sentiment Polarity":0.5,"Sentence":"how can i find my data usage on my account online, i need to know what web site uses the most data. ."},{"Tokens":[[{"Count":2,"Token":"i  see  that"},{"Count":1,"Token":"someone  told  me "},{"Count":1,"Token":"websites  consume  most data"}]],"Sentence_ID":2,"Sentiment Polarity":0.5,"Sentence":"i can see that, however i just called and someone at comcast told me i can see what websites or services consume the most data, how do i see that? ."}]},{"Customer":"Alex_","Document ID":1,"Agent":"GloryDBBL","Sentences":[{"Tokens":[[]],"Sentence_ID":0,"Sentiment Polarity":0,"Sentence":"have not received the final bill a month after moving. ."},{"Tokens":[[]],"Sentence_ID":1,"Sentiment Polarity":0,"Sentence":"i am."},{"Tokens":[[]],"Sentence_ID":2,"Sentiment Polarity":0,"Sentence":"thank you. ."}]}]';
+
+   var arr = [];
+   var pos = 0;
+   var i =0;
+   var lar =0;
+   var siga = true;
+
+   while (siga) 
+    {
+      pos = variable.indexOf('\"Sentence\":');
+
+      if (pos>0)
+        {
+             variable = variable.substring(pos+12)
+
+             pos = variable.indexOf('\"}');
+             sentencia = variable.substring(0,pos);
+             alert(sentencia);
+
+             arr[i++]=sentencia;
+             variable = variable.substring(pos);
+        }
+     else
+        siga = false;
+    }
+     
+ }
+
+
+</script>
+
+</head>
+
+<body>
+
+   <button type="button"  onclick="ReadFile()" >Click Me!</button> 
+
+</body>
+
+</html>

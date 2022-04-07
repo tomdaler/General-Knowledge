@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+
+<script>
+
+
+$(document).ready(function(){
+    $("button").click(function(){
+
+        var stuff;
+        $.get('demo_test.txt', function (response) {
+             stuff= response
+             showData(response);
+        });       
+
+        // stuff is undefined because it is asynchonous
+        // when this section is executed, it is not yet loaded file
+
+    });
+});
+
+
+
+var variable;
+
+function showData(data) {
+  var variable = data;
+  alert(data);
+}
+
+
+
+
+</script>
+</head>
+
+<body>
+
+<button>Get External Content</button>
+
+</body>
+</html>

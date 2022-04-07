@@ -1,0 +1,82 @@
+<html lang="es">
+
+<head>
+    <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+
+  
+
+</head>
+ 
+<body>
+    
+ <table id='mytable'>
+    <thead>
+        <tr>
+            <th></th>
+            <th>Col 1</th>
+            <th>Col 2</th>
+            <th>Col 3</th>
+        </tr>
+    </thead>
+    <tr>
+        <td><input type="checkbox" /></td>
+        <td>11</td>
+        <td>12</td>
+        <td>13</td>
+    </tr>
+    <tr>
+        <td><input type="checkbox" /></td>
+        <td>21</td>
+        <td>22</td>
+        <td>23</td>
+
+    </tr>
+    <tr>
+        <td><input type="checkbox" /></td>
+        <td>31</td>
+        <td>32</td>
+        <td>33</td>
+    </tr>
+    <tr>
+        <td><input type="checkbox" /></td>
+        <td>41</td>
+        <td>42</td>
+        <td>43</td>
+    </tr>
+    <tr>
+        <td><input type="checkbox" /></td>
+        <td>51</td>
+        <td>52</td>
+        <td>53</td>
+    </tr>
+</table>
+
+  <br/>
+
+  <input type="button" id="btnExport" value="Export into Excel" />
+
+  <iframe id="exportIF" style="display: none"></iframe>
+
+  <script>
+    $("#btnExport").click(function(e) {
+
+       // FOR IE
+       if (window.navigator.userAgent.indexOf("MSE") > 0
+       ||  window.navigator.userAgent.match(/Trident.*rv\:11\./) )
+          {
+             exportIF.document.open("txt/html","replace");
+             exportIF.document.write( $('#dvData').html() );
+             exportIF.document.close();
+             exportIF.focus();
+             sa = exportIF.document.execCommand("SaveAs",true,"DataExport.xls");
+             return;
+          }
+
+        // FOR OTHER BROWSERS
+        var tipo = 'data:application/vnd.ms-excel,';
+        window.open(tipo + encodeURIComponent($('#dvData').html()));        
+        e.preventDefault();
+    });
+    </script>
+</body>
+</html>

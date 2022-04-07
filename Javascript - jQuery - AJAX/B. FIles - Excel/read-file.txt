@@ -1,0 +1,43 @@
+
+getScriptPath es funcion que devuelve al archivo
+
+
+
+ fh = fopen(getScriptPath(), 0); // Open the file for reading 
+
+ if(fh!=-1) // If the file has been successfully opened 
+ { 
+     length = flength(fh);         // Get the length of the file     
+     str = fread(fh, length);     // Read in the entire file 
+     fclose(fh);                    // Close the file 
+      
+     // Display the contents of the file     
+     write(str);     
+ }
+
+
+
+https://www.nczonline.net/blog/2012/05/15/working-with-files-in-javascript-part-2/
+
+
+var file = 'sss.txt';
+
+var reader = new FileReader();
+reader.onload = function(event) {
+    var contents = event.target.result;
+    console.log("File contents: " + contents);
+};
+
+reader.onerror = function(event) {
+    console.error("File could not be read! Code " + event.target.error.code);
+};
+
+reader.readAsText(file);
+
+
+= = = = = = = 
+
+var reader = new FileReader();
+reader.readAsText('sss.txt');
+
+alert(reader.ToString());

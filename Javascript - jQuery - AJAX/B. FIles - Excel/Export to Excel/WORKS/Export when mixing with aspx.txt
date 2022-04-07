@@ -1,0 +1,32 @@
+function exportToExcelReport() {
+
+    var tab_text = getTableData();
+    if (tab_text == "")
+    {
+        alert('Select at least one row');
+        return;
+    }
+
+    var ua = window.navigator.userAgent;
+    var msie = ua.indexOf("MSIE ");
+    if (msie > 0 || !!navigator.userAgent.match(/Trident.*rv\:11\./)) { // If Internet Explorer
+        exportIF.document.open("txt/html", "replace");
+        exportIF.document.write(tab_text);
+        exportIF.document.close();
+        exportIF.focus();
+        sa = exportIF.document.execCommand("SaveAs", true, "FindLogins.xls");
+    }
+    else {
+        sa = window.open('data:application/vnd.ms-excel,' + encodeURIComponent(tab_text));
+    }
+
+    return (sa);
+}
+
+
+
+HTML
+
+<input type="button" class="marginLeft30" onclick="exportToExcelReport()" id='Export' value="Export" />
+
+<iframe id="exportIF" style="display: none"></iframe>
