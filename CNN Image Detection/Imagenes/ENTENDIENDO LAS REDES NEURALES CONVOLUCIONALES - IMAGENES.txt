@@ -1,0 +1,8 @@
+https://www.youtube.com/watch?v=zfiSAzpy9NM
+
+ANN for image recognition
+
+DISADVANTAGES
+- Too much computation
+- treats local pixels same as pixels far apart
+- sensitive to location of an object in an image
