@@ -1,0 +1,18 @@
+Para modificar las paginas 
+
+- Escoge la maquina virtual
+- Overview
+- Connect 
+- Seccion "Login using VM local account
+	ssh aminespinoza@104.42.114.135
+
+- Va a Terminal
+- Escribe la conexion
+	ssh aminespinoza@104.42.114.135
+
+- Da password
+
+- cd /var/www/html
+- encontrara el archivo indice.html que puede modificar con nano
+
+

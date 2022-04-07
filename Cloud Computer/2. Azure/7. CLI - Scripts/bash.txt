@@ -1,0 +1,13 @@
+cat myscript.sh
+#! /bin/bash
+az login
+az account list --output table >> ~/azure.log
+`az group create --name platziBalancer --location eastus >> ~/azure.log``
+
+.
+
+En Powershell:
+
+type .\azure_test.ps1
+az account list --output table | Add-Content .\azure.txt
+az vm image list --output table | Add-Content .\azure.txt

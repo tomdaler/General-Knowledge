@@ -1,0 +1,16 @@
+
+TODO INICIA CON MICROSOFT AZURE FUNDAMENTALS
+
+- Developer
+- Administrator, de usuarios, implementan, monitorean, usuarios, seguridad
+- Solution architects: computo, redes, seguridad, infraestructura, 
+- Data Engineers: (admon data) disenan administran monitorean, seguridad, privacidad DE DATOS!!!
+- Data scientits: machine learning, evaluar modelos para resolver problemas de negocios, correlacion
+- AI Engineer: servicios cognitivos, machine learning, knowledge mining
+- DevOps: combinan personas, procesos, tecnologia
+- Security engineer, redes, proteccion
+
+
+
+
+

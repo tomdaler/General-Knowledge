@@ -1,0 +1,19 @@
+Azure Active Directory (AD)
+Servicio de administracion de identidades y acceso basado en la nube de MS
+Permite el inicio de sesion con credenciales corporativas y accessos a recuros INTERNOS Y EXTERNOS
+
+Lo usan: Administradores IT / Desarrolladores / usuario final / suscriptor de servicio en nube
+
+
+Características Azure Active Directory.
+• Administración de apps. Un usuario puede compartir información útil para esa app.
+• Autenticación. Autenticación por AD en lugar de crear un módulo de autenticación en la app.
+• Soporte para desarrolladores. Integración de acceso para distintos lenguajes.
+• Escenarios B2B. Invitación de colaboración, se administran cuentas de invitado.
+• Escenarios B2C. Auth y Aut para usuarios finales. Soporta proveedores de identidad como Facebook, Google, etc.
+• Acceso condicional. Agregar second factor auth para ciertas operaciones sensibles o riesgosas.
+• Identidad híbrida. AD en nube se sincroniza con un AD en on premise.
+• Protección de identidad. Colocar mecanismos de seguridad para evitar robos a administradores.
+• Identidades administradas. Proporcionar a cada cuenta el nivel de acceso mínimo requerido.
+• Manejo de identidad privilegiada. Acceso seguro para ciertas cuentas y definir de dónde se puede loggear un admin (por IP, ciudad, etc).
+• Informes y supervisión. Logs de inicio de sesión fallidos, reportes de accesos, ubicación, etc.

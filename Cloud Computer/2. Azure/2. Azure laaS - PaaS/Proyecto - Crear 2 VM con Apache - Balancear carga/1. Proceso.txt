@@ -1,0 +1,4 @@
+- Creas 2 VM (una por portal, otra con CLI)
+- Se les instala Apache a ambas
+- Se les da acceso a puertos
+- Se crea balanceador de carga

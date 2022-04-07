@@ -1,0 +1,41 @@
+
+USANDO azure cli
+Herramienta creada en Python
+
+
+Ir a terminal
+
+En UBUNTU
+sudo apt intall azure-cli
+
+curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
+(password de administrador)
+
+az --version
+az login
+
+Se activa un tab en browser para logearse
+
+
+az vm create -n NombreMV -g GrupoRecursos --image ImagenUrnAlias --authentication-type password --admin-username NombreUsuario --location Zona
+
+az vm create 
+  -n NombreMV 
+  -g GrupoRecursos 
+  --image ImagenUrnAlias 
+  --authentication-type password 
+  --admin-username NombreUsuario 
+  --location Zona
+
+Como saber que imagen? Opciones de imagen
+az vm image list
+
+Lo que mas importan son los 'alias' para escoger
+
+OPCIONES:
+-- image UbuntuLTS
+-- location westus
+
+
+Si desea modificar disco, RAM, horas; debe ir al recurso en el portal y modificarlo.
+

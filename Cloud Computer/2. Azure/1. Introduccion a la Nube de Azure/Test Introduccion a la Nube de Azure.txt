@@ -1,0 +1,330 @@
+
+¿Cuáles son los niveles de certificación en Azure?
+Fundamentals, Associate, Expert y Specialty.
+
+
+La nube privada se encuentra únicamente en local (on-premise).  FALSO
+
+Azure SQL Database permite almacenar bases de dato SQL y NoSQL. VERDADERO
+
+Azure cuenta con servicios para crear redes virtuales privadas (VPN). Verdadero
+
+Azure Security Center puede detectar y bloquear malware mediante el uso de Machine Learning. Verdadero
+
+Azure Functions es únicamente compatible con .NET. Falso
+
+La región donde se encuentren nuestros recursos de Azure afectan a sus costos. Verdadero
+
+Los recursos pueden formar parte de varios grupos de recursos. Falso
+
+El costo de usar Azure Logic Apps puede variar según los conectores utilizados. Verdadero
+
+
+CONCEPTOS
+
+Un buen sistema de autenticación se compone de 3 elementos, estos son:
+Algo que sabes, algo que tienes, algo que eres <-
+NO - Un usuario, una contraseña y un elemento multi-factor de autenticación.
+NO - Azure Key Vault, Azure SSO y Azure Multi-Factor Authentication.
+
+¿Qué es la nube híbrida?
+Una combinación de la nube pública y privada, contando con una parte on-premise y otra provista por un proveedor de servicios en la nube.
+
+La nube es elastica
+Los servicios siempre tendran los recursos necesarios, si necesita mas se los asigna
+
+CONTENEDOR
+
+Contenedor
+Ambiente aislados para la virtualizacion del sistema operativo, algunas de sus fxs o procesos
+
+
+Un contendor es un ejemplo de
+Serverless <-
+- SAAS, NO
+- IaaS NO
+
+
+
+
+¿Cuáles son los componentes de una cuenta de Azure?
+•	suscripciones
+•	grupos de administracion
+•	recursos
+•	grupos de recursos 
+•	regiones
+CUenta / grupo de suscripcon, suscripcion, grupo de recursos y recursos
+
+
+
+>Por que la nube es mas barato que el local (on-premise)
+Porque su modelo de consumo se basa en costos operativos que se pagan mensualmente y no debe invertir en infraestructura fisica
+
+Agrupación de cuentas de usuario y recursos creados por una cuenta de Azure: Suscripción
+
+¿Qué es un contenedor?
+Ambientes aislados para la virtualización del sistema operativo, algunas de sus funciones o procesos.
+
+¿Qué sucede al eliminarse un grupo de recursos?
+Se eliminan todos los recursos contenidos.
+
+¿Qué tipos de datos admiten los servicios de almacenamiento en Azure?
+Estructurados, semi-estructurados y no estructurados.
+
+¿Qué es "cumplimiento"/"compliance"?
+-Aceptar los términos de servicio y condiciones de uso de algún producto digital.-
+-Estar de acuerdo con el tratamiento de datos e información personal al utilizar una app/.
+
+¿Qué representa una puntuación de seguridad alta en Azure Security Center?
+Que nuestro entorno se encuentra protegido.
+
+
+¿Cuáles son los niveles de acceso a los archivos almacenados en Azure?
+Frecuente, esporádico y de archivo.
+
+Qué tipo de herramientas nos ofrece Azure para administrar nuestro entorno?
+Visuales y basadas en código.
+
+Nos provee de herramientas para automatizar pruebas en nuestros flujos antes de lanzar software.
+Azure Test Plans.
+
+Azure Boards. 
+para dar seguimiento de trabajo en grupo
+
+
+
+ESCENARIOS
+
+¿En qué escenario es más conveniente tener una nube como SaaS (Software as a Service)?
+Cuando queremos utilizar una solución ya creada en la nube como usuarios, sin tener que desarrollar el producto.
+
+En que escenario es mejor utilizar maquinas virtuales?
+Tener el controlsobre la capacidad del hardware en la que corren nuestras aplicaciones. como el tamano de RAM o Disco
+
+¿En qué escenario es mejor utilizar máquinas virtuales?
+Cuando buscamos tener control sobre la capacidad del hardware en la que corren nuestras aplicaciones. Como lo puede ser el tamaño de memoria o espacio en disco.
+
+¿En qué escenario es más conveniente tener una nube como PaaS (Platform as a Service)? ^^^^^^
+Cuando queremos una configuración ágil enfocada al desarrollo y despliegue de aplicaciones.
+NO ES CUANDO NO QUEREMOS INVERTIR EN HARDWARE pero QUEREMOS HACERNOS RESPONSABLES DE SU ADMON. NO NOS HACEMOS RESPONSABLES DE ADMON SINO LO TENEMOS
+
+Es un ejemplo del modelo de consumo CapEx (capital expenditure, gastos de capital):
+Comprar servidores físicos, instalarlos y adecuar el espacio para los mismos.
+
+Supongamos que tienes una máquina virtual la cual comienza a ser lenta y decides escalarla verticalmente su capacidad ¿qué acción tomarías?
+Aumentar su memoria RAM o CPU para agilizar sus procesos.
+
+¿En qué escenario es más conveniente tener una nube en local (on-premise)? (nube en local? o sea no esta afuera)
+Cuando queremos tener un control al 100% del hardware, podemos permitirnos los costos involucrados y deseamos hacernos cargo de su administración.
+
+¿En qué escenario es más conveniente tener una nube como IaaS (Infrastructure as a Service)?
+Cuando no queremos invertir en hardware físico pero queremos hacernos responsables de su administración.
+
+¿En que escenarios es recomendable Azure Blob Storage?
+Para almacenar imágenes, videos, backups o cualquier dato no estructurado.
+
+
+SERVICIOS
+
+https://azurecharts.com/overview
+
+- AI + ML
+- Analytics
+- Compute
+- Database
+- Development
+- Identity + Security
+- IoT + MR
+- Integration
+- Identity + Security
+- Management + Governance
+- Media + Comms
+- Migration
+- Network
+- Storage
+
+
+Servicio para evaluar recursos y tener recomendaciones de como optimizar instancias
+AZURE MONITOR
+Azure Monitor to maximize the availability and performance of your applications and services. 
+It delivers a comprehensive solution for collecting, analyzing, and acting on telemetry from your cloud and on-premises environments. 
+Collect data from monitored resources using Azure Monitor Metrics
+
+
+¿Por qué Microsoft cuenta con un kit de desarrollo para IoT?
+Porque aún quedan muchos estándares por definir en IoT, el contar con un SDK y software propio de Microsoft brinda mayor seguridad.
+
+¿Cuándo es conveniente utilizar Azure Machine Learning? (AI + ML)
+Cuando creamos nuestros propios modelos de ML y buscamos tener control del proceso de entrenamiento de algoritmos.
+
+¿Cuándo es conveniente utilizar Azure Bot Service? (AI + ML)
+Cuando deseamos tener un asistente virtual para atención al cliente.
+To connect to your users via popular channels. 
+NO - Cuando deseamos utilizar servicios cognitivos de imagen, voz o video para que la inteligencia artificial los procese como entradas de datos.
+   -- aqui se refiere a un servicio multimedia de captura de datos
+
+
+¿Cuándo es conveniente utilizar Azure Cognitive Services? (AI + ML)
+Cuando deseamos utilizar servicios cognitivos de imagen, voz o video para que la inteligencia artificial los procese como entradas de datos.
+
+Este servicio nos permite evaluar recursos y tener recomendaciones sobre cómo podemos optimizar nuestras instancias en Azure.
+Azure Advisor.   (Management + Governance)
+
+¿Qué servicio de Azure nos permite almacenar información confidencial como claves, certificados y respaldos?
+Azure Key Vault. (Identity + Security)
+
+Azure Machine Learning
+Cuando creamos nuestros propios modelos de ML y buscamos tener control del proceso de entrenamiento de algoritmos
+
+Azure Cognitive services
+NO -(es Azure Machine Learning) Cuando creamos nuestros propios modelos de ML y buscamos tener control del proceso de entrenamiento de algoritmos
+
+
+
+Servicio serverless que permite ejecutar porciones de código basado en eventos/disparadores.
+Azure Functions.
+
+Nos brinda de espacios para albergar código fuente de manera centralizada y colaborativa.
+Azure Repos.
+
+¿Qué información nos brinda los términos de los servicios en línea de Microsoft?
+Define términos de seguridad y procesamiento de datos para servicios en línea.
+
+¿Cuándo es conveniente utilizar Azure Bot Service?
+Cuando deseamos tener un asistente virtual para atención al cliente.
+
+
+COSTOS
+
+¿Qué es el Acuerdo de Nivel de Servicio (Service Level Agreement)?
+El porcentaje de tiempo que garantiza Microsoft que un servicio estará disponible y la compensación en créditos que ofrecerá en caso de no cumplrlo.
+
+¿Cómo se calcula el porcentaje de acuerdo de nivel de servicio compuesto?
+Multiplicando el nivel de acuerdo de servicio de un recurso por el número de sus instancias, se repite el proceso con los demás recursos y se suman los resultados totales.
+
+¿Cuál es el modelo de pago de Azure Functions?
+Pago solo por funciones ejecutadas.
+
+¿Cómo se calcula el porcentaje de acuerdo de nivel de servicio compuesto?
+Multiplicando el nivel de acuerdo de servicio de un recurso por el número de sus instancias, se repite el proceso con los demás recursos y se suman los resultados totales.
+
+
+¿Para qué nos sirve la Calculadora de Costo Total de Propiedad (TOC)?
+Para determinar el costo de migrar nuestra infraestructura local a la nube de Azure.
+NO ES Para calcular el costo por el uso de los servicios de Azure mes a mes. LA PALABRA CLAVE ES MIGRAR
+
+==========
+
+¿Cuáles son los niveles de certificación en Azure?
+Fundamentals / Associate / Expert / Specialty
+
+
+Azure Advisor 
+-------------
+analiza sus configuraciones y la telemetría de uso y ofrece recomendaciones personalizadas para optimizar sus recursos de Azure para obtener confiabilidad, seguridad, excelencia operativa, rendimiento y rentabilidad.
+
+Helps you follow best practices to optimize your Azure deployments. 
+It analyzes your resource configuration and usage telemetry and then recommends solutions that can help you improve the cost effectiveness, performance, Reliability (formerly called High availability), and security of your Azure resources.
+
+
+Azure Monitor
+-------------
+ayuda a maximizar la disponibilidad y el rendimiento de las aplicaciones y los servicios. 
+Ofrece una solución completa para recopilar, analizar y actuar en la telemetría desde los entornos local y en la nube. ... 
+Detección y diagnóstico de problemas en aplicaciones y dependencias con Application Insight
+
+
+Que herramienta puedo crear multiples maquinas virtuales a la vez?
+->AZURE VMs (NO)
+azurebatch
+azure migration service
+Lift-and-shift  <---
+
+
+Servicio serveless que permite ejecutar porciones de codigo basado en eventos
+- azure thunderbolt
+- azure funcions <-
+- azure server funcitons
+- azure logic apps
+
+
+Si maquina virtual se pone lenta
+- aumente RAM y/o CPU
+
+
+Cuando usar maquinas virtuales
+Cuando buscamos tener control sobre la capacidad del hardware en la que corren las apps
+COmo lo puede ser el tamano de memoria o espacio en disco
+
+Azure cognitive services
+- servicios cognitivos de imagen, voz o video (media)?
+-> creamos nuestros propios modelos de ML y controlamos el proceso de entrenamiento de algoritmos <-
+- un asistente virtual de atencion al cliente
+
+
+sistema de autenticacion de compone de 3 elementos
+- algo que sabes, algo que tienes, algo que eres
+
+
+tipo de "servicios" que podemos alojar en azure apps
+- firewall, conexiones de red punto a punto, sistemas de autenticacion <-
+- maquinas virtuales, contenedores, kubernetes (no son servicios)
+- aplciaciones web api, backend de app movides
+
+
+Este servicio nos permite evaluar recursos y tener recomendaciones sobre cómo podemos optimizar nuestras instancias en Azure.
+Azure Service Health.
+
+
+¿Cuándo es conveniente utilizar Azure Cognitive Services?
+Cuando creamos nuestros propios modelos de ML y buscamos tener control del proceso de entrenamiento de algoritmos.
+
+
+
+
+
+ERROR
+
+INCORRECTO
+==========
+
+Es una instancia de los recursos disponibles en Azure.
+NO - Grupo de recursos
+NO - Máquina virtual
+Recursos?
+
+
+Este servicio de Azure se utiliza para analizar volúmenes de datos que pueden estar sin procesar, refinados o seleccionados:
+NO - Azure Big Database. (no existe?)
+
+
+19. ¿Qué tipo de herramientas nos ofrece Azure para administrar nuestro entorno?
+NO- No-code y low-code.
+
+
+¿Qué es el Azure Resource Manager?
+IT is the deployment and management service for Azure. 
+It provides a management layer that enables you to create, update, and delete resources in your Azure account.
+Es el administrador de recursos en Azure PERO NO "que permite controlar los gastos de facturación" y evitar que sobrepasemos nuestro presupuesto.
+
+
+¿A qué servicio debemos recurrir para saber el estado de los servicios, regiones y recursos de Azure?
+NO Azure Monitor.
+NO Azure Counselor
+NO 
+-- Azure Resource Manager no es servicio
+
+
+¿Qué tipo de servicios podemos alojar en Azure Apps?
+NO Firewall, conexiones de red de punto a punto y sistemas de autenticación.
+
+
+region
+zona donde se conecta un data center con tu ISP
+
+¿En qué escenario es más conveniente tener una nube como PaaS (Platform as a Service)?
+Cuando no queremos invertir en hardware físico pero queremos hacernos responsables de su administración.
+
+
+¿Qué información nos brinda los términos de los servicios en línea de Microsoft?
+Define términos de seguridad y procesamiento de datos para servicios en línea.

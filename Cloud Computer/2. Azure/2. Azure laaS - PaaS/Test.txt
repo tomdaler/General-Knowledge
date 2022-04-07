@@ -1,0 +1,259 @@
+¿Cuál es el propósito de diseñar una arquitectura?
+Ser la guía de los elementos que se utilizarán en un proyecto.
+
+¿En qué categoría de las herramientas de una máquina virtual puedes redimensionar el tamaño de tu MV? 
+Tamano
+
+¿Cuántas categorías de máquinas virtuales hay en Azure? 11 
+¿Cuántos Sistemas Operativos (no versiones) te ofrece el menú de creación? 2
+
+
+¿En qué categoría de las herramientas de una máquina virtual puedes redimensionar el tamaño de tu MV? Tamaño
+
+¿Qué tareas NO son posibles de automatizar en tu MV? Cambiar su Sistema Operativo.
+
+¿Cuál es el único medio para poder conectarte a una máquina virtual basada en Linux? ssh
+En VM windows se puede con RDP, en Linux solo con ssh
+
+¿Qué significa IaaS? Infrastructure as a Service
+
+¿Cuál es el propósito de diseñar una arquitectura?
+Ser la guía de los elementos que se utilizarán en un proyecto.
+
+¿Qué es lo que más distingue a una máquina virtual de una física?
+Su capacidad de incrementar o disminuir hardware conforme sea necesario.
+
+
+https://azure.microsoft.com/es-es/pricing/details/virtual-machines/series/
+
+Cuál es el puerto de comunicación que el balanceador de cargas utilizará para acceder a los servidores web de las MV? 80
+
+¿Qué es lo que más distingue a una máquina virtual de una física?
+Su capacidad de incrementar o disminuir hardware conforme sea necesario.
+
+¿En qué lenguaje de programación está hecha la CLI (en su versión dos) de Azure? Python
+
+
+¿Cuál es el único medio para poder conectarte a una máquina virtual basada en Linux? ssh
+
+¿Cuál es el formato de archivo que necesitamos para poder generar scripts de automatización (en máquinas virtuales)? JSON
+
+¿Qué tareas NO son posibles de automatizar en tu MV? Cambiar su Sistema Operativo.
+
+¿Cuál es el puerto de comunicación que el balanceador de cargas utilizará para acceder a los servidores web de las MV? 80
+
+¿Cuál es el objetivo principal de un balanceador de cargas? Distribuir todo el tránsito de entrada y salida al grupo de máquinas virtuales.
+
+
+COMANDOS
+
+https://docs.microsoft.com/es-es/azure/load-balancer/quickstart-load-balancer-standard-internal-cli?tabs=option-1-create-load-balancer-standard
+
+¿Qué comando utilizamos para crear un balanceador de cargas?
+az network lb create
+
+¿Qué comando utilizamos para crear una red virtual?
+az network vnet create
+
+Luego de crear las interfaces de red, ¿Qué comando usaste para crear un conjunto de disponibilidad?
+az vm availability-set create -g PlatziBalancer --name myAvailabilitySet
+
+¿Qué comando usaste para ver la IP Pública a la que accederás para ver tu solución?
+az network public-ip show
+
+
+Luego de crear las interfaces de red, ¿Qué comando usaste para crear un conjunto de disponibilidad?
+az vm availability-set create -g PlatziBalancer --name myAvailabilitySet
+
+¿Cuál es el comando (sin parámetros) para crear una máquina virtual? az vm create
+
+Crear grupo de recursos
+
+az group create --name CreateIntLBQS-rg --location eastus
+
+
+Crear red virtual
+
+  az network vnet create \
+    --resource-group CreateIntLBQS-rg \
+    --location eastus \
+    --name myVNet \
+    --address-prefixes 10.1.0.0/16 \
+    --subnet-name myBackendSubnet \
+    --subnet-prefixes 10.1.0.0/24
+
+Crear direccion IP PUblica
+
+az network public-ip create \
+    --resource-group CreateIntLBQS-rg  \
+    --name myBastionIP \
+    --sku Standard
+
+Ver IP publica
+
+az network public-ip show  <-
+
+Crear subred bastion
+
+az network bastion create \
+    --resource-group CreateIntLBQS-rg  \
+    --name myBastionHost \
+    --public-ip-address myBastionIP \
+    --vnet-name myVNet \
+    --location eastus
+
+
+Crear grupo de seguridad de red
+
+  az network nsg create \
+    --resource-group CreateIntLBQS-rg \
+    --name myNSG
+
+
+Crear regla de seguridad
+
+  az network nsg rule create \
+    --resource-group CreateIntLBQS-rg \
+    --nsg-name myNSG \
+    --name myNSGRuleHTTP \
+    --protocol '*' \
+    --direction inbound \
+    --source-address-prefix '*' \
+    --source-port-range '*' \
+    --destination-address-prefix '*' \
+    --destination-port-range 80 \
+    --access allow \
+    --priority 200
+
+
+Creación de interfaces de red para las máquinas virtuales
+
+  array=(myNicVM1 myNicVM2 myNicVM3)
+  for vmnic in "${array[@]}"
+  do
+    az network nic create \
+        --resource-group CreateIntLBQS-rg \
+        --name $vmnic \
+        --vnet-name myVNet \
+        --subnet myBackEndSubnet \
+        --network-security-group myNSG
+  done
+
+
+Crear VM
+ array=(1 2 3)
+  for n in "${array[@]}"
+  do
+    az vm create \
+    --resource-group CreateIntLBQS-rg \
+    --name myVM$n \
+    --nics myNicVM$n \
+    --image win2019datacenter \
+    --admin-username azureuser \
+    --zone $n \
+    --no-wait
+
+balanceador de cargas
+Crear equilibrador de carga
+
+ az network lb create \
+    --resource-group CreateIntLBQS-rg \
+    --name myLoadBalancer \
+    --sku Standard \
+    --vnet-name myVnet \
+    --subnet myBackendSubnet \
+    --frontend-ip-name myFrontEnd \
+    --backend-pool-name myBackEndPool
+
+
+Crear sondeo de estado
+
+  az network lb probe create \
+    --resource-group CreateIntLBQS-rg \
+    --lb-name myLoadBalancer \
+    --name myHealthProbe \
+    --protocol tcp \
+    --port 80
+  done
+
+
+Crear regla de equilibrador de carga
+
+  az network lb rule create \
+    --resource-group CreateIntLBQS-rg \
+    --lb-name myLoadBalancer \
+    --name myHTTPRule \
+    --protocol tcp \
+    --frontend-port 80 \
+    --backend-port 80 \
+    --frontend-ip-name myFrontEnd \
+    --backend-pool-name myBackEndPool \
+    --probe-name myHealthProbe \
+    --idle-timeout 15 \
+    --enable-tcp-reset true
+
+
+Agregar VM a grupo de equilibrador
+
+  array=(VM1 VM2 VM3)
+  for vm in "${array[@]}"
+  do
+  az network nic ip-config address-pool add \
+   --address-pool myBackendPool \
+   --ip-config-name ipconfig1 \
+   --nic-name myNic$vm \
+   --resource-group CreateIntLBQS-rg \
+   --lb-name myLoadBalancer
+  done
+
+prueba de equilibrio de carga
+1 Cree la interfaz de red con az network nic create
+
+  az network nic create \
+    --resource-group CreateIntLBQS-rg \
+    --name myNicTestVM \
+    --vnet-name myVNet \
+    --subnet myBackEndSubnet \
+    --network-security-group myNSG
+
+2 Cree VM
+
+  az vm create \
+    --resource-group CreateIntLBQS-rg \
+    --name myTestVM \
+    --nics myNicTestVM \
+    --image Win2019Datacenter \
+    --admin-username azureuser \
+    --no-wait
+
+
+Instale IIS en cada VM
+
+  array=(myVM1 myVM2 myVM3)
+    for vm in "${array[@]}"
+    do
+     az vm extension set \
+       --publisher Microsoft.Compute \
+       --version 1.8 \
+       --name CustomScriptExtension \
+       --vm-name $vm \
+       --resource-group CreateIntLBQS-rg \
+       --settings '{"commandToExecute":"powershell Add-WindowsFeature Web-Server; powershell Add-Content -Path \"C:\\inetpub\\wwwroot\\Default.htm\" -Value $($env:computername)"}'
+  done
+
+
+¿Cuál de los siguientes NO es un factor de cálculo de las máquinas virtuales? Motherboard ??
+
+¿Qué servidor web instalamos en las máquinas virtuales? NGINX
+
+
+¿Cuál es la herramienta de las máquinas virtuales que es capaz de controlar el acceso a las mismas? 
+NO Firewall
+NO PASSWORD
+Reglas de entrada y salida <-
+Antivirus? <-  HERRAMIENTA
+
+
+
+
+

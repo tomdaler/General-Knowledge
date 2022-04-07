@@ -1,0 +1,46 @@
+azure.microsoft.com/en-us/pricing/calculator
+
+Click virtual machine
+=====================
+Vas abajo y vas configurando por seccion
+
+Horas de Uso, hasta 730.
+
+No. Maquinas 1
+============
+
+-Region (no tiene que ver con costos, solo latencia)
+-Sistema OPerativo, con Linux baja (de 150 a 85)
+-Distribucion de linux
+-Tier: Basic
+-Instance: 14 GB RAM / 240 GB ($0.376/hora)
+
+Billing
+=======
+1 VM x 730 horas : $275
+
+Discos
+======
+HDD / SSD (solido) SSD 
+SIZE  512 GB
+No. Discos
+
+
+TRANSACCIONES
+=============
+No. 100,000
+
+
+MAQUINAS 1
+S.O.     UBUNTU
+RAM      14 GB
+SSD      512 GB
+HORAS:   700 (todo el tiempo encendida)
+$320 <---
+
+Por 1 hora de servidor $39
+Podriamos tener encendida la maquina 12 horas y reduce costo
+O apagarla durante fin de semana
+
+
+

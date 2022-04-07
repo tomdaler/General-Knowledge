@@ -1,0 +1,7 @@
+-	Azure CLI
+-	Azure functions core tools
+-	Node js
+-	TypeScript
+-	Visual Studio Code
+-	Visual Studio Core
+- 	WorkBench  https://www.mysql.com/products/workbench/

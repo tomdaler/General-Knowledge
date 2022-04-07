@@ -1,0 +1,36 @@
+https://acloudguru.com/videos/acg-fundamentals/how-to-get-started-with-azure-cli?utm_campaign=11244863417&utm_source=google&utm_medium=cpc&utm_content=469352928666&utm_term=_&adgroupid=115625160932&gclid=Cj0KCQiAzfuNBhCGARIsAD1nu--4nkFkXx7nz4sHK0FQTwKCMYC4bfj8zEkxyw-Lw3iAYcHBNIPJSpwaAlfsEALw_wcB
+
+
+
+Install Cli
+
+Microfost DOC
+https://docs.microsoft.com/en-us/cli/azure/install-azure-cli
+Select O.S.
+
+curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
+
+
+Quickstart for Bash in Azure Cloud Shell
+https://docs.microsoft.com/en-us/azure/cloud-shell/quickstart
+
+
+Start Cloud Shell
+-----------------
+Beside Notification Icon, open a terminal
+Select a subscription
+Select "Bash"
+
+az login
+(it will pop up a wep page to set the google account)
+
+az account list
+az account set --subscription 'aaaaa'
+
+az group create --location westus --name MyNewGroup
+az vm create -n MyNewGroup --image UbuntuLTS --generate-ssh-heys
+
+Note
+
+Using --generate-ssh-keys instructs Azure CLI to create and set up public and private keys in your VM and $Home directory. By default keys are placed in Cloud Shell at /home/<user>/.ssh/id_rsa and /home/<user>/.ssh/id_rsa.pub. Your .ssh folder is persisted in your attached file share's 5-GB image used to persist $Home
+

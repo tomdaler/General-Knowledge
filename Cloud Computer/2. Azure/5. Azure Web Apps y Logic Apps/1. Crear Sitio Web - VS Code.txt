@@ -1,0 +1,25 @@
+donet new web -n "<nombre>"
+donet new mvc -n "<nombre>"
+
+Aparecera
+- Bin
+- Controllers
+- obj
+- Properties
+- Views
+	- Home
+	     - Index.cshtml  <-
+	     - Privacy.cshtml
+	- SHared
+- wwwwroot
+- appsettings.Development.json
+- appsettings.json
+
+cd <nombre>
+dotnet run
+
+Aparece link a dar click para el sitio
+Now listening to ....
+
+Para pararlo Ctl-C
+
