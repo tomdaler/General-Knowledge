@@ -1,0 +1,16 @@
+
+Numeros negativos (####)
+De string a numero
+De float a integer
+Formato fecha
+Los null a 0, ''
+Decimales 2
+
+Eliminar filas segun condicion
+
+
+Dataset tenia fechas con diferentes formatos (dd/mm/yyyy) y (mm/dd/yyyy) 
+para el segundo caso Power BI no supo interpretar los datos 
+En excel utilice
+
+=SI(ESTEXTO(I2)=FALSO;I2;FECHA(EXTRAE(I2;6;4);EXTRAE(I2;3;2);EXTRAE(I2;1;1)))
