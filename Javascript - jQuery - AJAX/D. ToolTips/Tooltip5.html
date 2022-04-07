@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<script>
+   try{
+     window.open=function(){};
+     window.print=function(){};
+     window.alert=function(){};
+     window.prompt=function(){};
+     window.confirm=function(){};
+   }
+   catch(e){}
+</script>
+
+<html>
+<head>
+<meta charset=utf-8 />
+
+<title>JS Bin</title>
+
+
+<style id="jsbin-css">
+body {
+  padding-top: 100px;
+}
+
+a.tooltip {outline:none; position: relative;}
+a.tooltip strong {line-height:30px;}
+a.tooltip:hover {text-decoration:none; cursor: help;} 
+a.tooltip span {
+z-index:10;display:none; padding:14px 20px;
+width:220px; line-height:17px;
+}
+
+a.tooltip:hover span {
+  display:block;
+  position:absolute;
+  bottom: 2em;
+  left: 50%;
+  color:#373535;
+  border:2px solid #D3D3D3;
+  background:#fffFff;
+  
+  -webkit-transform: translateX(-50%);
+}
+
+/*CSS3 extras*/
+a.tooltip span
+{
+    border-radius:5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+
+    -moz-box-shadow: 1px 1px 8px #CCC;
+    -webkit-box-shadow: 1px 1px 8px #CCC;
+    box-shadow: 1px 1px 8px #CCC;
+}
+</style>
+
+</head>
+<body>
+ Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+ Inventore ullam expedita repellendus ea praesentium 
+ dolorum e<a href="#" class="tooltip">Normal Text<span><strong>Tooltip title</strong><br />
+ This would be the content of the tooltip that I want to show up above the cursor.</span></a>
+ 
+</body>
+</html>
+<!--jsbin live harness-->
+
+<script>
+  try
+    {
+      delete window.print;
+      delete window.alert;
+      delete window.prompt;
+      delete window.confirm;
+      delete window.open;
+    }
+   catch(e){}
+</script>

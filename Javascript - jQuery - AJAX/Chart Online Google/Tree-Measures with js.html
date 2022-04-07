@@ -1,0 +1,87 @@
+<html>
+  <head>
+   
+    <script type="text/javascript" src="jsapi.js"></script>
+
+    <script type='text/javascript' src="jquery-2.1.4.min.js"></script>    
+ 
+    <script type="text/javascript">
+
+      google.load("visualization", "1", {packages:["corechart"]});
+      google.setOnLoadCallback(drawVisualization);
+
+      function getData(choice) {
+        
+         var arreglo ="[ ['Interval', 'Actual', 'Forecast', 'Target'],";
+ 
+         arreglo = arreglo + "['10:30',  735,      720,         500     ],";          
+         arreglo = arreglo + "['11:00',  857,      767,         500     ],";
+         arreglo = arreglo + "['11:30',  539,      610,         500     ],";
+         arreglo = arreglo + "['12:00',  639,      810,         500     ],";
+         arreglo = arreglo + "['12:30',  439,      710,         500     ],";
+         arreglo = arreglo + "['13:00',  239,      510,         500     ],";
+         arreglo = arreglo + "['13:30',  439,      810,         500     ],";
+         arreglo = arreglo + "['14:00',  636,      691,         500     ] ]";
+
+         return arreglo;       
+      }
+
+
+      function drawVisualization() {
+
+            var choice = 1;
+            var myStr = getData(choice);
+            var myArr = eval(myStr); 
+ 
+            var data = google.visualization.arrayToDataTable( myArr );
+
+            var tipo0 = {8: {type: 'bars'}}
+
+            var tipo1 = {1: {type: 'bars'}}
+            var tipo2 = {2: {type: 'bars'}}
+            var tipo3 = {3: {type: 'bars'}}
+
+            var tipo4 = {1: {type: 'bars'} , 2: {type: 'bars'}}
+            var tipo5 = {1: {type: 'bars'} , 3: {type: 'bars'}}
+            var tipo6 = {2: {type: 'bars'} , 3: {type: 'bars'}}
+
+            var tipo7 = {1: {type: 'bars'} , 2: {type: 'bars'} , 3: {type: 'bars'}}
+
+            var cual;
+
+            var m1 = 0;
+            var m2 = 0;
+            var m3 = 0;
+
+            if (m1 == 0 && m2 == 0 && m3 == 0 ) cual = tipo0;
+
+            if (m1 == 1 && m2 == 0 && m3 == 0 ) cual = tipo1
+            if (m1 == 0 && m2 == 1 && m3 == 0 ) cual = tipo2;
+            if (m1 == 0 && m2 == 0 && m3 == 1 ) cual = tipo3;
+            if (m1 == 1 && m2 == 0 && m3 == 0 ) cual = tipo4;
+            if (m1 == 1 && m2 == 0 && m3 == 0 ) cual = tipo5;
+            if (m1 == 1 && m2 == 0 && m3 == 0 ) cual = tipo6;
+            if (m1 == 1 && m2 == 0 && m3 == 0 ) cual = tipo7;
+
+        var options = {
+          title : 'SL Comparison',
+          vAxis: {title: 'Value'},
+          hAxis: {title: 'Intervals'},
+          seriesType: 'line',
+          series: cual
+        };
+
+      var divs = 'chart_div'+choice;
+      var chart = new google.visualization.ComboChart(document.getElementById(divs));
+      chart.draw(data, options);
+   }
+
+    </script>
+  </head>
+
+  <body>
+    SOLO PARA APLICACIONES ONLINE <br><br>
+    <div id="chart_div1" style="width: 900px; height: 500px;"></div>
+  </body>
+
+</html>

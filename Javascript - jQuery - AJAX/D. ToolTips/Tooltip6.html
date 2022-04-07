@@ -1,0 +1,61 @@
+<HTML>
+ <Head>
+ <Script Language=JavaScript>
+
+ var absStr = "Position:Absolute;Top:0;Left:0";
+ var yOff = 70; // use this to position the message in the vertical axis
+ var xOff = 20; // use this to position the message in the horizontal axis
+
+ function stayHome(){ 
+
+ iL = document.body.scrollLeft; 
+ iV = document.body.scrollTop; 
+ mX = event.screenX-xOff+iL;
+ mY = event.screenY-yOff+iV;
+ document.getElementById('isFloat').style.left = mX; 
+ document.getElementById('isFloat').style.top = mY; 
+ }
+
+ document.onmousemove = stayHome;
+
+ function insertFloatIMG(){
+
+ styleStr = "<Style>.msgFloat {"+absStr+";Border-Style:Solid;Border-Width:1px;Background-Color:Yellow;Padding-Right:5px;Padding-Left:5px;Padding-Top:3px;Padding-Bottom:3px;Font-family:Tahoma;Font-Size:13pt;Line-Height:95%;}</Style>";
+ divStr = "<DIV class=msgFloat id=isFloat></DIV>"
+ document.write(styleStr);
+ document.write(divStr);
+ }
+
+ function hideMessage(){
+
+ document.getElementById('isFloat').style.visibility = 'hidden';
+ }
+
+ function showMessage(toolTip){
+
+ document.getElementById('isFloat').style.visibility = 'visible'
+ document.getElementById('isFloat').innerHTML = toolTip;
+ }
+
+ function initToolTip(){
+
+ insertFloatIMG();
+ hideMessage();
+ }
+ </Script>
+ </Head>
+ <Body>
+  </br>
+ <input type=button value="Button 1" onmouseover="showMessage('This is a message for the first button')" onmouseout="hideMessage()">
+ <br>
+ <br>
+ <input type=button value="Button 2" onmouseover="showMessage('This is a message for the second button')" onmouseout="hideMessage()">
+ <br>
+ <br>
+ <input type=button value="Button 3" onmouseover="showMessage('This is a message for the third button<br>consisting of 2 lines')" onmouseout="hideMessage()">
+ <br>
+ <br>
+ <!-- Keep the following line immediately preceding the the closing Body tag -->
+ <Script> initToolTip() </Script>
+ </Body>
+ </HTML> 

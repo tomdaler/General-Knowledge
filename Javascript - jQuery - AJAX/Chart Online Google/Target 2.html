@@ -1,0 +1,40 @@
+<html>
+  <head>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+      google.load("visualization", "1", {packages:["corechart"]});
+      google.setOnLoadCallback(drawVisualization);
+
+      function drawVisualization() {
+
+        var data = google.visualization.arrayToDataTable([
+
+         ['Interval', 'Actual', 'Forecast', 'Target'],
+         ['10:00',  465,      938,         500,     ],
+         ['10:30',  735,      720,         500     ],
+         ['11:00',  857,      767,         500     ],
+         ['11:30',  539,      810,         500     ],
+         ['12:00',  639,      810,         500     ],
+         ['12:30',  439,      710,         500     ],
+         ['13:00',  239,      610,         500     ],
+         ['13:30',  439,      810,         500     ],
+         ['14:00',  636,      691,         500     ]
+      ]);
+
+    var options = {
+      title : 'SL Comparison',
+      vAxis: {title: 'Value'},
+      hAxis: {title: 'Intervals'},
+      seriesType: 'bars',
+      series: {2: {type: 'line'}}
+    };
+
+    var chart = new google.visualization.ComboChart(document.getElementById('chart_div'));
+    chart.draw(data, options);
+  }
+    </script>
+  </head>
+  <body>
+    <div id="chart_div" style="width: 900px; height: 500px;"></div>
+  </body>
+</html>

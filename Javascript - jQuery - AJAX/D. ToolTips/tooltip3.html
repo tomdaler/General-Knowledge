@@ -1,0 +1,69 @@
+<html>
+<head>
+    <style type="text/css">
+        .tooltip
+        {
+            display: inline;
+            position: relative;
+            text-decoration: none;
+            top: 0px;
+            left: 4px;
+        }
+        .tooltip:hover:after
+        {
+            background: #333;
+            background: rgba(0,0,0,.8);
+            border-radius: 5px;
+            top: -5px;
+            color: #fff;
+            content: attr(alt);
+            left: 160px;
+            padding: 5px 15px;
+            position: absolute;
+            z-index: 98;
+            width: 150px;
+        }
+        .tooltip:hover:before
+        {
+            border: solid;
+            border-color: transparent black;
+            border-width: 6px 6px 6px 0;
+            bottom: 20px;
+            content: "";
+            left: 155px;
+            position: absolute;
+            z-index: 99;
+            top: 3px;
+        }
+    </style>
+</head>
+<body>
+    <table style="width: 270px;">
+        <tr>
+            <td>
+                Username:
+            </td>
+            <td>
+                <a href="#" alt="Please enter username" class="tooltip">
+                    <input id="txtUsername" type="text" /></a>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Password:
+            </td>
+            <td>
+                <a href="#" alt="Please enter password" class="tooltip">
+                    <input id="txtPassword" type="text" /></a>
+            </td>
+        </tr>
+        <tr>
+            <td>
+            </td>
+            <td>
+                <input id="Button1" type="button" value="Login" />
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

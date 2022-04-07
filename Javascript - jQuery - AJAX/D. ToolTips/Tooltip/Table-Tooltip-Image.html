@@ -1,0 +1,97 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="sv">
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+	<title>Transforming table cells into tooltips</title>
+	<style type="text/css">
+	.hide {
+		left: -10000px;
+		position: absolute;
+	}
+	.hooover { left: 80px; }
+	tr { position: relative; }
+	.a1 {
+		border: 1px solid Black;
+		width: 300px;
+	}
+	.a2 { padding: 20px 0 0 120px; }
+	.a3 { padding: 20px 0 0 200px; }
+	</style>
+</head>
+<body>
+
+<table summary="Options for your house">
+<thead>
+	<tr>
+		<th>Option</th>
+		<th>Price</th>
+		<th class="tooltip">Image</th>
+		<th class="tooltip">Store</th>
+		<th class="tooltip">SKU#</th>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+		<td>Bush</td>
+		<td>$3</td>
+		<td class="tooltip a1"><img src="./bush.jpg" alt="An Alabama bush"></td>
+		<td class="tooltip a2">Alabama</td>
+		<td class="tooltip a3">#23535151</td>
+	</tr>
+	<tr>
+		<td>Tree</td>
+		<td>$4</td>
+		<td class="tooltip a1"><img src="./bush.jpg" alt="A Florida tree"></td>
+		<td class="tooltip a2">Florida</td>
+		<td class="tooltip a3">#878700852</td>
+	</tr>
+</tbody>
+</table>
+
+	<script type="text/javascript">
+	//snook.ca's handy function - http://www.snook.ca/archives/000370.php
+
+	function getElementsByClassName(node, classname) {
+	    var a = [];
+	    var re = new RegExp('\\b' + classname + '\\b');
+	    var els = node.getElementsByTagName("*");
+	    for(var i=0,j=els.length; i<j; i++)
+	        if(re.test(els[i].className))a.push(els[i]);
+	    return a;
+	}
+
+	// Hide all classes with the className "tooltip"
+	var tooltips = getElementsByClassName(
+		document.getElementsByTagName("body")[0], "tooltip");
+	for (var i = 0; i < tooltips.length; i++) {
+		tooltips[i].className += " hide";
+	}
+
+	var tbodies = document.getElementsByTagName("tbody");
+	for (var i = 0; i < tbodies.length; i++) { 
+		var trows = tbodies[i].getElementsByTagName("tr");
+
+		// Add a function to each tr that makes it show it's cells on mouseover
+		for (var j = 0; j < trows.length; j++) {
+			trows[j].onmouseover=function() {
+				var childtooltips = getElementsByClassName(this, "tooltip");
+				for (var k = 0; k < childtooltips.length; k++) {
+					childtooltips[k].className+=" hooover";
+				}
+			}
+
+			// And hides all child cells on mouseout
+			trows[j].onmouseout=function() {
+				var childtooltips = getElementsByClassName(this, "tooltip");
+				for (var k = 0; k < childtooltips.length; k++) {
+					childtooltips[k].className = 
+						childtooltips[k].className.replace(new RegExp(" hooover\\b"), "");
+				}
+			}
+		}
+	}
+
+	</script>
+
+</body>
+</html>

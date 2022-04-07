@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>Stackoverflow - html: hover table column - jsFiddle demo by isherwood</title>
+  
+  <script type='text/javascript' src='//code.jquery.com/jquery-1.9.1.js'></script>
+  
+  <script type="text/javascript" src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+  <link rel="stylesheet" type="text/css" href="http://code.jquery.com/ui/1.9.2/themes/base/jquery-ui.css">
+  
+  <link rel="stylesheet" type="text/css" href="/css/result-light.css">
+  
+  <style type='text/css'>
+    table {
+    border-spacing: 0;
+    border-collapse: collapse;
+    overflow: hidden;
+    z-index: 1;
+}
+td, th, .ff-fix {
+    cursor: pointer;
+    padding: 10px;
+    position: relative;
+}
+td:hover::after, .ff-fix:hover::after {
+    background-color: #ffa;
+    content:'\00a0';
+    height: 10000px;
+    left: 0;
+    position: absolute;
+    top: -5000px;
+    width: 100%;
+    z-index: -1;
+}
+tr:hover {
+    background-color: #ffa;
+}
+}
+  </style>
+  
+
+<script type='text/javascript'>//<![CDATA[
+$(window).load(function(){
+$('td').each(function () {
+    var myIndex = $(this).index() + 1;
+    var myTitle = $(this).closest('tr').find('th').text();
+    myTitle += ":";
+    myTitle += $('tr:first-child th:nth-child(' + myIndex + ')').text(); 
+    
+    $(this).attr('title', myTitle);
+    
+    $(this).tooltip();
+});
+
+function firefoxFix() {
+
+    if ( /firefox/.test( window.navigator.userAgent.toLowerCase() ) ) {
+
+        var tds = document.getElementsByTagName( 'td' );
+
+        for( var index = 0; index < tds.length; index++ ) {
+            tds[index].innerHTML = '<div class="ff-fix">' + tds[index].innerHTML + '</div>';                     
+        };
+
+        var style = '<style>'
+            + 'td { padding: 0 !important; }' 
+            + 'td:hover::before, td:hover::after { background-color: transparent !important; }'
+            + '</style>';
+        document.head.insertAdjacentHTML( 'beforeEnd', style );
+
+    };
+
+};
+
+firefoxFix();
+});//]]> 
+
+</script>
+
+</head>
+<body>
+  <table>
+    <tr>
+        <th></th>
+        <th>50kg</th>
+        <th>55kg</th>
+        <th>60kg</th>
+        <th>65kg</th>
+        <th>70kg</th>
+    </tr>
+    <tr>
+        <th>160cm</th>
+        <td>20</td>
+        <td>21</td>
+        <td>23</td>
+        <td>25</td>
+        <td>27</td>
+    </tr>
+    <tr>
+        <th>165cm</th>
+        <td>18</td>
+        <td>20</td>
+        <td>22</td>
+        <td>24</td>
+        <td>26</td>
+    </tr>
+    <tr>
+        <th>170cm</th>
+        <td>17</td>
+        <td>19</td>
+        <td>21</td>
+        <td>23</td>
+        <td>25</td>
+    </tr>
+    <tr>
+        <th>175cm</th>
+        <td>16</td>
+        <td>18</td>
+        <td>20</td>
+        <td>22</td>
+        <td>24</td>
+    </tr>
+</table>
+  
+</body>
+
+</html>
+

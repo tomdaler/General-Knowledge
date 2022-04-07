@@ -1,0 +1,56 @@
+MULTISELECT
+===========
+
+lista = $('#listLOB').serialize();
+
+
+TABLES
+======
+<table id="tbl2">
+   <tr><td><input type="text" name="tb3"/></td></tr>
+   <tr><td><input type="text" name="tb4"/></td></tr>
+ </table>
+
+var params = $("#tbl2").serialize();
+
+var params = $("#tbl2 :input").serialize();
+
+var params = $("#tbl2 input").serializeArray();
+
+- - - - - 
+
+var table = $('#table-example').DataTable();
+
+var params = table.$('input').serializeArray();
+
+
+FORM
+====
+
+$(document).ready(function() {
+    $('#create-account-button').on('click', function(e) {
+        e.preventDefault();
+        var dataString = $('#create-account-form').serialize();
+        alert('Datos serializados: '+dataString);
+    }); 
+});
+
+        <form id="create-account-form" action="#">
+
+                <div class="form-group">
+                    <label for="name">Nombre</label>
+                    <input type="text" class="form-control" id="name" name="name" value="Demo Demo">
+                </div>
+
+                <div class="form-group">
+                    <label for="description">Descripción</label>
+                    <textarea class="form-control" id="description" name="description" rows="3">Lorem ipsum</textarea>
+                </div>
+
+                <button type="submit" class="btn btn-primary" id="create-account-button">Crear cuenta</button>
+              </form>
+
+Serializado
+
+name=Demo%20Demo&description=Lorem%20ipsum
+
