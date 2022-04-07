@@ -1,0 +1,9 @@
+
+https://stackoverflow.com/questions/14432557/matplotlib-scatter-plot-with-different-text-at-each-data-point
+
+https://towardsdatascience.com/how-to-add-text-labels-to-scatterplot-in-matplotlib-seaborn-ec5df6afed7a
+
+https://stackoverflow.com/questions/65044644/how-do-i-label-groups-on-a-scatterplot-in-matplotlib-using-data-from-dictionarie
+
+Matplotlib scatter plot with different text at each data point
+

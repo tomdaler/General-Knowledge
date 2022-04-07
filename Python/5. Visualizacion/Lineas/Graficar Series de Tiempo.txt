@@ -1,0 +1,10 @@
+from datetime import datetime
+import matplotlib.pyplot as plt 
+
+dates=["2020-may-20","2020-may-21","2020-may-22","2020-may-23","2020-may-24","2020-may-25","2020-may-26"]
+x=[datetime.strptime(date, "%Y-%b-%d").date() for date in dates]
+y=[20,30,35,18,24,28,26]
+
+plt.plot(x,y,marker="o")
+plt.gcf().set_size_inches(9, 7)
+plt.show()

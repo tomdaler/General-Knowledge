@@ -1,0 +1,25 @@
+Data viz: individual
+Visualizacion, representacion de datos
+Etapas: inputs / outputs
+Tan antiguo como los abacos, mapas de estrellas
+
+
+Herramientas más utilizadas
+–> Excel
+–> Tableau
+–> Power BI
+–> Google Analytics
+–> Google Data Studio
+
+Excel es muy conocido, crea dashboard de manera simple.
+
+Power BI evolución de Excel en sus dos versiones de escritorio y Web, crea dashboards dinámicos para presentaciones más amigables. La versión Web es un poco limitada.
+
+En mercadotecnia es Google Analitycs obsevar el posicionamiento en buscadores, la efectivdad por clic en campañas de marketing y nivel de retorno de usuarios.
+
+Tableau visualizaciones datos y story telling más amigable, comunidad muy grande y amigable que incluso da varias competencias y un foro actualizado e incluso un reto semanal con una base de datos liberado cada lunes. Existe dos versiones la de escritorio y la publica. La versión pública no permite guardar los documentos de manera local, cada vez que se quiera grabar se sube en la nube en el perfil público.
+Iron viz para premiar anualmente la mejor visualizacion de Tableu
+
+Para crear un perfil en tableau public solo se debe ingresar a https://public.tableau.com/ y crear una cuenta
+
+

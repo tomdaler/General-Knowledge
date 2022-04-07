@@ -1,0 +1,13 @@
+from io import StringIO 
+from IPython.display import Image, display
+import pydotplus
+
+out = StringIO()
+tree.export_graphviz(tree_one, out_file = out)
+
+graph = pydotplus.graph_from_dot_data(out.getvalue())
+
+graph.write_png('titanic.png')
+
+
+DELE REFRESH A PARTE DE ARCHIVOS, Y LUEGO CLICK O DOWNLOAD

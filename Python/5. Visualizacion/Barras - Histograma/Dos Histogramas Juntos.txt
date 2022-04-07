@@ -1,0 +1,14 @@
+Receta de algoritmos ML
+
+Proceso de decision: como los modelos hacen una prediccion o retornan una respuesta, usando parametros
+
+Funcion error/coste: como evaluar si los parametros en el modelo generan buenas predicciones
+
+Regla de actualizacion: como mejorar los parametros para hacer mejores predicciones (usando optimizacion numerica)
+
+Del DataSet Original
+====================
+Training (60-80) el modelo aprende patrones
+Validation (0-20) verificar modelo aprende
+Testing (0-20) Revisar si modelo fue exitoso al predecir
+

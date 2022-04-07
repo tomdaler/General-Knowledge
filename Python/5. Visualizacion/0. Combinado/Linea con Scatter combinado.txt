@@ -1,0 +1,4 @@
+https://www.delftstack.com/es/howto/matplotlib/matplotlib-plot-time-series/
+
+- linea 
+- scatter

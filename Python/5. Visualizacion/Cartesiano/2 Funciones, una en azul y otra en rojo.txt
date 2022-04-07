@@ -1,0 +1,4 @@
+plt.plot(x,y, 'b')
+plt.plot(x2, y2, 'r')
+plt.grid()
+
