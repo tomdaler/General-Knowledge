@@ -1,0 +1,14 @@
+
+
+using System.Text.Json;
+using System.Text.Json.Serialization;
+
+var ss2 = "aaaa";
+var result2 = JsonSerializer.Deserialize<Books>(ss2);
+
+
+
+LISTA
+List<Depto> lista = JsonSerializer.Deserialize<IList<Dpto>>(jsonArray);
+
+No se como seria el jsonArray

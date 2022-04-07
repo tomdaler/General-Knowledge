@@ -1,0 +1,4 @@
+https://www.tutorialsteacher.com/webapi
+
+
+https://www.pragimtech.com/blog/blazor/asp.net-core-rest-api-dbcontext/
