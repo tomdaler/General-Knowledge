@@ -1,0 +1,25 @@
+
+ESP32
+=====
+- Se sube codigo donde se asigna credenciales
+- Se da print a un HTML
+
+Desventaja
+----------
+- Se debe tener una app para ver cual IP dinamica se asigno
+- O asignar IP fija
+- No puede almacenar imagenes, fotos
+- Mas limitado a encender, apagar, con Relay
+- Pero esta alternativa de ESP-CAM
+
+
+RPi
+===
+- Se configura Apache
+- Se crean las html que se necesiten
+- Hacen llamado a shell para ejecutar python o bash
+- Mas versatil por poder invocar comandos linux, almacenar, user email
+
+Desventaja RPi
+--------------
+Mas cara que ESP32

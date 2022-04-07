@@ -1,0 +1,31 @@
+Lora SX 1278 433 Mhz
+
+#include <SoftwareSerial.h>
+
+#define TX 3
+#define RX 2
+#define MO 13
+#define MI 12
+
+SoftwareSerial mySerial(TX, RX);
+
+void setup(){
+   mySerial.begin(9600);
+   pinMode(MO, OUTPUT);
+   pinMode(MI, OUTPUT);
+   digitalWrite(MO, LOW);
+   digitalWrite(MI, LOW); 
+}
+
+
+ENVIAR LO QUE ESCRIBIO EN MONITOR SERIAL POR RADIO
+
+
+
+RECIBIR POR RADIO, poner en monitor serial
+
+if (mySerial.available()>0){
+   String enviar = mySerial.readString();
+   Serial.println(enviar);
+}
+

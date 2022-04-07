@@ -1,0 +1,31 @@
+ESP8266 Web Server - LED
+https://www.youtube.com/watch?v=7gXcTBHLCRc
+
+
+COMO INSTALAR UN SERVIDOR WEB CON XAMPP
+https://www.luisllamas.es/instalar-servidor-web-xampp/
+
+
+SMS ENVIAR Y RECIBIR EN RASPBERRY PI
+https://www.youtube.com/watch?v=juBl8bhmWVA
+
+
+ESP32 Publich Data to Cloud without WIFI (TTGO T-Call ESP32 SIM800L)
+https://www.youtube.com/watch?v=aCeVsySh-v4&t=67s
+
+TTGO T-CALL
+https://www.youtube.com/watch?v=bFm8Pb_M-dE
+
+
+- - - - - - -
+
+https://www.esploradores.com/wp-content/uploads/2018/06/Modos-de-conexi%C3%B3n-WiFi-3.pdf
+
+Como conectAr un ESP8266 A RED WIFI MODO STA
+https://www.luisllamas.es/como-conectar-un-esp8266-a-una-red-wifi-modo-sta/
+
+
+https://www.luisllamas.es/raspberry-pi-ip-estatica/
+
+ENVIAR EMAIL POR ESP32
+https://randomnerdtutorials.com/esp32-send-email-smtp-server-arduino-ide/

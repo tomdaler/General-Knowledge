@@ -1,0 +1,15 @@
+
+void loop()
+{
+
+  client.println("<HTML>");
+
+  int valor = AnalogRead(A0);
+
+  client.println("</br>VALOR SENSOR " + String(valor) + "</br>");
+
+  client.println("Click <a href=\"/LED=ON\">here</a> turn the LED on pin 2 ON<br>");
+
+
+  client.println("</HTML>");
+}
