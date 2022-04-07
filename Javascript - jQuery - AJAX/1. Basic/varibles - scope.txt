@@ -1,0 +1,11 @@
+variable local
+var i = 0;
+
+GLOBAL
+si es declarada fuera de funcion
+
+si no lleva 'var' en funcion
+i = 0;
+
+
+

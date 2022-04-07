@@ -1,0 +1,21 @@
+Javascript is ECMAScript
+
+variable sin var se convierte en .... global
+
+use string ?
+
+eval: ejecuta specified stirng as javascript code
+
+1=="1"  devuelve TRUE
+
+funcion anonima?
+var myFunc - function(){};
+
+Which of the following object represent parameters of current function, inside any function
+- arguments
+
+array
+
+var arr=[1, 'two'];
+var arr = new Array();
+

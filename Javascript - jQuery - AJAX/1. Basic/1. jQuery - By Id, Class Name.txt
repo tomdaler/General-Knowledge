@@ -1,0 +1,3 @@
+$('#id').show();
+$('.clase').show();
+$([name='DataTables_Table_0_length']).show();
