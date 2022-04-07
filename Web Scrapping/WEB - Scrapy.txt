@@ -1,0 +1,307 @@
+
+VERDADERO
+¿Respeta Scrapy el archivo robots.txt de un sitio web?
+La palabra clave “yield”, ¿le da cualidades de generador a un método de tipo parse?
+
+
+FALSO
+Cuando ejecutamos más de una vez un spider, ¿Scrapy reescribe los archivos de resultados anteriores?
+¿El anterior enunciado es?
+El método parse permite configurar un spider.
+
+
+
+¿Cómo extraemos un atributo de un tag?
+Utilizando el metodo get(atributo)
+
+
+¿Cómo hacemos para abrir el modal (pop-up) con la información de las escalas?
+Seleccionando el elemento del boton de escalas y luego clickearlo
+
+
+¿Cómo hacemos para seleccionar un elemento cuya clase contiene una palabra?
+[contains(@class, "palabra")]
+
+
+¿Cómo obtenemos un tag de un HTML parseado con BeautifulSoup?
+Utilizando el método find y buscando por el nombre del tag y sus atributos.
+
+
+¿Cómo podemos hacer para prevenir que una excepción interrumpa la ejecución del programa?
+Usando la sentencia try, except.
+
+
+
+¿Cuál es el atributo dentro de un spider que lo identifica de manera única frente al resto de spiders?
+name
+
+¿Cuál es el comando para lanzar la consola de Scrapy?
+scrapy shell
+
+
+¿Cuál es el operador operación lógica "y" en XPath?
+and
+
+¿Cuál es el operador operación lógica "o" en XPath?
+or
+
+¿Cuál es la expresión que selecciona al padre del nodo actual?
+..
+
+
+¿Cuál es la expresión que selecciona un atributo?
+@
+
+
+
+
+¿Cuál es el formato más eficiente que Scrapy te permite usar para guardar datos que te servirán 
+para nutrir de información a una aplicación web?
+JSON
+
+
+¿Cuál es el formato más eficiente que Scrapy te permite usar para guardar datos que te servirán 
+para realizar tareas de Data Science o análisis de información?
+CSV
+
+¿Cuál es el wildcard que extrae todos los nodos y su contenido?
+node()
+
+
+¿Cuál es la ventaja de utilizar Scrapy?
+Todas son correctas
+Se encarga del manejo de errores automáticamente
+Permite hacer requests asincrónicas
+Permite definir distintos parsers para distintas estructuras de páginas
+
+
+¿Cuál es el XPath correcto para seleccionar el tercer ítem de una lista que pertenece a la clase "flights"?
+//li[@class="flight"][3]
+
+¿Cuál de las siguientes configuraciones permite cambiar mi identidad en una petición http?
+USER_AGENT
+
+
+Dentro de la consola de Scrapy, ¿qué comando nos permite ver las cabeceras de una respuesta http?
+response.headers
+
+Dentro de la consola de Scrapy, ¿qué comando nos permite ver el método de una petición http?
+request.method
+
+
+El archivo que contiene información sobre el deployment de nuestro proyecto es:
+scrapy.cfg
+
+
+El atributo que permite controlar si se respeta o no el archivo robots.txt de un sitio web es:
+ROBOTSTXT_OBEY
+
+
+¿El comando para crear un proyecto de Scrapy es?
+scrapy startproject <project>
+
+
+¿El comando para correr un Spider es?
+scrapy crawl
+
+
+El flag que permite guardar un archivo de resultados por consola es:
+-o
+
+El método que permite “seguir” un link dentro de un spider es:
+response.follow
+
+
+El flag que permite pasar argumentos por consola a un spider es:
+-a
+
+¿En cuál de las siguientes plataformas puedes encontrar un trabajo freelance de web scraping?
+Upwork
+
+
+¿En qué problema podría meterme por no respetar el archivo robots.txt?
+Todas las opciones.
+
+
+¿En qué carpeta se deben guardar los spiders que creamos?
+spider
+
+
+¿En qué casos debemos usar Selenium?
+Cuando no hay otra alternativa
+
+
+En un conjunto de nodos hermanos, ¿con qué predicado extraigo los nodos a partir del tercero?
+[position()>2]
+
+
+extrae el texto de todos los span de un documento HTML:
+//span/text()
+
+extrae el atributo src de todas las imágenes de un documento HTML:
+//img/@src
+
+extrae a todos los nodos small que contienen una clase que comienza por el carácter "o" de un documento HTML:
+//small[starts-with(@class,"o")]
+
+extrae a todos los nodos hijos de un div con un id igual a "main" de un documento HTML:
+//div[@id="main"]/*
+
+extrae a todos los nodos de un documento HTML:
+//*
+
+
+función para buscar un nodo sabiendo que su contenido posee una cadena de caracteres determinada en algún lugar?
+contains()
+
+función para buscar un nodo sabiendo que su contenido comienza con una cadena de caracteres determinada?
+starts-with()
+
+función me permite utilizar expresiones regulares para buscar un nodo por su contenido?
+matches()
+
+
+
+Hacer Web Scraping implica:
+Obtener información almacenada en algún sitio de internet.
+
+
+La función que transforma a un iterable en un iterador es:
+iter
+
+
+La función que extrae el siguiente dato de un iterador es:
+X extract
+x get
+
+
+Para acceder al endpoint de un álbum y conocer sus canciones:
+Debemos conocer el id de ese álbum.
+
+
+
+Para extraer el texto de todas las etiquetas de tipo “a” en un sitio web puedo utilizar la siguiente expresión de XPath:
+//a/text()
+
+
+Para extraer todos los nodos span cuya clase es igual a “tag-item” puedo utilizar la siguiente expresión de XPath:
+//span[@class="tag_item"]
+
+
+¿Para qué debemos instalar Scrapy dentro de un entorno virtual?
+Para no generar conflictos entre las dependencias de diferentes proyectos.
+
+¿Para qué sirve Tesseract?
+x Para hacer transformaciones sobre imágenes, como pasarlas a escala de grises o invertir los colores.
+
+¿Por qué debemos cambiar de método para scrapear sitios dinámicos?
+Porque necesitamos ejecutar código JS para acceder a la información
+
+¿Por qué la función matches genera un error en Google Chrome?
+Porque Chrome solo soporta la versión 1.0 de XPath.
+
+¿Por qué obtenemos un status code 401?
+Porque no estamos enviando el token de autorizacion
+
+
+
+¿Puedo tener alguna consecuencia si hago Web Scraping?
+Sí, si se violan leyes informáticas o los Términos y Condiciones.
+
+
+
+Que Scrapy sea un framework asíncrono quiere decir que:
+No necesita esperar a que termine una petición http para realizar la siguiente.
+
+¿Qué tipos de datos son iterables en Python?
+list, dict, set, str
+
+Qué dato debemos incluir en el encabezado de cualquier solicitud para que nos autoricen la respuesta?
+Depende de la solicitud. Hay que leer la documentación
+
+¿Qué debemos hacer para asegurarnos que una página terminó de cargar lo que esperábamos?
+Utilizar las funciones de Selenium para esperar la presencia de un elemento determinado.
+
+QUE ES
+un nodo? Un tag de HTML y su contenido.
+Web Scraping?  Una técnica para extraer información de Internet de forma estructurada.
+
+
+¿Qué es lo último que debo hacer cuando terminé de usar el driver?
+.close()
+
+
+¿Qué etiqueta incluir JavaScript en un documento HTML?
+script
+
+¿Qué módulo de Python nos permite hacer peticiones HTTP?
+requests
+
+¿Qué módulo de Python me permite aplicar XPath sobre un documento HTML?
+x http
+x requests
+x html
+x beatiful soup
+
+¿Qué predicado me permite seleccionar el último nodo de un conjunto de nodos hermanos?
+[last()]
+
+¿Qué status code nos indica que una petición salió bien?
+200
+
+
+¿Qué significa usar un proxy?
+Que hay un intermediario entre el cliente y el servidor.
+
+¿Qué es un generador?
+Una función que recuerda su estado interno en las siguientes invocaciones.
+
+
+¿Qué función debemos usar para solicitar el código HTML de una página?
+requests.get(url)
+
+
+¿Qué son los spiders?
+Clases de Python destinadas exclusivamente a extraer información.
+
+Scrapy, ¿es un framework de?
+Web Scraping y Web Crawling
+
+selecciona la raíz de un documento HTML?
+/
+
+
+Selecciona el predicado que trae un nodo con una clase igual a "car":
+[@class="car"]
+
+¿Si el contenido de una request no es texto, cómo es conveniente almacenarlo?
+Debemos quedarnos con el atributo .content de la respuesta.
+
+
+
+Un nodo div con una clase que contiene “tags-box” en su contenido se selecciona mediante la siguiente expresión de XPath:
+//div[@class="tags_box"]
+response.xpath("//div[contains(@class, 'tags-box')]//a[contains(@class, 'tag')]/text()").getall()
+
+
+XPath Axe que extrae a los hijos y nietos de un nodo?
+descendant
+
+XPath Axe que extrae a los hijos de un nodo?
+child
+
+XPath Axe que obtiene a un nodo en sí mismo?
+self
+
+XPath fue pensado en su creación para extraer información de un documento:
+XML
+
+
+/html/head/title − This will select the <title> element, inside the <head> element of an HTML document.
+
+/html/head/title/text() − This will select the text within the same <title> element.
+
+//td − This will select all the elements from <td>.
+
+//div[@class = "slice"] − This will select all elements from div which contain an attribute class = "slice"
+
