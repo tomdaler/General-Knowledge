@@ -1,0 +1,10 @@
+
+import RPi.GPIO as GPIO
+import time
+Sensor = 17
+
+GPIO.setmode(GPIO.BCM)
+GPIO.setup(Sensor, GPIO.IN)
+
+msg.payload = GPIO.input(Sensor)
+return msg.payload

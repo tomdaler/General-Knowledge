@@ -1,0 +1,16 @@
+from gpiozero import Buzzer
+buzzer = Buzzer(17)
+
+buzzer.on()
+
+
+= = = = 
+
+buzzer.on()
+buzzer.off()
+
+## Beep the buzzer (on and off for 1 second)
+buzzer.beep()
+
+## Beep the buzzer on and off for 0.1 seconds 10 times
+buzzer.beep(0.1, 0.1, 10)

@@ -1,0 +1,4 @@
+LLAMAR A FUNCION MAIN DESDE INICIO
+
+if __name__ == "__main__":
+    main()
