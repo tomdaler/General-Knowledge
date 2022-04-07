@@ -1,0 +1,36 @@
+VIDEO
+
+Circuito Wireless Audio
+https://www.facebook.com/watch/?v=3098186083641612
+
+TRANSISTORES MOSFETS
+https://www.youtube.com/watch?v=AAWwn1Uc5zU
+
+TOP 2 LED PROJECTs WITH BC-547
+https://www.youtube.com/watch?v=j5syvs_nUDk&list=RDCMUClOxhatjRmd_ag_AamsyT0w&index=6
+
+Servomotores para tu CNC Parte 1
+https://www.youtube.com/watch?v=Wq8ETxhDnAQ
+
+Robojax
+Servo Motor with Potentiometer and LCD with Arduino
+https://www.youtube.com/watch?v=xrIiKqvm8hQ&feature=push-u-sub&attr_tag=UqFZTbPJ97KrFB4t%3A6
+
+Como conectar SENSORES de OBSTÁCULOS temporizados para activar motores| bombillos | SIN PROGRAMACIÓN
+https://www.youtube.com/watch?v=vZgxqYfb7mo
+
+
+MOSFET AND TRANSISTORS
+https://www.youtube.com/watch?v=IG5vw6P9iY4
+
+
+QUE ES UN TRANSISTOR
+https://www.prometec.net/transistores/
+
+
+El Transistor 2N2222 
+- Controlar carga a un voltaje distinto del Arduino (mezclar con voltaje alto). 
+- Administrar más corriente que la provista por Arduino (25mA)
+
+
+https://programarfacil.com/blog/arduino-blog/transistor-bipolar-bjt-npn/
