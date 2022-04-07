@@ -1,0 +1,5 @@
+anonymous
+password
+cd rogers
+put rogers_tm_list.csv
+quit
