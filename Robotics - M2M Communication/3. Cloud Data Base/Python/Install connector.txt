@@ -1,0 +1,4 @@
+https://pynative.com/python-mysql-database-connection/
+
+
+pip install mysql-connector-python

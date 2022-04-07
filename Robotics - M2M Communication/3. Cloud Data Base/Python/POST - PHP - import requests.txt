@@ -1,0 +1,63 @@
+pip install requests
+
+import requests
+pload = {'username':'Olivia','password':'123'}
+r = requests.post('https://httpbin.org/post',data = pload)
+print(r.text)
+print(r.status)
+print(r.headers)
+==================
+
+CREDENTIALS
+
+import requests
+
+url = 'http://192.168.0.23/login.php'
+username = 'admin'
+password = 'letmein'
+Login = 'Login'
+r = requests.post(url, allow_redirects=False, data={
+    'username': username,
+    'password': password,
+    'Login': Login
+    })
+
+=================
+
+CREDENTIALS
+
+import requests
+
+headers = {'User-Agent': 'Mozilla/5.0'}
+payload = {'username':'Admin','password':'Letmein','Login':'Login'}
+
+session = requests.Session()
+session.post('http://192.168.0.23/login.php',headers=headers,data=payload)
+
+===================
+
+import requests
+pload = {'username':'olivia','password':'123'}
+r = requests.post('https://httpbin.org/post',data = pload)
+
+print(r.json())
+
+================
+
+import urllib
+import urllib2
+
+url = 'http://xxx.xxx.x.xxx/reciever.php'
+payload = {"device":"gabriel","data_type":"data","zone":1,"sample":4,"count":0,"time_stamp":"00:00"}
+headers = {'content-type': 'application/json'}    
+data = urllib.urlencode(payload)
+
+req = urllib2.Request(url, data, headers)
+
+response = urllib2.urlopen(req)
+the_page = response.read()
+
+====================
+
+CREDENTIALS
+

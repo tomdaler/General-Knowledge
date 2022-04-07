@@ -1,0 +1,110 @@
+
+
+LoRa vr NRF24L01
+https://www.upswift.io/post/nrf24-vs-lora-for-wireless-communication-between-iot-devices
+
+
+LoRa Module VS nRF24 VS Generic RF Module || Range & Power Test
+https://www.youtube.com/watch?v=nP6YuwNVoPU
+
+LoRa 
+- up to 10 km
+- Low Consumption
+- Few data
+
+NRF24L01
+- 1 Km
+- Transmit more data
+
+
+Specifications nRF24L01 – 2.4GHz RF Transceiver
+
+Low cost single-chip 2.4GHz GFSK RF transceiver IC
+Range with Antenna: 250Kb rate (Open area) >1000 meter
+Power: Ultra low power consumption
+Input Voltage: 3.3V
+Pins: 5V tolerant
+Price: $2
+
+
+COMMUNICATION BETWEEN ARDUINO AND RASPBERRY PI USING NRF24L01
+https://medium.com/@anujdev11/communication-between-arduino-and-raspberry-pi-using-nrf24l01-818687f7f363
+
+
+Wireless RF Communication using nRF24L01 Module
+https://circuitdigest.com/microcontroller-projects/wireless-rf-communication-between-arduino-and-raspberry-pi-using-nrf24l01
+
+
+Random Nerd Complete Guide for nRF24L01 – 2.4GHz RF Transceiver Module With Arduino
+https://randomnerdtutorials.com/nrf24l01-2-4ghz-rf-transceiver-module-with-arduino/
+
+
+Conectar Raspberry Pi 3 a nRF24L01
+https://www.laboratoriogluon.com/conectar-raspberry-pi-3-a-nrf24l01/
+
+
+Raspberry Pi, Arduino and RF24, a simple and quick guide
+https://www.youtube.com/watch?v=fWiS2l5K4P8
+
+
+Módulos de radio ¿Cuál usar? NRF24 | LoRa | CC1101 | HC12 | 433MHz | HC05
+https://www.youtube.com/watch?v=CVpu5j4wWuE
+
+
+Raspberry Pi communication between RF 433 MHz devices
+https://www.youtube.com/watch?v=Y_b2dThbJHc
+
+
+
+TUTORIAL BÁSICO NRF24L01 CON ARDUINO
+https://naylampmechatronics.com/blog/16_tutorial-basico-nrf24l01-con-arduino.html
+
+
+
+LoRa
+
+- Maximum transmission distance of 10km (open area) at maximum transmit power
+- Operating voltage : 1.8-3.7VDC
+- Operating current:
+              Transmission: 20-120mA (selectable power output)
+               Reception: 10.8-12.0mA (Booster enabled or disabled)
+
+- Full-duplex operation
+- Standard Serial Peripheral Interface(SPI) connectivity
+- 6x GPIO pins, configurable through software
+- Upto 256-byte single payload
+- 37.5kbps max bitrate
+= Built-in temperature and battery voltage sensor for low BOM count applications
+
+
+NRF24L01
+
+- ~800m range (line of sight)
+- Operating Voltage: 
+             3.3VDC operation
+             5V tolerant input pins
+
+- Operating Current:
+              Transmission: 11.3mA 
+              Reception: 13.5mA
+              900nA power down and 26uA standby mode current
+
+- Operation in 2.4GHz ISM band
+- 250kbps-2Mbps transmission rate (configurable)
+- Standard Serial Peripheral Interface(SPI) connectivity
+
+
+
+
+
+I switched to mysensors for 3 resons:
+
+- get a low power device (compared to ESP)
+- get a “clean sending” device (compared to RF433)
+- get (much) better range than RF433.
+
+The 3rd however is not true. My RF433 devices (the ones left) have a better range then my new mysensors.
+
+Note: I already added a 4.7 microF capacitor to my gateway and sensor, but it makes no difference.
+
+

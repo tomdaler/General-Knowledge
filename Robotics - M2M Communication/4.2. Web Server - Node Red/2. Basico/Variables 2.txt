@@ -1,0 +1,13 @@
+var payload=msg.payload;
+
+var flag1=context.get("flag1");
+if (typeof flag1=="undefined") flag1=false;
+
+if (payload>20 && !flag1)
+{
+    flag1=true;
+    msg.alarm=1;
+    context.set("flag1",flag1);
+    return msg;
+}
+

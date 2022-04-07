@@ -1,0 +1,23 @@
+
+INSTALAR
+apt-get install python3-pip
+pip3 install rpi-rf
+
+
+-- SEND asigna a GPIO 4 --
+rpi-rf_send -g 4 -p 205 -t 1 6
+
+
+-- RECEIVE asigne a GPIO 20 --
+rpi-rf_receive -g 20
+2018-06-22 11:27:41 - [INFO] rpi-rf_receive: Listening for codes on GPIO 20
+2018-06-22 11:27:41 - [INFO] rpi-rf_receive: 6 [pulselength 205, protocol 1]
+2018-06-22 11:27:41 - [INFO] rpi-rf_receive: 6 [pulselength 205, protocol 1]
+
+Para correrlo background y se genere un archive de salida y no bloquear consola
+
+nohup rpi-rf_receive -g 20 & > archivo.txt
+
+Y con otro programa en python se utiliza tail -n 1 para tomar la ultima linea y darle parse al ultimo dato
+
+
