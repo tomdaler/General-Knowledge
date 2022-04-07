@@ -1,0 +1,36 @@
+pip install pinput
+
+from pynput.keyboard import Key, Controller
+keys = Controller()
+
+time.sleep(2)
+
+keys.press('a')
+keys.realease('a')
+
+#enter
+keys.press(Key.cmd)
+keys.realease(Key.cmd)
+
+======
+
+
+from pynput.keyboard import Key, Controller
+keys = Controller()
+
+import os
+os.startfile("C:\System\Windows\Camera.exe")
+
+time.sleep(2)
+
+#enter
+keys.press(Key.cmd)
+keys.realease(Key.cmd)
+
+time.sleep(30)
+
+#enter
+keys.press(Key.cmd)
+keys.realease(Key.cmd)
+
+
