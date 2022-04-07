@@ -1,3 +1,0 @@
-https://www.tutorialspoint.com/scrapy/scrapy_extracting_items.htm
-
-https://docs.scrapy.org/en/latest/intro/tutorial.html
