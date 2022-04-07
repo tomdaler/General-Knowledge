@@ -1,0 +1,42 @@
+
+X = df[predictors].values
+y = df[target_column].values
+
+#sepera dataset en 75% a train y 25% a test
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.30, random_state=40)
+
+
+REGRESION LINEAL SIMPLE
+modelo = LinearRegression()
+
+REGRESION LINEAL RIDGE
+modelo = Ridge(alpha=0.01)
+
+REGRESION LINEAL LASSO
+modelo = Lasso(alpha=0.01)
+
+REGRESION LINEAL ELASTICNET
+modelo = ElasticNet(alpha = 0.01)
+
+
+modelo.fit(X_train, y_train) 
+trained= model.predict(X_train)
+
+#MSE en miles, mientras mas pequeno MEJOR
+print(np.sqrt(mean_squared_error(y_train,trained)))
+
+#R2 mientras mas cerca de 1 MEJOR
+print(r2_score(y_train, trained))
+
+
+OTRA FORMA
+
+model = LinearRegression()
+model.fit(xtrain, ytrain)
+predictions = model.predict(xtest)
+
+# Calculation of R2 Score
+from sklearn.model_selection import cross_val_score
+print(cross_val_score(linear_regression, x, y, cv=10, scoring="r2").mean())
+
+

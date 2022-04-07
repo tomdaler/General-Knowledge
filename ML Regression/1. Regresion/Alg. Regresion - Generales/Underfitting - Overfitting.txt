@@ -1,0 +1,27 @@
+
+
+Unferfitting (Subajuste) 
+------------------------
+Cuando un modelo no puede capturar la tendencia de los datos. 
+Usualmente porque son pocos datos de entrenamiento
+
+
+Overfitting (Sobreajuste) 
+-------------------------
+Cuando un algoritmo está perfectamente adaptado a los datos de entrenamiento,
+pero con nuevos datos no puede predecir bien.
+Por ejemplo un polinomio en regresion lineal, se adapto al entrenamiento pero dara alto error con predecir.
+
+
+
+Por ello es importante
+- Entrenar
+- Validar (con otro set si hay exactitud)
+- Evaluar prediccion con otro set
+
+Lo que buscamos : 
+Error de entrenamiento bajo
+Error de test bajo 
+Yy la diferencia entre los dos errores también debería ser bajo. 
+
+Se busca un polinomio no tan basico ni tan complejo. <--
