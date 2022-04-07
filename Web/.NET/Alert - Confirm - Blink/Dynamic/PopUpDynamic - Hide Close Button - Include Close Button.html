@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title> - jsFiddle demo</title>
+  
+  <script type='text/javascript' src='http://code.jquery.com/jquery-1.9.1.js'></script>
+  
+  <script type="text/javascript" src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+
+  <link rel="stylesheet" type="text/css" href="http://code.jquery.com/ui/1.9.2/themes/base/jquery-ui.css">
+  
+  <style type='text/css'>
+    
+  </style>
+ 
+
+<script type='text/javascript'>
+
+     function closing()
+        {
+          $("#div1").parent().remove();
+        }
+
+$(window).load(function(){
+$(document).on("click", "#btn", function () {
+
+    $('<div></div>').dialog({
+        modal: true,
+        title: "Confirmation",
+        open: function () {
+
+            var markup = "<div id='div1'>Hello World <BR/> <button style='background:white; cursor:pointer' id='bt_add' onclick='closing(this); ' >Close 2</button></div> ";
+
+            $(".ui-dialog-titlebar-close").hide(); 
+
+            $(this).html(markup);
+
+        },
+        buttons: {
+            Close: function () {
+                $(this).dialog("close");
+            }
+        }
+    }); 
+
+});
+});
+
+</script>
+
+</head>
+<body>
+  <input id="btn" type="button" value="Click Me" />
+  
+</body>
+
+</html>
+

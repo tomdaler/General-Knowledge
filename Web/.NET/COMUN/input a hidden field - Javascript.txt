@@ -1,0 +1,3 @@
+<input type="number" id="minutos" min="0" max="6" 
+       onchange="document.getElementById('hdMinutos').value = 
+                 document.getElementById('minutos').value;"/>

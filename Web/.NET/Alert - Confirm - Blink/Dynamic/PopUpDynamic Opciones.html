@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title> - jsFiddle demo</title>
+  
+  <script type='text/javascript' src='http://code.jquery.com/jquery-1.9.1.js'></script>  
+  <script type="text/javascript" src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+
+  <link rel="stylesheet" type="text/css" href="http://code.jquery.com/ui/1.9.2/themes/base/jquery-ui.css">
+  
+  <style type='text/css'>
+    
+     .tabla  {
+            border-collapse:collapse;
+            border:1px solid #FF0000;
+       }
+
+     .tabla td, th {
+           border:1px solid #FF0000;
+      }
+
+     .ui-dialog-title{
+         font-size: 90% !important;
+         color: Black;
+      }
+
+     .ui-dialog { 
+          font-size: 90%;
+        }
+
+  </style>
+ 
+
+<script type='text/javascript'>
+
+    var USER1 = '';
+
+    function Update_Row(ids) {
+
+         var Row = document.getElementById(ids);
+         var Cells = Row.getElementsByTagName("td");
+
+         var ids3 = "#t-"+ids + " option:selected";
+         ids3 = "#t-"+ids;
+         var tipo1 = $(ids3).val();
+
+         //tipo1 = $("#t-23 option:selected").val();
+          
+         target='False';
+         ids3 = "#c-"+ids;
+      
+         if ($(ids3).is(":checked")) target = "True";
+
+         $("#bt_add").show();
+         $("#add_new").hide();          
+
+         //alert(ids+'  '+tipo1 +' '+target);   
+
+         // UPDATE DATABASE    
+     }
+
+
+    function Delete_Row(ids) {
+
+        if (confirm("Are you sure you want to delete row?") == false)
+         {
+           return;
+         }
+
+         var Row = document.getElementById(ids);
+         var Cells = Row.getElementsByTagName("td");
+         var metrica =Cells[0].innerText;
+
+
+         // add to DropDown
+         Add_Metric(ids,metrica);
+      
+
+         // delete row in grid
+         var row = document.getElementById(ids);
+         row.parentNode.removeChild(row);
+
+
+         $("#bt_add").show();
+         $("#add_new").hide();          
+          
+
+         // update database
+         //*****************
+
+         alert( "Metric will not appear on the Graph as it has been\nremoved from your Metric Result Preferences");
+
+     }
+
+
+     function Add_Metric(valID, txt1)
+     {
+        var option = document.createElement("option");
+        option.text = txt1;
+        option.value = valID;
+        var select = document.getElementById("metrics");
+        select.appendChild(option);
+     }
+
+
+     function Show_Div() {        
+          $("#add_new").show();
+          $("#bt_add").hide();
+       }
+
+     function Save_Data() {
+
+       var txt1 = $("#metrics option:selected").text();
+       var metrica = $("#metrics option:selected").val();
+
+       if (metrica ==0)
+          {
+             alert('Select a metric');
+             return;
+          }
+
+       var txt2 = $("#tipos option:selected").text();
+       var val2 = $("#tipos option:selected").val();
+
+       if (val2 ==0)
+          {
+             alert('Select a horizontal or vertical');
+             return;
+          }
+      
+       var tipos;
+
+       if (val2==1) {
+             tipos = "<select id='t-"+ metrica +"'><option value=1>Horizontal Line</option><option value=2>Vertical Bar</option></select>";
+          }
+       else  {
+             tipos = "<select id='t-"+ metrica +"'><option value=2>Vertical Bar</option><option value=1>Horizontal Line</option></select>";
+          }
+              
+
+       var target = "<INPUT id='c-"+metrica+"' TYPE=CHECKBOX>";
+       if ($('#Display1').is(":checked")) target = "<INPUT id='c-"+metrica+"' TYPE=CHECKBOX checked>";
+
+
+       var pref_table = "<tr id='"+ metrica +"'><td>"+txt1+"</td><td>"+tipos+"</td><td align='center'>"+target+"</td><td align='center'>";
+
+       pref_table = pref_table + "&nbsp;<button type='button'  onClick='Update_Row("+ metrica +")' >Update</button> &nbsp;";
+       pref_table = pref_table + "      <button type='button'  onClick='Delete_Row("+ metrica +")' >&nbsp;Delete</button>&nbsp;" +  "</td></tr>";
+       $('#table_pref').append(pref_table);
+
+
+       // UPDATE DATABASE
+       //***************************************
+
+
+       // DELETE OPCION DE metric combo       
+       var x = document.getElementById("metrics");
+       x.remove(x.selectedIndex);
+
+       var rowCount = document.getElementById('table_pref').rows.length;
+ 
+       if (rowCount==4) {
+          $('#bt_add').hide();
+          $("#add_new").hide();
+          alert('You can assign up to 3 metrics');
+       }
+     }
+
+
+    function load_metrics()
+       {
+           //  return "<select id='metrics' ><option value=0>Select One</option><option value=1>Metricas 1</option><option value=2>metric2</option></select>";
+
+            // FROM DATABASE
+            //*****************
+
+            var metricas = "<select id='metrics' ><option value=0>Select One</option>";
+
+            //var data_options = "{opcion:'" + tipo + "', lista_in:'" + lista_in + "'}";
+            //data: data_options,
+
+            $.ajax({
+                type: "POST",
+                url: "Intradaybrief.aspx/GetMetrics",                
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                async: true,
+                success: function (response) {
+
+                    for (var i = 0; i < response.d.length; i++) {
+
+                        metricas = metricas + "<option value="+ response.d[i].MetricBaseID;
+                        metricas = metricas + ">"+ response.d[i].MetricBaseName +"</option>";                        
+                    }
+                  
+                    metricas = metricas + "</select>";
+                    alert(metricas);
+                    return metricas;
+
+                },
+                error: function (XMLHttpRequest, textStatus, errorThrown) {
+                    alert("Status: " + textStatus);
+                    alert("Error: " + errorThrown);
+                }
+            });
+       }
+
+
+    function load_preferences(user) {
+             
+      // HEADER
+      var pref_table = "<table id='table_pref' class='tabla'><tr><th>Metric</th><th>Type</th><th>Display\n Target</th><th>Action</th></tr>";
+
+
+      // DETAIL
+      var ids = 23;
+
+      var check1 = "<INPUT id='c-"+ids+"' TYPE=CHECKBOX checked>";
+      // if ( == ) check1 = "<INPUT id='c-"+ids+"' TYPE=CHECKBOX>";
+
+      var pos1 = "<select id='t-"+ids+"'><option value=1>Horizontal Line</option><option value=2>Vertical Bar</option></select>";
+      // if ( == ) pos1 = "<select id='t-"+ids+"'><option value=2>Vertical Bar</option><option value=1>Horizontal Line</option></select>
+
+      pref_table = pref_table + "<tr id='"+ids+"'><td>Fcast Metric</td><td>"+pos1+"</td><td align='center'>"+check1+"</td><td align='center'>";
+
+      pref_table = pref_table + "&nbsp;<button type='button'  onClick='Update_Row(" + ids + ")' >Update</button> &nbsp;";
+      pref_table = pref_table + "      <button type='button'  onClick='Delete_Row(" + ids + ")' >&nbsp;Delete</button>&nbsp;" +  "</td></tr>";
+
+
+      // END
+      pref_table = pref_table + "</table><br/>";
+      return pref_table;
+
+    }
+
+
+$(window).load(function(){
+$(document).on("click", "#btn", function () {
+
+      //var selecting  = "<select><option value=0>Select One</option><option value=1>Edit</option><option value=2>Delete</option></select>";
+
+      var metric_list = load_metrics();
+
+      var selecting2 = "<select id='tipos'><option value=0>Select One</option><option value=1>Horizontal Line</option><option value=2>Vertical Bar</option></select>";
+
+      var Titulo = "Manage Graph Preference";
+
+      var boton = "<div ALIGN=right><button style='background:white; cursor:pointer' id='bt_add' onclick='Show_Div();' >Add New</button></div>";
+
+      var pref_table = load_preferences(1);    
+
+      var infor1 = "Metric will not appear on the Graph as it has been<br/>";
+      var infor2 = "removed from your Metric Result Preferences<br/></br>";
+
+      
+    
+      var label2 = "<div style='background-color:blue; color:white'> <center>Add Graph Preference</center> </div> <br\>";
+
+      var metric1  = "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Metric:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" + metric_list + "<br/>";
+      var type1    = "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Type :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"   + selecting2 + "<br/>";
+      var display1 = "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Display Target: <INPUT TYPE=CHECKBOX id='Display1'><br/> ";
+
+      var save1   = "<center><button type='button'  onClick='Save_Data()' >Save</button><br/></center>";
+
+      var div_add = "<div id='add_new' style = 'display:none' >" + label2 + metric1 + type1 + display1 + save1 + "</div>";
+          
+      var html_info = boton +pref_table + infor1 + infor2 + div_add; 
+      
+      //infor2="<br\>";
+      //var html_info = boton +pref_table + infor2 + div_add; 
+
+      var newDiv = $(document.createElement('div'));
+           
+            newDiv.html(html_info);
+
+            newDiv.dialog({
+                width: 600,
+                maxHeight: 900,
+                maxWidth:  600,
+                dialogClass: "popup-styling",
+                title: Titulo
+            });
+   });
+});
+
+</script>
+
+</head>
+<body>
+  <input id="btn" type="button" value="Click Me" />
+  
+</body>
+
+</html>
+
