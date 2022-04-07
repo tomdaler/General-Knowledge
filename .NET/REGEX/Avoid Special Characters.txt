@@ -1,1 +1,0 @@
- valor = Regex.Replace(valor, @"[^0-9a-zA-Z:,;. &+-_ /()']", "");

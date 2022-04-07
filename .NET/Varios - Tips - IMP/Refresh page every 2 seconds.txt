@@ -1,3 +1,0 @@
-Refresh after 2 seconds go to page1.html
-
-<meta http-equiv="refresh" content="2; URL=page1.html">
