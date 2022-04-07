@@ -1,0 +1,34 @@
+VIDEO
+ffmpeg -f video4linux2 -r 25 -s 640x480 -i /dev/video0 out.avi
+
+For 1 hour
+ffmpeg -f v4l2 -i /dev/video0 -t 01:00:00 output
+
+
+ffmpeg -f dshow -framerate 15 -i video="USB Video Device":audio="Microphone (USB Audio Device)" -s 640x360 -c:v libx264 -g 15 -c:a aac -preset veryfast -segment_time 10 -segment_wrap 24 -f segment %03d.ts
+
+
+call from python
+
+import os
+import subprocess
+
+os.chdir('C://Users/Alex/')
+subprocess.call(['ffmpeg', '-i', 'picture%d0.png', 'output.avi'])
+subprocess.call(['ffmpeg', '-i', 'output.avi', '-t', '5', 'out.gif'])
+
+
+The preferred way is:
+
+subprocess.call(['ffmpeg', '-i', 'test%d0.png', 'output.avi'])
+
+Alternatively:
+
+subprocess.call('ffmpeg -i test%d0.png output.avi', shell=True)
+
+
+= = = = 
+
+pip install ffmpeg-python
+
+

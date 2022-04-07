@@ -1,0 +1,13 @@
+PICTURE
+fswebcam -r 1280x720 image2.jpg
+
+
+Archivo webcam.sh
+
+#!/bin/bash
+DATE=$(date +"%Y-%m-%d_%H%M")
+fswebcam -r 1280x720 --no-banner /home/pi/webcam/$DATE.jpg
+
+chmod +x webcam.sh
+./webcam.sh
+
