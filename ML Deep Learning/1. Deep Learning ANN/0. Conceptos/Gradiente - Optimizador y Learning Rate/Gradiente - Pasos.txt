@@ -1,0 +1,7 @@
+
+¿Cómo optimizar los hiper-parámetros  de gradient boosting trees?
+1.- Fijar un learning rate alto
+2.- Fijar parámetros para cada árbol    
+3.- Encontrar el mejor número de estimadores para nuestro ensable    
+4.- Una vez definido el número de estimadores y el learning rato óptimo, 
+    regresar a mejorar parámetros para cada árbol

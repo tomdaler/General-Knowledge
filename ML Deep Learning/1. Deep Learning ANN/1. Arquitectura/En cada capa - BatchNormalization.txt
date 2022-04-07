@@ -1,0 +1,15 @@
+En cada capa
+
+#CONV2
+model.add(Conv2D(base_hidden_units, (3,3),
+   padding='same',
+   input_shape=x_train.shape[1:]))
+
+model.add(Activation('relu'))
+
+model.add(MaxPooling2D(pool_size(2,2)))
+model.add(Dropout(0.2))
+
+model.add(BatchNormalization())
+
+

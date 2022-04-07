@@ -1,0 +1,14 @@
+
+x = np.array([0,1], [2,3], [4,5], [6,7])
+
+x.reshape(8,1)
+output: array([0],[1],[2],[3],[4],[5],[6],[7])
+
+
+x.reshape(4,2)
+output: array([[0],[1],[2],[3]] , [[4],[5],[6],[7]])
+
+#de 3 dimensiones a 2
+x_train = train_data.reshape((60000, 28x28))
+
+y = np.transpose(x) 

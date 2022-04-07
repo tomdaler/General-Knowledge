@@ -1,0 +1,8 @@
+Use ReLu o LReLu en hidden layers
+
+No use tanh
+
+Para salida 
+-	Para clasification, categorias:  Softmax
+-	Para linear : Regression
+-	Para binario : sigmoid

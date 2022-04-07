@@ -1,0 +1,9 @@
+- CNN (Convolutional neural network
+- NLP Natural language process
+- Sequences
+- Hyper parameters tuning
+- Gans Generative adversarial network
+- LSTM Long short-term memory
+- Callbacks
+- Tensorboard
+- y mas

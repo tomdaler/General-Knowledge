@@ -1,0 +1,9 @@
+
+TensorFlow is a library specific for tensor calculation and neural network, including deep learning. 
+It can be used on deep learning, like image classification, text generation or reinforcement learning, 
+but there's no method for general machine learning and statistics, like logistic regression, random forest or pca.
+
+Scikit-learn provides more various methods for machine learning and statistics than TensorFlow. 
+There are basic machine learning method, including decision tree and ensemble models, pca and clustering, and assessment methods. 
+You can use scikit-learn for various purposes, though it has no method for deepest learning.
+
