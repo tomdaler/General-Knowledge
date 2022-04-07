@@ -1,0 +1,41 @@
+!pip install Pillow
+!pip install face-recognition
+
+import face_recognition
+import matplotlib.pyplot as plt
+import matplotlib.patches as patches
+
+import PIL.ImageDraw
+from PIL import Image
+
+imagen = 'IMAGEN.JPG'
+IMG1 = face_recognition.load_image_file(imagen)
+
+face_locations = face_recognition.face_locations(IMG1)
+
+NoFaces = len(face_locations)
+print("We found {} face(s) in this image.".format(NoFaces))
+
+pil_image = PIL.Image.fromarray(IMG1)
+
+x=[]
+y=[]
+height=[]
+width=[]
+
+for face_location in face_locations:
+    top, left, bottom, right = face_location
+    x.append(left)
+    y.append(top)
+    width.append(left-right)
+    height.append(top-bottom)
+    # print("A face is detected at pixel location Top: {}, Left: {}, Bottom: {}, Right: {}".format(top, left, bottom, right))
+
+figure, ax = plt.subplots(1)
+img = Image.open(imagen)
+
+for i in range(len(x)):
+    rect = patches.Rectangle((x[i],y[i]),(height[i]),(width[i]), edgecolor='r', facecolor="none")
+    ax.add_patch(rect)
+    
+ax.imshow(img)
