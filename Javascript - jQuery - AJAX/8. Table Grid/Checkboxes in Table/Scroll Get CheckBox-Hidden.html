@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title> - jsFiddle demo</title>
+  
+  <script type='text/javascript' src="http://code.jquery.com/jquery-2.1.0.js"></script>    
+  
+  <style type="text/css"> 
+       table, th, td {  border: 1px solid black;    } 
+       td     {padding: 6px;}
+      .hidden { display: none;}
+       th     { text-align:center; }
+  </style>
+
+
+<script type='text/javascript'>
+
+
+   function LoadData(){
+    
+      // Clean table
+       var table1 = document.getElementById("t1");
+
+       if (table1 != null && table1.hasChildNodes()) {
+                while (table1.hasChildNodes()) {
+                    table1.removeChild(table1.firstChild);
+                }
+            }
+
+   
+      // Create Header
+      $('#t1').append('<tr><th>First</th><th>Last Name</th><th>Email</th><th>Check Box</th></tr>');  
+
+
+      // Generate each row
+      tr = document.createElement('tr');
+
+      for (var i = 1; i < 4; i++) {
+          tr = document.createElement('tr');
+          tr.appendChild(document.createElement('td'));
+          tr.appendChild(document.createElement('td'));
+          tr.appendChild(document.createElement('td'));
+          tr.appendChild(document.createElement('td')); // For checkbox
+          tr.appendChild(document.createElement('td')); // For hidden
+ 
+
+          tr.cells[0].appendChild(document.createTextNode('John'));
+          tr.cells[1].appendChild(document.createTextNode('McDowell'));
+          tr.cells[2].appendChild( document.createTextNode('ddd@gmail.com') );
+
+
+          // CHECKBOX
+          var checkbox = document.createElement("input"); 
+          checkbox.type = "checkbox"; //Added for checkbox
+          tr.cells[3].appendChild(checkbox); 
+
+
+          // HIDDEN FIELD
+          var hidden1 = document.createElement("input"); 
+          hidden1.type = "hidden"; 
+          hidden1.id   = "hidden1";
+          hidden1.value = 100 + i;
+          hidden1.className = "HF";
+
+          tr.cells[4].appendChild(hidden1);  
+          tr.cells[4].className = "hidden";  
+
+          table1.appendChild(tr);
+      }
+
+      return false;   
+   }
+
+
+   function GetLista() {
+
+       alert('Dentro');
+       var lista = "";
+
+
+       $('#t1').find('input[type="checkbox"]:checked').each(function () {
+          alert( $(this).parent().parent().find('.HF').val() );
+       });
+
+
+
+      $('#t1 tr').each(function () {           
+           $(this).find('td input:checked').each(function () {
+               lista = lista + $(this).parent().parent().find('.HF').val() +',';                        
+           });
+       });
+
+    alert('Salida'+lista);
+    return false;
+  }
+  
+
+</script>
+
+</head>
+<body>
+
+ <br>
+
+ <button onclick="return LoadData();">Load Data</button>
+
+ <button onclick="return GetLista();">Checking</button>
+
+  <br>
+  <br>
+
+
+<table id='t1'>
+  <tr>
+     <th>First Name</th>
+     <th>Last Name</th>
+     <th>Email</th>
+  </tr> 
+
+  <tr>
+    <td>1</td>
+    <td>2</td>
+    <td>3</td>
+  </tr>
+
+</table>
+
+
+</body>
+</html>
+
+
+
+
+

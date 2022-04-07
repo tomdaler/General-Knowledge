@@ -1,0 +1,23 @@
+
+
+
+<table id="tbl2">
+   <tr><td><input type="text" name="tb3"/></td></tr>
+   <tr><td><input type="text" name="tb4"/></td></tr>
+ </table>
+
+var params = $("#tbl2").serialize();
+
+var params = $("#tbl2 :input").serialize();
+
+var params = $("#tbl2 input").serializeArray();
+
+
+= = = = = = 
+
+
+var table = $('#table-example').DataTable();
+
+var params = table.$('input').serializeArray();
+
+
