@@ -1,0 +1,84 @@
+var domains = new Dictionary<string, string>
+{
+    {"sk", "Slovakia"},
+    {"ru", "Russia"},
+    {"de", "Germany"},
+    {"no", "Norway"}
+};
+
+domains.Add("pl", "Poland");
+
+Console.WriteLine(domains["sk"]);
+
+var days = new Dictionary<string, string>
+{
+    ["mo"] =  "Monday",
+    ["tu"] =  "Tuesday",
+    ["we"] =  "Wednesday",
+    ["th"] =  "Thursday",
+    ["fr"] =  "Friday",
+    ["sa"] =  "Saturday",
+    ["su"] =  "Sunday"
+};
+
+Console.WriteLine(days["fr"]);
+
+Console.WriteLine($"There are {domains.Count} items in the dictionary");
+
+$ dotnet run
+Slovakia
+Friday
+There are 5 items in the dictionary
+
+
+var users = new Dictionary<string, int>()
+{
+    { "John Doe", 41 },
+    { "Jane Doe", 38 },
+    { "Lucy Brown", 29 },
+};
+
+users["Paul Brown"] = 33;
+users.Add("Thomas Pattison", 34);
+
+Console.WriteLine(string.Join(", ", users));
+
+users.Remove("Jane Doe");
+
+Console.WriteLine(string.Join(", ", users));
+
+users.Clear();
+
+if (users.Count == 0)
+{
+    Console.WriteLine("The users dictionary is empty");
+}
+
+The example creates a new dictionary and modifies it using several built-in methods.
+
+var users = new Dictionary<string, int>()
+{
+    { "John Doe", 41 },
+    { "Jane Doe", 38 },
+    { "Lucy Brown", 29 },
+};
+
+A new dictionary is created. The user names are the keys and the user ages are the values.
+
+users["Paul Brown"] = 33;
+users.Add("Thomas Pattison", 34);
+We add two new pairs to the dictionary using dictionary access notation and the Add method.
+
+Console.WriteLine(string.Join(", ", users));
+We use the string Join method to display all elements in one shot.
+
+users.Remove("Jane Doe");
+A pair is removed with the Remove method. The parameter is the dictionary key.
+
+users.Clear();
+The dictionary is cleared with the Clear method.
+
+$ dotnet run
+[John Doe, 41], [Jane Doe, 38], [Lucy Brown, 29], [Paul Brown, 33], [Thomas Pattison, 34]
+[John Doe, 41], [Lucy Brown, 29], [Paul Brown, 33], [Thomas Pattison, 34]
+The users dictionary is empty
