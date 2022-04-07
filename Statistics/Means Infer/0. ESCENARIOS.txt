@@ -1,0 +1,24 @@
+
+A) Se tiene un promedio y desviacion definidos
+EL TORNILLO QUE SE FABRICA SIEMPRE ES DE 5" DE LARGO Y 1.5" DE ANCHO
+====================================================================
+
+Se puede crear un intervalo de confianza con los valores definidos
+
+Una Muestra
+- Se crea una muestra (pequena (t) o grande (normal) 
+- Se compara con los valores definidos
+
+Se puede predecir, dado un valor 'x'
+- Que probabilidad de que hayan menores a el o mayores al el
+
+
+Se tiene promedios y se comparan
+
+
+B) Se comparan 2 muestras
+SE TIENE DOS MUESTRAS, HOMBRES/MUJERES, Y SE EVALUA SI MEDIAS SON SIMILARES
+===========================================================================
+- Se calcula estadisticas descriptivas de ambas muestras
+- Se compara si las medias son similares o no
+ 

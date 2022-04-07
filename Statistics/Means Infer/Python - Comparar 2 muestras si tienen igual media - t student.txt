@@ -1,0 +1,87 @@
+
+COMPARAR, 2 MUESTRAS DE 10 Y EVALUAR SI TIENEN MEDIAS SIMILARES EN UN 95%
+10 MUESTRAS HOMBERS
+10 MUESTRAS MUJERES
+df = 10+10-2
+
+
+We will create some dummy data and 
+let’s assume that they represent the likes on Instagram for some male and female users in one day. 
+We will see if there is any difference in their mean 
+thus the number of likes the males do is bigger than the number of likes of females.
+
+
+The Hypothesis
+Let’s beging by setting up our two hypothesis.
+
+Null Hypothesis (H0): Population mean for males – Population mean for females = 0
+Alternative Hypothesis (H1): Population mean for males – Population mean for females > 0
+
+Now, let’s set our significance level to 0.05 or 5%. 
+That means that if our outcome has less that 5% chance of occuring 
+we will reject the Null Hypothesis.
+
+
+import pandas as pd
+import numpy as np
+import random
+from numpy.random import seed
+from numpy.random import randn
+from scipy.stats import ttest_ind
+from scipy.stats import t
+
+seed(1)
+df=pd.DataFrame({"female":np.random.randint(10, 100, size=10),"male":np.random.randint(10, 140, size=10)})
+print(df.head())
+
+
+  female  male
+0      47    81
+1      22    35
+2      82    30
+3      19   111
+4      85    60
+
+
+dof = 10+10-2 = 18 (2 muestras de 10, una de hombres y otra de mujeres)
+
+OPTION 1:
+
+se_male=df.std()['male']/np.sqrt(10)
+se_female=df.std()['female']/np.sqrt(10)
+sed=np.sqrt((se_male**2) + (se_female**2))
+
+t_stat=(df.mean()['male'] - df.mean()['female'])/sed
+
+print(t_stat)
+
+1.4975967856987693
+
+
+OPCION 2: CON Scipy
+
+t_stat, p = ttest_ind(df['male'], df['female'])
+print(f't={t_stat}, p={p}')
+
+t=1.4975967856987693, p=0.15156916509799923
+
+For right tail  p/2
+
+This function returns the p-value for the two-tailed test and we want left-tailed.
+What we can do is to run the following function with our t statistic and the DOF.
+
+#right-tailed 
+t.sf(t_stat, 18)
+
+0.07578458254899961
+
+Igual a p/2
+
+
+#left-tailed 
+#DOF =18
+t.cdf(t_stat, DOF)
+
+As we are getting 0.075 which is bigger than 0.05 
+thus we will not reject the NULL Hypothesis.
+

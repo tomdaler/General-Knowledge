@@ -1,0 +1,18 @@
+import numpy as np
+import numpy as np, scipy.stats as st
+
+data = ([22, 23, 19, 17, 29, 25])
+
+num1 = len(data)-1
+mean1 = np.mean(data)
+
+st1 = st.sem(data)
+sigma = st1/np.sqrt(num1)
+
+p=0.9
+
+#scipy.stats.norm.interval(confidence, loc=mean, scale=sigma)
+st.t.interval(p, num1, loc=mean1, scale=sigma)
+
+
+(20.49231140436882, 24.50768859563118)
