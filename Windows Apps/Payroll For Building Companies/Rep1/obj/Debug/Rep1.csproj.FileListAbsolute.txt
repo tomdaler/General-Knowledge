@@ -1,0 +1,8 @@
+C:\Proyectos\Planilla\Rep1\bin\Debug\Rep1.dll
+C:\Proyectos\Planilla\Rep1\bin\Debug\Rep1.pdb
+C:\Proyectos\Planilla\Rep1\obj\Debug\Rep1.Desde.resources
+C:\Proyectos\Planilla\Rep1\obj\Debug\Rep1.csproj.GenerateResource.cache
+C:\Proyectos\Planilla\Rep1\obj\Debug\Rep1.csproj.CoreCompileInputs.cache
+C:\Proyectos\Planilla\Rep1\obj\Debug\Rep1.dll
+C:\Proyectos\Planilla\Rep1\obj\Debug\Rep1.pdb
+C:\Proyectos\Planilla\Rep1\obj\Debug\Rep1.csproj.AssemblyReference.cache
