@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='us-ascii'?>
+
+<options>
+   <Connection> 
+      <Name>Production</Name> 
+      <Server>DALSAPENTDBP01</Server> 
+      <Database>SAPhIRE</Database> 
+      <Windows>Y</Windows> 
+      <User1> </User1> 
+      <Password> </Password> 
+   </Connection>
+   <Connection> 
+      <Name>Test</Name> 
+      <Server>DALSAPENTDBT01</Server> 
+      <Database>SAPhIREDev_2_0</Database> 
+      <Windows>N</Windows> 
+      <User1>Saphire</User1> 
+      <Password>$@P#1R3</Password> 
+   </Connection>
+</options>

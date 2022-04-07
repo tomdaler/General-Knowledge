@@ -1,0 +1,8 @@
+On Server 063 the driver for excel is for 32bits, and for .NET, to make it work, it has to set the building of the project to “Any CPU”.
+
+On the other hand, on my laptop the driver installed is for 64bits, and to make it work on my laptop I have to set the project to work with “64 bits”
+
+
+So, while I test the application on my laptop I have to set to 64bits , and when I copy the release to production I have to set to “Any CPU”
+
+For this reason, if the driver is updated to 64bits on server 063 the rest of automations have to be rebuilt with the setting on their projects to “64 bits”
