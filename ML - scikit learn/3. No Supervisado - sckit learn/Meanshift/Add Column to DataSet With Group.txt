@@ -1,0 +1,32 @@
+import pandas as pd 
+from sklearn.cluster import MeanShift 
+
+dataset = pd.read_csv('candy.csv') 
+ #print(dataset.head(5))  
+
+# eliminar la columna QUE NO APORTA, NO SE CATEGORIZA, ES EL NOMBRE
+X = dataset.drop('competitorname', axis=1)
+
+meanshift = MeanShift().fit(X)
+
+#Aparece 2, o sea tiene 3 clusters
+print(max(meanshift.labels_))
+print("="*64)
+
+# Imprimamos la ubicación de los centros que puso sobre nuestros datos. Hay que recordar que estos algoritmos 
+# crean un centro y a partir de ahí se ajuztan a todos los datos que lo rodean  
+print(meanshift.cluster_centers_)
+    
+# Los arreglos lo integramos a nuestros datasets 
+# EL GRUPO AL QUE PERTENECE SE LO ASIGNAMOS AL NUEVO DATASET
+
+dataset['meanshift'] = meanshift.labels_  
+#---------------------------------------
+print("="*64)
+print(dataset)  
+
+
+Si ambos modelos, K-means y meanShift, tienen K-3 clusters podemos comparar sus predicciones
+(df['KMeans'] == df['MeanShift']).sum() / df.shape[0]
+
+#output = 0.5058823529411764

@@ -1,0 +1,9 @@
+Tipos de Aprendizaje: Supervisado y no supervisado.
+
+Todo el aprendizaje supervisado se trata de valor esperado condicional
+
+En Data Science: la mayor parte de los problemas de aprendizaje supervisado consisten en la estimación de valores esperados condicionales.
+
+El aprendizaje supervisado se divide en dos tipos:
+•	Regresión: cuando la variable dependiente es continua (a medida que "x" cambia, "y" también lo hace).
+•	Clasificación: cuando la variable dependiente es categórica (discreta), que es cuando en base a caracteristicas de individuos (que se pueden contar) vamos a clasificarlo en alguna de varias categorías.

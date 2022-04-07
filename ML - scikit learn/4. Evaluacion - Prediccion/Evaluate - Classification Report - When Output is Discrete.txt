@@ -1,0 +1,25 @@
+from sklearn.metrics import confusion_matrix , classification_report
+import numpy as np
+
+y_pred = ann.predict(X_test)
+y_pred_classes = [np.argmax(element) for element in y_pred]
+
+print("Classification Report: \n", classification_report(y_test, y_pred_classes))
+
+Classification Report: 
+               precision    recall  f1-score   support
+
+           0       0.63      0.45      0.53      1000
+           1       0.72      0.46      0.56      1000
+           2       0.33      0.46      0.39      1000
+           3       0.36      0.25      0.29      1000
+           4       0.44      0.37      0.40      1000
+           5       0.34      0.46      0.39      1000
+           6       0.56      0.47      0.51      1000
+           7       0.39      0.67      0.50      1000
+           8       0.64      0.60      0.62      1000
+           9       0.59      0.53      0.55      1000
+
+    accuracy                           0.47     10000
+   macro avg       0.50      0.47      0.47     10000
+weighted avg       0.50      0.47      0.47     10000

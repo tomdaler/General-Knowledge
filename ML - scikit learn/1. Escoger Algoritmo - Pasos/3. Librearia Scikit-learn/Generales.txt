@@ -1,0 +1,19 @@
+Módulos de Scikit-learn
+
+1.- Clasificación.
+2.- Regresión.
+3.- Clustering.
+4.- Preprocesamiento.
+5.- Reducción de dimensionalidad.
+6.- Selección del modelo.
+
+
+https://scikit-learn.org/
+
+- Ayuda en preprocesamiento de datos
+- Que modelos podemos usar
+- El procedimiento para optimizar modelos
+
+
+
+

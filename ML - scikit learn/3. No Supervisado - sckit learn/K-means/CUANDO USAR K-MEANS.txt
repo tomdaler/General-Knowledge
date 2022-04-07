@@ -1,0 +1,6 @@
+K-Means se utiliza cuando
+
+- No es supervisado
+- Es decir, no se tiene target
+- Es un algoritmo que propone agrupaciones
+- Clustering, agrupa, genera clusters

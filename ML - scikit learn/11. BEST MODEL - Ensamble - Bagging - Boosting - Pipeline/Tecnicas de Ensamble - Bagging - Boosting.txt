@@ -1,0 +1,33 @@
+METODOS DE ENSAMBLE
+
+- Se combina diferentes metodos de ML 
+- Se usa en cada metodo diferente combinacion
+- Se saca consenso
+
+ESTRATEGIAS 
+
+BAGGING: Bootstrap Aggregation:
+============================== 
+la respuesta es el consenso del valor entre varios modelos
+Si 4 dicen uva, y 1 fresa, se toma la uva, el consenso
+
+MENOR ERROR: 
+Se toma el modelo que produzca el menor error
+
+
+BOOSTING: Impulsar / propulsar:
+==============================
+Secuencial
+Fortalece gradualmente un modelo usando el error residual de etapas anteriores
+El resultado final se consigue en consenso entre modelos
+Modelos que usa: AdaBoost, Gradient Tree Boosting, XGBoost
+
+
+Si toma varios modelos y todos tienen exactitud arriba de 98%
+Tomaria el que tiene la mayor exactitud? o un modelo de ensamble?
+
+Depende de lo que pronostica
+- Para la eficacion de un fertilizante, un 98% podria ser aceptable
+- Para un sistema critico de avion no seria aceptable un 98%
+
+

@@ -1,0 +1,76 @@
+
+import pandas as pd
+
+from sklearn.neighbors import KNeighborsClassifier
+from sklearn.ensemble import BaggingClassifier
+
+from sklearn.model_selection import train_test_split
+from sklearn.metrics import accuracy_score
+
+dt_heart = pd.read_csv('heart.csv')
+#print(dt_heart['target'].describe())
+
+#min 0, max 1
+
+y= dt_heart['target']
+x= dt_heart.drop(['target'], axis=1)
+x_train, x_test, y_train, y_test = train_test_split(x,y,test_size=0.35)
+
+
+# KNN SIN BAGGING
+# ================
+
+knn_class = KNeighborsClassifier().fit(x_train, y_train)
+knn_pred = knn_class.predict(x_test)
+
+
+print("="*30)  # imprima linea
+print(accuracy_score(knn_pred, y_test))
+print('Accuracy KNeighbors:', accuracy_score(knn_pred, y_test))
+print('')
+
+# ==============================
+# 0.7437325905292479
+
+
+# CON BAGGING VARIOS MODELOS
+# ==========================
+
+from sklearn.svm import LinearSVC
+from sklearn.svm import SVC
+
+from sklearn.linear_model import SGDClassifier
+from sklearn.tree import DecisionTreeClassifier
+
+#Eliminar warnings
+import warnings
+warnings.simplefilter("ignore")
+
+classifier = {
+        'KNeighbors': KNeighborsClassifier(),
+        'LinearSCV': LinearSVC(),
+        'SVC': SVC(),
+        'SGDC': SGDClassifier(),
+        'DecisionTree': DecisionTreeClassifier()
+    }
+
+for name, estimator in classifier.items():
+    bag_class = BaggingClassifier(base_estimator=estimator, n_estimators=5).fit(x_train, y_train)
+    bag_pred = bag_class.predict(x_test)
+    print('Accuracy Bagging with {}:'.format(name), accuracy_score(bag_pred, y_test))
+    print('')
+
+
+output
+==============================
+0.6824512534818942
+
+Accuracy Bagging with KNeighbors: 0.8022284122562674
+
+Accuracy Bagging with LinearSCV: 0.6128133704735376
+
+Accuracy Bagging with SVC: 0.6545961002785515
+
+Accuracy Bagging with SGDC: 0.7075208913649025
+
+Accuracy Bagging with DecisionTree: 0.9777158774373259

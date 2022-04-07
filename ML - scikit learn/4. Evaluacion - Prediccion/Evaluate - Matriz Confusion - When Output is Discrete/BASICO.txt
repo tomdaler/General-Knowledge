@@ -1,0 +1,38 @@
+
+model.fit(X_train, y_train, epochs=100)
+model.evaluate(X_test, y_test)
+
+y_pred = model.predict(X_test)
+
+# Da valores entre 0 - 1
+# Convertimos valores a 0, 1
+
+
+# Opcion para Arreglos
+======================
+Y1 = []
+for element in y_pred:
+    if element > 0.5:
+        Y1.append(1)
+    else:
+        Y1.append(0)
+
+
+# Opcion, para dataframe
+========================
+df1['A'].values[df1['A'] > 0.5] = 1
+df1['A'].values[df1['A'] <= 0.5] = 0
+
+
+# Compara y_test con Y1 que fue generado de predecir X_test
+===========================================================
+
+import seaborn as sn
+from sklearn.metrics import confusion_matrix , classification_report
+cm = tf.math.confusion_matrix(labels=y_test,predictions=Y1)
+
+plt.figure(figsize = (10,7))
+sn.heatmap(cm, annot=True, fmt='d')
+plt.xlabel('Predicted')
+plt.ylabel('Truth')
+

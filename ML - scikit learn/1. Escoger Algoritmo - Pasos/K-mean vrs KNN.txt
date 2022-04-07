@@ -1,0 +1,16 @@
+
+1.	K-NN is a Supervised machine learning 
+	while K-means is an unsupervised machine learning.
+
+2.	K-NN is a classification or regression machine learning algorithm 
+	while K-means is a clustering machine learning algorithm.
+
+3.	K-NN is a lazy learner 
+	while K-Means is an eager learner. 
+	An eager learner has a model fitting that means a training step but a lazy learner does not have a training phase.
+
+4.	K-NN performs much better if all of the data have the same scale 
+	but this is not true for K-means.
+
+El centroide de un cluster se define como el punto equidistante de los objetos pertenecientes a dicho cluster
+

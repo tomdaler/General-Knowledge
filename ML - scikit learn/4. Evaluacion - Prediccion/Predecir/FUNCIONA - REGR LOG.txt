@@ -1,0 +1,3 @@
+test = pd.DataFrame([[3, 2]])
+result = model1.predict(test)
+result[0]

@@ -1,0 +1,32 @@
+
+Using both incrases accuracy for intrusion detection.
+First K-means and the second stage Naive-Bayes
+
+
+K-Means is used to identify groups of samples that behave similarly and dissimilarly 
+such as malicious and non-malicious activity in the first stage 
+
+While Naïve Bayes is used in the second stage to classify all data into correct class category.
+
+
+Naive Bayes is for classification. 
+==================================
+It is a supervised learning classification technoque
+Which means, you give a training set with the right answers.
+Creates the model to predict more data to predict the answer.
+
+
+k-means is for clustering. 
+==========================
+It is an unsupervised learning problem 
+Which means there isn't a right or wrong answer.
+We do not know the class or labels for any data.
+It is intended to find structure in data based on certain targeted requirements.
+
+PROPOSE POSSIBLE CLUSTERS, SCENARIOS, 
+WITH NEW DATA IT WILL CREATE A NEW SCENARIO OR AFFECTS THE MAGNITUD OF PREVIOUS SCENARIOS
+
+For example
+From data from different sensors shows how is the place.
+Then we look for cluster these data points into the number of possible states for the place.
+When with a new sensor reading we can predict the new states of the place.
