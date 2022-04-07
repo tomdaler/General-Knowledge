@@ -1,7 +1,0 @@
-Difference
-
-K means is unsupervised
-KNN is supervised
-
-K means creates classes out of unlabeled data
-KNN classifies data to available classes from labeled data.

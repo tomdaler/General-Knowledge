@@ -1,5 +1,0 @@
-import joblib
-
-joblib.dump(modelo,'archivo.pkl')
-
-
