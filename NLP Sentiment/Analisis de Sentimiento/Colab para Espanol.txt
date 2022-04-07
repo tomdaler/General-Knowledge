@@ -1,0 +1,116 @@
+https://colab.research.google.com/github/pysentimiento/pysentimiento/blob/master/notebooks/PySentimiento_Sentiment_Analysis_in_Spanish.ipynb
+
+!pip install pysentimiento
+
+
+from pysentimiento import create_analyzer
+analyzer = create_analyzer(task="sentiment", lang="es")
+
+
+
+analyzer.predict("Qué gran jugador es Messi")
+
+Predicción en batch
+Si tenemos un conjunto de oraciones, pysentimiento hace la predicción en conjunto de manera eficiente''
+
+%%time
+from tqdm.auto import tqdm
+oraciones = [
+    "Qué gran jugador es Messi",
+    "Esto es pésimo",
+    "No sé, cómo se llama?",    
+] * 100
+for sent in tqdm(oraciones):
+    analyzer.predict(sent)
+
+
+
+100%
+300/300 [00:25<00:00, 11.79it/s]
+CPU times: user 25.3 s, sys: 208 ms, total: 25.5 s
+Wall time: 25.4 s
+
+
+
+%%time
+rets = analyzer.predict(oraciones)
+
+
+
+100%
+10/10 [00:00<00:00, 59.44ba/s]
+The following columns in the test set  don't have a corresponding argument in `RobertaForSequenceClassification.forward` and have been ignored: text.
+***** Running Prediction *****
+  Num examples = 300
+  Batch size = 32
+
+%%time
+rets = analyzer.predict(oraciones)
+
+
+
+%%time
+rets = analyzer.predict(oraciones)
+
+
+
+Emojis
+It supports the use of emojis through the emoji library.
+
+Soporta también el uso de emojis
+
+analyzer.predict("🤢")
+
+AnalyzerOutput(output=NEG, probas={NEG: 0.981, NEU: 0.017, POS: 0.002})
+
+O de hashtags
+
+analyzer.predict("#EstoEsUnaMierda")
+
+AnalyzerOutput(output=NEG, probas={NEG: 0.998, NEU: 0.001, POS: 0.001})
+
+
+
+Emotion Analysis
+pysentimiento provee análisis de emociones a través de modelos pre-entrenados con los datasets de EmoEvent
+
+
+emotion_analyzer = create_analyzer(task="emotion", lang="en")
+
+
+emotion_analyzer.predict("This is so terrible...")
+
+AnalyzerOutput(output=sadness, probas={sadness: 0.978, fear: 0.013, disgust: 0.003, others: 0.002, surprise: 0.002, anger: 0.001, joy: 0.001})
+
+
+emotion_analyzer.predict("omg")
+
+AnalyzerOutput(output=surprise, probas={surprise: 0.982, others: 0.007, fear: 0.003, joy: 0.003, sadness: 0.002, anger: 0.002, disgust: 0.001})
+
+
+emotion_analyzer.predict("yayyyy")
+AnalyzerOutput(output=joy, probas={joy: 0.879, others: 0.106, surprise: 0.005, anger: 0.005, sadness: 0.002, disgust: 0.002, fear: 0.002})
+
+emotion_analyzer.predict("People in the world is really worried because of Coronavirus")
+AnalyzerOutput(output=fear, probas={fear: 0.939, others: 0.043, surprise: 0.005, joy: 0.004, disgust: 0.004, sadness: 0.002, anger: 0.002})
+
+
+Hate Speech
+
+hate_speech_analyzer = create_analyzer(task="hate_speech", lang="es")
+
+
+hate_speech_analyzer.predict("Esto es una mierda pero no es odio")
+
+
+
+Preprocessing
+
+pysentimiento tiene un módulo de preprocesamiento de tweets con varias opciones para manipular hashtags, emojis, repetición de caracteres y demás.
+
+from pysentimiento.preprocessing import preprocess_tweet
+
+preprocess_tweet("📢 @realDonaldTrump ha sido banneado de Twitter #BreakingNews")
+
+emoji altavoz de mano emoji  @usuario ha sido banneado de Twitter breaking news
+
