@@ -1,0 +1,27 @@
+Transformaciones comunes
+
+- cambiar tipo de dato
+- dividir columnas
+- reemplazar valores
+- agregar columnas
+- filtrar datos
+- valores negativos en parentesis
+- fecha con formato diferente
+
+
+combinaciones
+- anexar consultas
+- combinar consultas
+- combinar binarios
+
+
+dataset tenia fechas con diferentes formatos, 
+es decir para la misma columna tenia (dd/mm/yyyy) y (mm/dd/yyyy) 
+para el segundo caso Power BI no supo interpretar los datos 
+y tenia para la misma columna texto y fechas, 
+sin embargo por temas de hacer bien el ejercicio recurrí del Excel
+ para poder hacer la limpieza, para ello utilice la siguiente formula
+
+=SI(ESTEXTO(I2)=FALSO;I2;FECHA(EXTRAE(I2;6;4);EXTRAE(I2;3;2);EXTRAE(I2;1;1)))
+
+

@@ -1,0 +1,18 @@
+FILE / Options and settions / Options
+
+Python Scripting / How to install Python
+
+Click in
+
+Work through the 'Run Python scripts in Power BI Desktop'
+
+
+Pagina
+
+https://www.python.org/
+
+DOwnloads / WIndows
+
+https://www.python.org/downloads/windows/
+
+Escoja 64 bits / windows

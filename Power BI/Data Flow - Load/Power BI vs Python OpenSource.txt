@@ -1,0 +1,13 @@
+Se necesita 
+- Premium
+- Cuenta Azure cognitive
+- Puede automatizar la actualizacion
+- Publica
+
+
+La alternativa
+- Python
+- OpenSource libraries
+- Codificar vs code para automatizar
+
+
