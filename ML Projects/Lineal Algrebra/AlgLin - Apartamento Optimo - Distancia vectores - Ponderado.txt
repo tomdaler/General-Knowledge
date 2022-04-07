@@ -1,0 +1,98 @@
+Apartamento optimo
+Se crea vectores y se define vector ideal, mas abajo se da ponderacion
+Y se evalua cual se acerca mas al ideal
+
+
+Catalogar tamanos en
+1. Area menos a 60 mts2
+2. Area 60-80 mtr2
+3. Area 80-110 mtr2
+4. Area 110-130 mtr2
+5 Area mayor a 130 mtr2
+
+
+#Categoria tam / Num dormitorios / num banos / num estacionamientos
+
+
+Ap1 = (4,3,3,3) mayor a 110mts2 y menos a 130 mts2 / 3 dormitorios / 3 banos / 3 estcionamientos
+
+Ap2 = (3,3,1,0)
+
+Ap3 = (5,4,3,0)
+
+Ideal = (3,2,2,1)
+
+#ideal cat 3. entre 80-110mts2 / 2 dormitorios / 2 banos/ 1 estacionamiento
+I=np.array([3,2,2,1])   
+
+Ap1 = np.array([4,3,3,3])
+Ap2 = np.array([3,3,1,0])
+Ap3 = np.array([5,4,3,0])
+
+print(np.ligalg.norm(I - Ap1)
+print(np.ligalg.norm(I - Ap2)
+print(np.ligalg.norm(I - Ap3)
+
+2.64
+1.73
+3.16
+
+Lo mas cercano a lo que deseo es Ap.2 y lo mas lejano es Ap.3
+Al encontrar el vector mas cercano.
+
+Si a Ap2 me agregamos 1 estacionamiento, baja a 1.41
+
+================================================================================
+
+PONDERACION
+
+He incluido un vector para ponderar la importancia de las variables a tener en cuenta.
+El resultado se muestra en una tabla hecha con ‘DataFrame’ de ‘pandas’
+
+import numpy as np
+import pandas as pd
+
+I = np.array([3,2,2,1])
+A_1 = np.array([4,3,3,3])
+A_2 = np.array([3,3,2,1])
+A_3 = np.array([5,4,3,0])
+33
+
+#importancia de cada variable (0-1)
+arr_pond = np.array([0.5, #tamaño vivienda
+                     0.8, #numero de recámaras
+                     0.2, #numero baños
+                     1    #numero estacionamientos
+                     ])
+
+def pond(arr,arr_pond=arr_pond):
+  return arr*arr_pond
+
+#array con todas las opciones
+options = np.array([A_1, A_2, A_3])
+
+#Esta es la funcion que nos va ayudar a decidir
+#Introducimos como parámetros las opciones que estamos contemplando (options) y nuestra referencia ideal (I)
+
+def FxDecisor(options, ideal):
+    results = []
+    house_index = 0
+    for option in options:
+        house_index +=1
+        result = ['A_' + str(house_index), np.linalg.norm(pond(ideal)-pond(option))] 
+
+    #Generamos un array con el nombre de la casa y la nota (distancia)
+    results.append(result)
+
+    # '.nsmallest()' ordena la tabla de menor a mayor   
+    df = pd.DataFrame(results,columns=['Houses','Rate']).nsmallest(3,'Rate') 
+    return df
+
+FxDecisor(options,I)
+
+
+	Houses	Rate
+1	A_2	0.800000
+2	A_3	2.144761
+0	A_1	2.220360
+
