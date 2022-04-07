@@ -1,0 +1,16 @@
+
+Eliminar primera fila
+
+np.delete(arr1, 0, axis=0)
+arr1[:-1])
+
+
+
+Eliminar primera columna
+
+np.delete(arr, 0, axis=1)
+
+
+Resize image
+
+image2 = image1.resize((500,500))
