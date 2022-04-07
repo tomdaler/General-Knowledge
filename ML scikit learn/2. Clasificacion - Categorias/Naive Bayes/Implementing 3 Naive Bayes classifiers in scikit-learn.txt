@@ -1,0 +1,3 @@
+Implementing 3 Naive Bayes classifiers in scikit-learn
+
+https://hub.packtpub.com/implementing-3-naive-bayes-classifiers-in-scikit-learn/
