@@ -1,0 +1,44 @@
+MQTT IN
+
+
+1) Connection failed to broker: mqtt
+
+you have to use 1883
+
+http://192.168.1.23:1883
+
+- 1883  para no TLS  TLS checkbox false
+- 8883  para TLS     TLS checkbox true
+
+DON'T USE LOCALHOST
+
+
+
+
+
+Logs
+
+/var/log/mosquitto/mosquitto.log
+
+1565375291: New connection from 192.168.48.42 on port 1883.
+1565375291: Socket error on client <unknown>, disconnecting.
+
+
+Configuracion
+Place your local configuration in /etc/mosquitto/conf.d/
+
+
+user mosquitto
+max_queued_messages 200
+message_size_limit 0
+allow_zero_length_clientid true
+allow_duplicate_messages false
+
+listener 1883
+autosave_interval 900
+autosave_on_changes false
+persistence true
+persistence_file mosquitto.db
+allow_anonymous true
+log_dest file /var/log/mosquitto/mosquitto.log
+

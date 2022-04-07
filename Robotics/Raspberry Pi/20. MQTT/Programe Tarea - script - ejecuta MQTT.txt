@@ -1,0 +1,98 @@
+
+
+- CREE SCRIPT EN PYTHON
+- PROGRAME CON CRON EL MOMENTO DE EJECUTAR SCRIPT
+
+
+
+INSTALL PAHO
+
+pip install paho-mqtt
+
+
+import paho.mqtt.client as mqtt 
+broker_address="192.168.1.184" 
+
+#create new instance
+client = mqtt.Client("P1") 
+
+#connect to broker
+client.connect(broker_address) 
+client.publish("input/LED1","ON")
+
+client.publish("input/LED1","OFF")
+
+
+
+crontab [-u user] file
+crontab [-u user] [-l | -r | -e] [-i] [-s]
+
+u: crontab is opening the current user crontab by default, but you can specify which one to open (if you have enough privileges)
+l: list current crontab content
+e: edit current crontab content
+r: remove current crontab content
+
+
+
+Abre crontab por primera vez con el comando:
+
+crontab -e
+
+Aparecera:
+
+pi @ raspberrypi: ~ $ crontab -e
+no crontab para pi - usando uno vacío
+
+Selecciona un editor. Para cambiar más tarde, ejecuta 'select-editor'.
+  1. / bin / ed
+  2. / bin / nano <- - más fácil
+  3. /usr/bin/vim.tiny
+
+Elija 1-3 [2]:
+
+Debes elegir un editor. Te aconsejo que uses nano, así que mantén la opción predeterminada y presiona enter:
+
+Al terminar guarda el archivo (CTRL + O y Enter) y sal con (Ctrl + X)
+
+
+Syntax
+
+1 2 3 4 5 command
+
+1: Minute (between 0 and 59)
+2: Hour (between 0 and 23)
+3: Day (between 1 and 31)
+4: Month (between 1 and 12)
+5: Day of week (between 0 and 7, starting on Sunday)
+
+
+ejecutar un comando cada minuto, que escribirá la fecha en un archivo.
+* * * * * echo `date` >> /home/pi/log
+
+Run a backup script every Wednesday at midnight.
+0 0 * * 3 /home/pi/backup.sh
+
+Launch a script at fixed hours
+0 6,12 * * * /home/pi/backup.sh   => will run at 6 and 12 only
+
+Start a script every 2h
+0 */2 * * * /home/pi/backup.sh => will run every 2hours (so 0, 2, 4, 6, ...)
+
+Schedule a script only during the weekdays
+0 3 * * 1-5 /home/pi/backup.sh 
+
+Start something on boot
+@reboot /home/pi/backup.sh   
+
+run every minute of every hour of every day of every month (every minute, 24/7)
+* * * * * python3 /home/pi/test.py
+
+run minute 0 and hour 0 of every day of every month (midnight, daily)
+0 0 * * * python3 /home/pi/test.py
+
+run at 15 and 45 minutes past the hour, every hour between 7am and 6pm, on every day of the week from Monday to Friday.
+15,45 7-18 * * 1-5 python3 /home/pi/test.py
+
+run the script 8pm every odd day from May to September.
+0 20 1-31/2 5-9 * python3 /home/pi/test.py
+

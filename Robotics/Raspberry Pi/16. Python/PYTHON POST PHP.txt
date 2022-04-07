@@ -1,0 +1,16 @@
+pip install requests
+
+
+import requests
+
+url = 'http://example.com/post-data.php'
+myobj = {'valor1': '14.5', 
+         'valor2': '23.5'
+        }
+
+id = "adfd"
+pwd= "adddfff"
+
+x = requests.post(url, data = myobj,id, pwd)
+print (x.text)
+

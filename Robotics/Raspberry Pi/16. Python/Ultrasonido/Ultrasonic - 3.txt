@@ -1,0 +1,82 @@
+1. Import the Pin class from the machine library and then import the utime library. The former is used to control GPIO pins, the latter is a library of time based functions.
+
+from machine import Pin
+import utime
+
+2. Create two new objects, trigger and echo. These objects configure the GPIO pins of the Pico to be used with the ultrasonic sensor. For example our trigger pin is used to send a pulse of current, as such it is an output pin. The echo pin receives the reflected pulse, so echo is an input.
+
+trigger = Pin(3, Pin.OUT)
+echo = Pin(2, Pin.IN)
+
+3. Create a function, ultra(), which will contain the code necessary to take a reading.
+
+def ultra():
+
+4. Pull the trigger pin low, to ensure that it is not active, then pause for two microseconds.
+
+   trigger.low()
+   utime.sleep_us(2)
+
+5. Pull the trigger pin high for five microsends before pulling the trigger pin low. This will send a short pulse from the ultrasonic sensor and then turn off the pulse.
+
+   trigger.high()
+   utime.sleep_us(5)
+   trigger.low()
+
+6. Create a while loop to check the echo pin. If no echo pulse is received, update a variable, signaloff so that it contains a timestamp in microseconds.
+
+   while echo.value() == 0:
+       signaloff = utime.ticks_us()
+
+7. Create another while loop, this time to check if an echo has been received. This will store the current timestamp in microseconds to the signalon variable.
+
+   while echo.value() == 1:
+       signalon = utime.ticks_us()
+
+8. Create a new variable, timepassed, which will store the value total time taken for the pulse to leave the sensor, hit the object and return back to the sensor as an echo.
+
+   timepassed = signalon - signaloff
+
+9. Create a new variable, distance. This variable will store the answer of the equation. We multiply the journey time (timepassed) by the speed of sound (343.2 m/s, which is 0.0343 cm per microsecond) the product of that equation is divided by two as we do not need the total journey distance, just the distance from the object to the sensor.
+
+distance = (timepassed * 0.0343) / 2
+
+10. Print a message to the Python Shell showing the distance.
+
+ print("The distance from object is ",distance,"cm")
+
+11. Moving out of the function we now create a loop that will run the function every second.
+
+while True:
+   ultra()
+   utime.sleep(1)
+
+
+Here’s the complete code:
+
+
+from machine import Pin
+import utime
+trigger = Pin(3, Pin.OUT)
+echo = Pin(2, Pin.IN)
+
+def ultra():
+   trigger.low()
+   utime.sleep_us(2)
+   trigger.high()
+   utime.sleep_us(5)
+   trigger.low()
+
+   while echo.value() == 0:
+       signaloff = utime.ticks_us()
+
+   while echo.value() == 1:
+       signalon = utime.ticks_us()
+
+   timepassed = signalon - signaloff
+   distance = (timepassed * 0.0343) / 2
+   print("The distance from object is ",distance,"cm")
+
+while True:
+   ultra()
+   utime.sleep(1)

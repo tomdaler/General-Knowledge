@@ -1,0 +1,71 @@
+import datetime
+now = datetime.datetime.now()
+
+hour = str(now.hour).zfill(2)
+minute = str(now.minute).zfill(2)
+
+File_mp4 = "movie " + hour+"." + minute + ".mp4"
+
+
+
+======
+
+import datetime
+now = datetime.datetime.now()
+
+print(now.year, now.month, now.day, now.hour, now.minute, now.second)
+# 2015 5 6 8 53 40
+
+= = = = 
+
+import datetime
+now = datetime.datetime.now()
+
+year = str(now.hour)
+month = str(now.month).zfill(2)
+day = str(now.day).zfill(2)
+
+day_month_year = '{}-{}-{}'.format(year, month, day)
+print('day_month_year: ' + day_month_year)
+
+
+result:
+
+day_month_year: 2019-03-26
+
+= = = = 
+
+
+from datetime import datetime
+dateTimeObj = datetime.now()
+
+print(dateTimeObj)
+
+Output
+2018-11-18 09:32:36.435350
+
+
+
+dateTimeObj = datetime.now()
+timeObj = dateTimeObj.time()
+
+timeStr = timeObj.strftime("%H:%M:%S.%f")
+
+output  09:44:41.921898
+
+
+
+import time;
+ts = time.time()
+
+
+import datetime;
+ts = datetime.datetime.now().timestamp()
+
+
+import calendar;
+import time;
+ts = calendar.timegm(time.gmtime())
+
+
+
