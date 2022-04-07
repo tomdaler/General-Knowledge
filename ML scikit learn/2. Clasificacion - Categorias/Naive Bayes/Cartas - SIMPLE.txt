@@ -1,0 +1,17 @@
+Pick a random card
+If you know it is a diamon, then what is the probability to have a queen?
+
+Total Diamond = 13
+Queen = 1
+
+P(Q/D) = 1/13
+
+P(A/B) = P(B/A) PA
+            P(B)
+
+P(Q/D)  = P(D/Q) P(Q)
+             P(D)
+
+P(D/Q) = 1/4 X 1/13  = 1/13
+            1/4
+

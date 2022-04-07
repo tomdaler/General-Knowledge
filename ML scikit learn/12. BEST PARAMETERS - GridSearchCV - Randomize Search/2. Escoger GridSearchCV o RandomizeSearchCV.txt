@@ -1,0 +1,5 @@
+
+GridSearch for small dimensions of the data set (only 2,000 samples).
+
+Randomized Search for larger data sets.
+
