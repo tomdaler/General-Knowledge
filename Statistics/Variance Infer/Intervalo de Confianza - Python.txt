@@ -1,0 +1,24 @@
+
+import numpy as np
+import scipy.stats as st
+
+num1 = 6
+
+gl = num1 -1
+st1 = 18.3
+
+# Un intervalo del 90% -> 0.05 - 0.95
+# 5% de cada lado
+
+P1 = 0.95
+P2 = 1 - P1
+
+L1 = st.chi2.ppf(P1, gl)
+L2 = st.chi2.ppf(P2, gl)
+
+L11 = gl*st1/L1
+L22 = gl*st1/L2
+
+#En standard deviation, no en varianza
+print(np.sqrt(L11))
+print(np.sqrt(L22))

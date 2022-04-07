@@ -1,0 +1,7 @@
+import scipy.stats
+p=0.99
+df1 = 10-1
+
+scipy.stats.chi2.ppf(p, df=df1)
+
+

@@ -1,0 +1,24 @@
+import numpy as np
+from scipy.stats import chi2_contingency 
+
+# using Pearson’s chi-squared statistic
+=======================================
+data = np.array([[60, 10], [30, 25]])
+chi_val, p_val, dof, expected =  chi2_contingency(data)
+chi_val, p_val, dof, expected
+
+# output 
+(13.3364898989899, 0.0002602911116400899, 1, array([[50.4, 19.6],
+       [39.6, 15.4]]))
+
+
+# without Yates’ correction for continuity
+# corrected for the Yates’ continuity
+===========================================
+chi_val, p_val, dof, expected =  chi2_contingency(data, correction=False)
+chi_val, p_val, dof, expected
+
+# output 
+(14.842300556586274, 0.00011688424010613195, 1, array([[50.4, 19.6],
+       [39.6, 15.4]]))
+
