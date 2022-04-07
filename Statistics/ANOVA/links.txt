@@ -1,0 +1,8 @@
+
+https://www.kaggle.com/hamelg/python-for-data-26-anova/notebook
+
+https://www.javatpoint.com/anova-test-in-python
+
+https://analyticsindiamag.com/a-complete-python-guide-to-anova/
+
+https://www.analyticsvidhya.com/blog/2020/06/introduction-anova-statistics-data-science-covid-python/
