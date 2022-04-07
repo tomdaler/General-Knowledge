@@ -1,0 +1,44 @@
+Use $("css selector") to get a set of DOM elements
+
+GET DOM ELEMENTS
+----------------
+
+Examples
+
+$(#some_ID")          return the element
+$("p")                return all p elements
+$(".clase")           retrun all elemensts with class="clase"
+$("li b span.clase")  return all <span class="clase" elements that are inside b elemetns, which are inside li elements
+
+
+COMMON FUNCTIONS
+----------------
+$("#SOME_ID").val()   returns value of input element
+$("selector").each(function)  calls function on each element. "this" set to element
+
+$("selector").addClass("clase") 
+$("selector").removeClass("clase") 
+$("selector").toggleClass("clase") 
+
+$("selector").hide()
+$("selector").show()
+$("selector").faseIn()
+$("selector").fadeOut()
+
+$("selector").html("<tag>some html</tag>")  sets the innerHTML of each element
+$("selector").append
+$("selector").prepend
+
+
+CHAINING
+$("a").click(funct1).addClass("name").each(funct2)
+
+
+$("#some-div").html("bla <i> bla</i>");   find element with id "some-div" and set inner HTML to "bla <i>bla</i>"
+
+$("#some-btn").click(somefuncion);
+
+$("div.msg").addClass("clase").show();  Find all with class="msg" then include class and show
+
+$("form#some-id input[type=text]").val("");   Clear the values of all textfields that are inside <form id="some-id">
+

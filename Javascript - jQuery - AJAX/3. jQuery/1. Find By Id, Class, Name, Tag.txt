@@ -1,0 +1,16 @@
+
+$('#id').show();
+
+$('.clase').show();
+
+$([name='DataTables_Table_0_length']).show();
+
+$('div p').show();
+
+
+with part
+---------
+
+$("[id^='Start_']").show();
+
+$("[name*='_any_place']").show();
