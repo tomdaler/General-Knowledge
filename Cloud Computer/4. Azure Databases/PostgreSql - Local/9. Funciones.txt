@@ -1,0 +1,49 @@
+
+
+ON CONFLICT DO
+RETURNING
+LIKE / ILIKE
+IS / IS NOT
+COALESCE
+NULLIF 
+GREATEST
+LEAST
+BLOQUES ANONIMOS
+
+
+INSERT INTO public.estacion (id, nombre, direccion)
+VALUES (1,'nombre', 'Dire')
+
+ON CONFLICT(id) DO
+   UPDATE SET nombre='Nombre', dire = 'Dire'
+
+RETURNING id;
+
+==============
+
+SELECT * FROM TABLE
+WHERE nombre = LIKE 'Os%'
+AND direc IS NOT NULL
+
+ILIKE, no importa si es mayuscula o minuscula
+
+====================
+
+SELECT COALESCE(dire, 'ES NULO') FROM TABLA1
+
+SELECT NULLIF (0,0)  si son iguales retorna null
+
+SELECT GREATEST (0,1,2,4,65,100)
+SELECT LEAST (2,6,3,6,3,3)
+
+SELECT
+CASE
+  WHEN fecNac > '2015-02-01' THEN 'Nino'
+  ELSE 'Mayor'
+END
+
+FROM TABLA1
+
+
+
+

@@ -1,0 +1,100 @@
+<PackageReference Include="Microsoft.Azure.Storage.Queue" Version="11.0.0"/>
+<PackageReference Include="Microsoft.Azure.Storage.Blob" Version="11.0.0"/>
+
+
+static void Main(string[] args)
+{
+   var builder = new ConfigurationBuilder()
+   .SetBasePath(Directory.GetCurrentDIrectory() )
+   .AddJsonFIle("appsettings.json");
+
+   IConfiguration config = new ConfigurationBuilder()
+   .AddJsonFile("appsettings.json",true, true)
+   .Build();
+  
+   //realiza la conexion con el Storage Account
+   CloudStorageAccount myClient = CloudStorageAccount.Parse(configuration["connectionstring"]);
+
+   //crea la instancia Queue que se usara.
+   CloudQueueClient queueClient = myClient.CreateCloudQueueClient();
+
+   // **** crea my queue.
+   // *** CloudQueue queue = queueClient.GetQueueReference("myFirstQueue");
+   //**** queue.CreateIfNotExist(); //Crear si no existe mi queue`
+
+   // consumir queue
+   CloudQueue queue = queueClient.GetQueueReference("myFirstQueue");
+   CloudQueueMessage pickMsg = queue.peekedMessage();
+   
+   CloudBlobClient    blobClient = myClient.CreateCloudBlobCLient();
+   CloudBlobContainer container =  blobClient.GetContainerReference("ContenedorReg");
+   container.CreateIfNotExists();
+
+   foreach(CloudQueueMessage item in queue.GetMessages(20, TimeSpan.FromSeconds(100)))
+   {
+      string filePath = string.Format(@"log{0}.txt", item.Id);
+      TextWriter tempFile = File.CreateText(filePath);
+      var message = queue.GetMessage().AsString;
+      tempFile.WriteLine(message);
+      tempFile.Close();
+
+   } 
+   
+
+}
+
+
+= = = = = 
+
+using System;
+using System.IO;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Azure.Storage;
+using Microsoft.Azure.Storage.Queue;
+using Microsoft.Azure.Storage.Blob;
+
+
+namespace QueueConsole
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var builder = new ConfigurationBuilder()
+                   .SetBasePath(Directory.GetCurrentDirectory())
+                   .AddJsonFile("appsettings.json");
+             IConfiguration config = new ConfigurationBuilder()
+                   .AddJsonFile("appsettings.json",true,true).Build();
+            CloudStorageAccount myClient = CloudStorageAccount.Parse(config ["ConectionString"]);
+
+            CloudQueueClient queueClient = myClient.CreateCloudQueueClient();
+            CloudQueue queue = queueClient.GetQueueReference("filaprocesos");
+            CloudQueueMessage peekedMessage = queue.PeekMessage();
+            CloudBlobClient blobClient = myClient.CreateCloudBlobClient();
+            CloudBlobContainer container = blobClient.GetContainerReference("contenedorregistros");
+            container.CreateIfNotExists();
+
+            foreach (CloudQueueMessage item in queue.GetMessages(20, TimeSpan.FromSeconds(100)))
+            {
+                string filePath = string.Format(@"log{0}.txt",item.Id);
+                TextWriter tempFile = File.CreateText(filePath);
+                var message = queue.GetMessage().AsString;
+                tempFile.WriteLine(message);
+
+                Console.WriteLine("Archivo Creado");
+                tempFile.Close();
+
+                using(var fileStream =System.IO.File.OpenRead(filePath))
+                {
+                    CloudBlockBlob myblob = container.GetBlockBlobReference(string.Format("log{0}.txt", item.Id));
+                    myblob.UploadFromStream(fileStream);
+                    Console.WriteLine("blob Creado");
+                }
+
+                queue.DeleteMessage(item);
+            }
+            Console.ReadLine(); 
+        }    
+    }
+}
+

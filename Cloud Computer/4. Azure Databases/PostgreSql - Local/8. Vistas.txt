@@ -1,0 +1,36 @@
+Vista vs Vista Materializada
+
+Vista Materializada: persiste
+
+
+Una consulta que se realice muchas veces y colocarla bajo un solo nombre.
+
+Centraliza muchos esfuerzos en una sola función.
+
+Vista volátil: Siempre consulta en la vista, en la BD, informacion exacta, pero no modificable por vista. (Read Only)
+
+Vista materializada: Consulta primera vez y data queda en memoria, mas rapido pero no seguro, no actualizada.
+
+
+Vista volátil
+=============
+- Click derecho a views, 
+- Create, view
+- Nombre
+- Code : SQL Consulta
+
+
+Vista materializada (Informacion estatica) en DISCO !!!
+=======================================================
+- Click derecho
+- Create, materialized view. 
+- Nombre
+- Definicion : SQL Consulta
+- Storage (With data: NO) (SERA AL DARLE REFRESH MATERIALIZED VIEW <NOMBRE>
+
+Al probarla nos lanza un error, porque no tiene datos almacenados. 
+Para almacenar datos usamos:
+
+REFRESH MATERIALIZED VIEW <nombre vista>;
+
+
