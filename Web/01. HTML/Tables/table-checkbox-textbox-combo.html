@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title> - jsFiddle demo</title>
+  
+  <script type='text/javascript' src='/js/lib/mootools-core-1.3-full-compat-nc.js'></script>
+  
+  <link rel="stylesheet" type="text/css" href="/css/normalize.css">
+  
+  
+  <link rel="stylesheet" type="text/css" href="/css/result-light.css">
+
+  
+  <style type='text/css'>
+
+    .center {
+       text-align: center;
+       vertical-align: middle;
+     }
+
+    td, th {
+        padding: 5px;   
+    }
+
+    tr {
+       height: 25px;   
+    }
+
+  </style>
+  
+
+
+<script type='text/javascript'>//<![CDATA[ 
+window.addEvent('load', function() {
+
+});//]]>  
+
+</script>
+
+
+</head>
+<body>
+  <table style="empty-cells:hide;" border="1"   cellpadding="1" cellspacing="1">
+    
+    <tr>
+        <th>Search?</th><th>Field</th><th colspan="2">Search criteria</th><th>Include in report?<br></th>
+    </tr>
+    
+    <tr>
+        <td class="center">
+            <input type="checkbox" name="query_myTextEditBox">    
+        </td>
+        
+        <td>
+            myTextEditBox
+        </td>
+        
+        <td>
+            <select size ="1" name="myTextEditBox_compare_operator">
+                <option value="=">equals</option>
+                <option value="<>">does not equal</option>
+            </select>
+        </td>
+        
+        <td>
+            <input type="text" name="myTextEditBox_compare_value">
+        </td>
+        
+        <td  class="center">
+            <input type="checkbox" name="report_myTextEditBox" value="checked">
+        </td>
+        
+    </tr>
+    
+</table>
+
+  
+</body>
+
+
+</html>
+
