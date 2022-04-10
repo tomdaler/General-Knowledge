@@ -1,9 +1,0 @@
-K Near Neighborgh
-
-Desconoce que grupos pueden existir
-Se general grupos o puntos
-
-Entrena modelo para poder predecir cercania con un data nuevo
-
-Se propone cual es, o son, los grupos mas cercanos a ese dato
-

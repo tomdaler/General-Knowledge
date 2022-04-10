@@ -1,3 +1,0 @@
-A Gentle Introduction to Bayes Theorem for Machine Learning
-
-https://machinelearningmastery.com/bayes-theorem-for-machine-learning/
