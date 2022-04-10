@@ -1,1 +1,0 @@
-https://blog.paperspace.com/intro-to-optimization-momentum-rmsprop-adam/

@@ -1,7 +1,0 @@
-Tipo probleman                           Ultima capa    Loss function
-----------------------------------------------------------------------
-BInary clasificacion                     sigmoid (0,1)  binary_crossentropy
-Multiclas, single-label clasification    softmax        categorical_crossentropy
-Multiclass, multilabel clasification     sigmoid (0,1)  binary_crossentropy
-Regresion to arbitrary values            none           mse
-Regresion to binary                      sigmoid (0,1)  mse / binary_crossentropy

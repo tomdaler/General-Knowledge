@@ -1,5 +1,0 @@
-La capa de dropout consiste en:
-X Reduce la cantidad de capas en el modelo.
-X Castigar con un delta extra la función de costo con valores elevados al cuadrado basados en los pesos del modelo.
-X Castigar con un delta extra la función de costo con valores absolutos basados en los pesos del modelo.
-Dejar en 0 aleatoriamente una fracción de las neuronas en la salida de la capa.

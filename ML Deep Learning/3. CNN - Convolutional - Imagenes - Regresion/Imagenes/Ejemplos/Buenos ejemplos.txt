@@ -1,9 +1,0 @@
-https://machinelearningmastery.com/how-to-make-classification-and-regression-predictions-for-deep-learning-models-in-keras/
-
-This section provides more resources on the topic if you are looking to go deeper.
-
-How to Train a Final Machine Learning Model
-Save and Load Your Keras Deep Learning Models
-Develop Your First Neural Network in Python With Keras Step-By-Step
-The 5 Step Life-Cycle for Long Short-Term Memory Models in Keras
-How to Make Predictions with Long Short-Term Memory Models in Keras
