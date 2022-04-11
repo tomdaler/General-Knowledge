@@ -1,3 +1,0 @@
-Fasttext
-Tensorflow Hub
-GPT3
