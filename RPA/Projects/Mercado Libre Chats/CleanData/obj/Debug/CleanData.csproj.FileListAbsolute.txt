@@ -1,8 +1,0 @@
-C:\Proyectos\MercadoLibre\CleanData\bin\Debug\CleanData.exe.config
-C:\Proyectos\MercadoLibre\CleanData\bin\Debug\CleanData.exe
-C:\Proyectos\MercadoLibre\CleanData\bin\Debug\CleanData.pdb
-C:\Proyectos\MercadoLibre\CleanData\obj\Debug\CleanData.csproj.CoreCompileInputs.cache
-C:\Proyectos\MercadoLibre\CleanData\obj\Debug\CleanData.exe
-C:\Proyectos\MercadoLibre\CleanData\obj\Debug\CleanData.pdb
-C:\Proyectos\MercadoLibre\CleanData\obj\Debug\CleanData.csproj.SuggestedBindingRedirects.cache
-C:\Proyectos\MercadoLibre\CleanData\obj\Debug\CleanData.csproj.AssemblyReference.cache
