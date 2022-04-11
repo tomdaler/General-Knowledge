@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<bookstore specialty="novel">
+  <book style="autobiography">
+    <author>
+      <first-name>Joe</first-name>
+      <last-name>Bob</last-name>
+      <award>Trenton Literaty </award>
+    </author>
+    <price>55</price>
+  </book>
+  <book style="textbox">
+    <author>
+      <first-name>Mary</first-name>
+      <last-name>Bob</last-name>
+      <publication>
+        <first-name>Mary</first-name>
+        <last-name>Bob</last-name>
+      </publication>
+    </author>
+    <editor>
+      <first-name>Britney</first-name>
+      <last-name>Bob</last-name>
+    </editor>
+    <price>55</price>
+  </book>
+  <book style="novel" id="myfave">
+    <author>
+      <first-name>Mary</first-name>
+      <last-name>Bob</last-name>
+      <publication>Still</publication>
+    </author>
+  </book>
+</bookstore>
