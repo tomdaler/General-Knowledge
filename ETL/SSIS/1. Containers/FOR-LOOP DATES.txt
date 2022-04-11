@@ -1,6 +1,0 @@
-
-Init value  @[User::StartValue]
-
-Condition   DATEDIFF("Day", @[User::StartValue] , @[User::EndValue] ) >=0
-
-Another    @[User::StartValue] = DATEADD("Day",1, @[User::StartValue])
