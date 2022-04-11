@@ -1,4 +1,0 @@
-
-CONVERT MP4 TO AVI
-
-ffmpeg -i input.mp4 output.avi

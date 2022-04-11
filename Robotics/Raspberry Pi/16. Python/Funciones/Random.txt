@@ -1,6 +1,0 @@
-
-import random
-client_id = f'val-{random.randint(0, 1000)}'
-
-val-010
-val-234
